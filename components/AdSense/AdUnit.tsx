@@ -30,12 +30,7 @@ const AdUnit: React.FC<AdUnitProps> = ({
 
     // Don't show ads in development or if no valid publisher ID
     if (!publisherId || publisherId === 'ca-pub-0000000000000000') {
-        return (
-            <div className={`bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center ${className}`}>
-                <p className="text-gray-500 text-sm">Ad Placeholder</p>
-                <p className="text-xs text-gray-400 mt-1">Set NEXT_PUBLIC_ADSENSE_PUBLISHER_ID</p>
-            </div>
-        );
+        return null;
     }
 
     return (
