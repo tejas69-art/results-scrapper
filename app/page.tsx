@@ -237,12 +237,7 @@ const VTUResults = () => {
                 }
             }
 
-            // Debug logging
-            console.log('Response data type:', typeof data);
-            console.log('Response data keys:', typeof data === 'object' ? Object.keys(data) : 'N/A');
-            console.log('Response data:', data);
-            console.log('Extracted HTML length:', htmlContent.length);
-            console.log('HTML preview (first 500 chars):', htmlContent.substring(0, 500));
+
 
             if (!htmlContent || htmlContent.trim().length === 0) {
                 throw new Error('Empty HTML content received from server. Please verify the USN and URL are correct.');
