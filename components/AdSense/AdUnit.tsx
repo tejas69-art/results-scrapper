@@ -34,10 +34,10 @@ const AdUnit: React.FC<AdUnitProps> = ({
     }
 
     return (
-        <div className={className}>
+        <div className={className} style={{ minHeight: '90px' }}>
             <ins
                 className="adsbygoogle"
-                style={{ display: 'block' }}
+                style={{ display: 'block', minHeight: '90px' }}
                 data-ad-client={publisherId}
                 data-ad-slot={adSlot}
                 data-ad-format={adFormat}

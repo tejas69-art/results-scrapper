@@ -32,10 +32,10 @@ const InFeedAd: React.FC<InFeedAdProps> = ({
     }
 
     return (
-        <div className={`my-4 ${className}`}>
+        <div className={`my-4 ${className}`} style={{ minHeight: '90px' }}>
             <ins
                 className="adsbygoogle"
-                style={{ display: 'block' }}
+                style={{ display: 'block', minHeight: '90px' }}
                 data-ad-format="fluid"
                 data-ad-layout-key={adLayout}
                 data-ad-client={publisherId}
