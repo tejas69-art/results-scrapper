@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     description: "Check your VTU (Visvesvaraya Technological University) exam results quickly and calculate your SGPA. Enter your USN and get instant results with grade analysis.",
     keywords: "VTU results, VTU exam results, USN, SGPA calculator, VTU grade checker, Visvesvaraya Technological University",
     authors: [{ name: "VTU Results" }],
+    icons: {
+        icon: [
+            { url: "/favicon.png", sizes: "any" },
+            { url: "/favicon.png", type: "image/png" },
+        ],
+        apple: "/favicon.png",
+    },
     openGraph: {
         type: "website",
         locale: "en_US",
