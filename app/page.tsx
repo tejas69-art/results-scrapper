@@ -7,8 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import AdUnit from '@/components/AdSense/AdUnit';
-import InFeedAd from '@/components/AdSense/InFeedAd';
 
 const API_URL = "/api/single-post";
 
@@ -325,13 +323,6 @@ const VTUResults = () => {
             )}
 
             <div className="container mx-auto px-4 max-w-6xl">
-                {/* Top Ad */}
-                <AdUnit
-                    adSlot="1234567890"
-                    adFormat="horizontal"
-                    className="mb-8"
-                />
-
                 {/* VTU Results Form */}
                 {!parsedResult && (
                     <div className="bg-white rounded-lg p-6 mb-8 shadow-md border border-gray-200">
@@ -379,9 +370,6 @@ const VTUResults = () => {
                                 </div>
                             )}
                         </form>
-
-                        {/* In-Feed Ad below form */}
-                        <InFeedAd adSlot="2345678901" className="mt-8" />
                     </div>
                 )}
 
@@ -487,11 +475,6 @@ const VTUResults = () => {
                                                         Internal: {subject.internal} | External: {subject.external} | Announced: {subject.announcedDate}
                                                     </div>
                                                 </div>
-
-                                                {/* Insert in-feed ad after every 3 subjects */}
-                                                {(index + 1) % 3 === 0 && index < parsedResult.subjects.length - 1 && (
-                                                    <InFeedAd adSlot={`${3456789012 + index}`} />
-                                                )}
                                             </React.Fragment>
                                         ))}
                                     </CardContent>
@@ -528,12 +511,6 @@ const VTUResults = () => {
                                         </div>
                                     </CardContent>
                                 </Card>
-
-                                {/* Sidebar Ad */}
-                                <AdUnit
-                                    adSlot="4567890123"
-                                    adFormat="vertical"
-                                />
 
                                 {/* Performance Metrics */}
                                 <Card className="bg-white shadow-lg border border-gray-200">
@@ -583,13 +560,6 @@ const VTUResults = () => {
                                 </Button>
                             </div>
                         </div>
-
-                        {/* Bottom Ad */}
-                        <AdUnit
-                            adSlot="5678901234"
-                            adFormat="horizontal"
-                            className="mt-8"
-                        />
                     </div>
                 )}
             </div>
