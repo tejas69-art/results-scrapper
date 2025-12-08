@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { VTU_RESULTS_DATA, ExamEvent, ExamLink } from '@/lib/vtu-data';
 
 const API_URL = "/api/single-post";
 
@@ -42,7 +43,7 @@ const getGradeFromMarks = (marks: number) => {
     return { grade: 'F', points: 0 };
 };
 
-const parseHTMLResult = (html: string, usn: string): ParsedResult | null => {
+const parseHTMLResult = (html: string, fallbackUsn: string): ParsedResult | null => {
     try {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
@@ -51,6 +52,15 @@ const parseHTMLResult = (html: string, usn: string): ParsedResult | null => {
         const nameRegex = /Student Name[\s\S]*?<td[^>]*><b>:\s*<\/b>\s*([^<]+)<\/td>/i;
         const nameMatch = nameRegex.exec(html);
         const studentName = nameMatch ? nameMatch[1].trim() : 'Unknown';
+
+        // Extract USN
+        const usnRegex = /University Seat Number[\s\S]*?<td[^>]*><b>:\s*<\/b>\s*([^<]+)<\/td>/i;
+        const usnMatch = usnRegex.exec(html);
+        let usn = usnMatch ? usnMatch[1].trim() : fallbackUsn;
+        
+        // Use fallback if extracted USN is empty or too short
+        if (!usn || usn.length < 5) usn = fallbackUsn;
+
 
         // Extract semester
         const semesterRegex = /Semester\s*:\s*(\d+)/i;
@@ -122,13 +132,82 @@ const parseHTMLResult = (html: string, usn: string): ParsedResult | null => {
 };
 
 const VTUResults = () => {
+    // Core State
     const [usn, setUsn] = useState('');
     const [url, setUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [parsedResult, setParsedResult] = useState<ParsedResult | null>(null);
+    const [allResults, setAllResults] = useState<ParsedResult[]>([]);
+    
+    // Stats State
     const [sgpa, setSgpa] = useState<number>(0);
     const [totalCredits, setTotalCredits] = useState<number>(0);
+
+    // Search Mode State
+    const [searchMode, setSearchMode] = useState<'single' | 'multiple'>('single');
+    const [startUsn, setStartUsn] = useState('');
+    const [endUsn, setEndUsn] = useState('');
+
+    // Hierarchical Dropdown State
+    const [selectedYear, setSelectedYear] = useState<string>('');
+    const [selectedExamId, setSelectedExamId] = useState<string>('');
+    const [selectedType, setSelectedType] = useState<string>('');
+    const [selectedScheme, setSelectedScheme] = useState<string>('');
+    const [showManualUrl, setShowManualUrl] = useState(false);
+
+    // Filtered Options
+    const uniqueYears = Array.from(new Set(VTU_RESULTS_DATA.map(d => d.year))).sort().reverse();
+    
+    // Derived state for available exams based on year
+    const availableExams = VTU_RESULTS_DATA.filter(e => e.year === selectedYear);
+
+    // Update URL when selections change
+    useEffect(() => {
+        if (selectedExamId && selectedType && selectedScheme) {
+            const exam = VTU_RESULTS_DATA.find(e => e.id === selectedExamId);
+            if (exam) {
+                const link = exam.links.find(l => l.type === selectedType && l.scheme === selectedScheme);
+                if (link) {
+                    setUrl(link.url);
+                }
+            }
+        }
+    }, [selectedExamId, selectedType, selectedScheme]);
+
+    // Reset downstream selections when upstream changes
+    const handleYearChange = (year: string) => {
+        setSelectedYear(year);
+        setSelectedExamId('');
+        setSelectedType('');
+        setSelectedScheme('');
+        setUrl('');
+    };
+
+    const handleExamChange = (examId: string) => {
+        setSelectedExamId(examId);
+        setSelectedType('');
+        setSelectedScheme('');
+        
+        // Auto-select type if only one exists
+        const exam = VTU_RESULTS_DATA.find(e => e.id === examId);
+        if (exam) {
+            const types = Array.from(new Set(exam.links.map(l => l.type)));
+            if (types.length === 1) setSelectedType(types[0]);
+        }
+    };
+
+    const getAvailableTypes = () => {
+        const exam = VTU_RESULTS_DATA.find(e => e.id === selectedExamId);
+        if (!exam) return [];
+        return Array.from(new Set(exam.links.map(l => l.type)));
+    };
+
+    const getAvailableSchemes = () => {
+        const exam = VTU_RESULTS_DATA.find(e => e.id === selectedExamId);
+        if (!exam) return [];
+        return Array.from(new Set(exam.links.filter(l => l.type === selectedType).map(l => l.scheme)));
+    };
 
     const calculateSGPA = (subjects: Subject[]) => {
         let totalGradePoints = 0;
@@ -170,90 +249,91 @@ const VTUResults = () => {
         setLoading(true);
         setError(null);
         setParsedResult(null);
+        setAllResults([]);
 
-        if (!usn.trim() || !url.trim()) {
-            setError('Please enter both USN and URL');
+        if (!url.trim()) {
+            setError('Please enter the Result URL');
             setLoading(false);
             return;
         }
 
+        if (searchMode === 'single' && !usn.trim()) {
+             setError('Please enter USN');
+             setLoading(false);
+             return;
+        }
+
+        if (searchMode === 'multiple' && (!startUsn.trim() || !endUsn.trim())) {
+             setError('Please enter both Start and End USNs');
+             setLoading(false);
+             return;
+        }
+
         try {
-            const response = await fetch(API_URL, {
+            const isSingle = searchMode === 'single';
+            const endpoint = isSingle ? '/api/single-post' : '/api/multi-post';
+            
+            const payload = isSingle 
+                ? { usn: usn.trim().toUpperCase(), index_url: url.trim() }
+                : { 
+                    index_url: url.trim(), 
+                    start_usn: startUsn.trim().toUpperCase(), 
+                    end_usn: endUsn.trim().toUpperCase() 
+                  };
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    usn: usn.trim().toUpperCase(),
-                    index_url: url.trim()
-                }),
+                body: JSON.stringify(payload),
             });
 
             if (!response.ok) {
                 let errorMessage = `HTTP error! status: ${response.status}`;
                 try {
                     const errorData = await response.json();
-                    if (errorData.detail) {
-                        errorMessage = Array.isArray(errorData.detail)
-                            ? errorData.detail.map((e: any) => e.msg || JSON.stringify(e)).join(', ')
-                            : errorData.detail;
-                    } else if (errorData.message) {
-                        errorMessage = errorData.message;
-                    } else if (typeof errorData === 'string') {
-                        errorMessage = errorData;
-                    }
-                } catch {
-                    errorMessage = response.statusText || errorMessage;
-                }
+                    if (errorData.detail) errorMessage = errorData.detail;
+                } catch { /* ignore */ }
                 throw new Error(errorMessage);
             }
 
             const data = await response.json();
+            
+            // The API now returns { "USN": "HTML" } or just { ... }
+            const results: ParsedResult[] = [];
+            
+            Object.keys(data).forEach(key => {
+                 const html = data[key];
+                 if (typeof html === 'string' && html.length > 100) { 
+                     // Determine best USN to use as fallback/primary
+                     let currentUsn = key;
+                     // If we are in single mode, and we have a valid USN input, use it 
+                     // This handles cases where the API might return generic keys like "html"
+                     if (searchMode === 'single' && usn) {
+                         currentUsn = usn;
+                     }
+                     
+                     const parsed = parseHTMLResult(html, currentUsn);
+                     if (parsed && parsed.subjects.length > 0) {
+                         results.push(parsed);
+                     }
+                 }
+            });
 
-            const usnKey = usn.trim().toUpperCase();
-            let htmlContent = '';
+            if (results.length === 0) {
+                 throw new Error('No valid results found. Please check the USNs and URL.');
+            }
+            
+            results.sort((a, b) => a.usn.localeCompare(b.usn));
+            setAllResults(results);
 
-            // Handle different response formats
-            if (typeof data === 'string') {
-                htmlContent = data;
-            } else if (data.html) {
-                htmlContent = data.html;
-            } else if (data[usnKey]) {
-                htmlContent = data[usnKey];
-            } else {
-                // Try to find the HTML in any key
-                const firstKey = Object.keys(data)[0];
-                if (firstKey && data[firstKey]) {
-                    // If the value is a string, use it; if it's an object, check for html property
-                    if (typeof data[firstKey] === 'string') {
-                        htmlContent = data[firstKey];
-                    } else if (data[firstKey].html) {
-                        htmlContent = data[firstKey].html;
-                    } else {
-                        throw new Error('No result data found in response');
-                    }
-                } else {
-                    throw new Error('No result data found in response');
-                }
+            if (results.length === 1) {
+                setParsedResult(results[0]);
             }
 
-
-
-            if (!htmlContent || htmlContent.trim().length === 0) {
-                throw new Error('Empty HTML content received from server. Please verify the USN and URL are correct.');
-            }
-
-            const parsed = parseHTMLResult(htmlContent, usnKey);
-            if (parsed) {
-                if (parsed.subjects.length === 0) {
-                    throw new Error('No subject data found in the result. The HTML structure might be different than expected. Please check the console for details.');
-                }
-                setParsedResult(parsed);
-            } else {
-                throw new Error('Failed to parse result data. Please check the console for details.');
-            }
         } catch (err: any) {
-            setError(err.message || 'Failed to fetch results. Please check your USN and URL.');
+            setError(err.message || 'Failed to fetch results.');
             console.error('Error fetching results:', err);
         } finally {
             setLoading(false);
@@ -277,6 +357,21 @@ const VTUResults = () => {
         if (sgpa >= 5) return 'from-orange-500 to-red-600';
         return 'from-red-500 to-red-700';
     };
+    
+    // Helper to calculate SGPA for the table view without setting state
+    const calculateSGPAValue = (subjects: Subject[]) => {
+        let totalGradePoints = 0;
+        let totalCreds = 0;
+        subjects.forEach(subject => {
+            if (subject.total > 0 && subject.credits > 0) { // Note: Credits might be 0 initially if scraping doesn't get them
+                 // For estimation, if credits are 0, we can't calc accurately. 
+                 // But let's use what we have.
+                 totalGradePoints += subject.gradePoints * subject.credits;
+                 totalCreds += subject.credits;
+            }
+        });
+        return totalCreds > 0 ? (totalGradePoints / totalCreds) : 0;
+    };
 
     return (
         <div className="min-h-screen bg-gray-50 py-8">
@@ -298,19 +393,9 @@ const VTUResults = () => {
                                 </h3>
                                 <div className="space-y-2">
                                     <p className="text-sm text-gray-600 leading-relaxed">
-                                        This may take a few seconds as we depend on <span className="font-semibold text-blue-600">free resources</span> to keep this service available to everyone.
-                                    </p>
-                                    <p className="text-sm font-medium text-blue-700">
-                                        Thank you for your patience! 🙏
+                                        This may take some time depending on the number of records.
                                     </p>
                                 </div>
-                            </div>
-
-                            {/* Progress Dots */}
-                            <div className="flex gap-2">
-                                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                                <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                             </div>
                         </div>
                     </div>
@@ -319,38 +404,192 @@ const VTUResults = () => {
 
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* VTU Results Form */}
-                {!parsedResult && (
+                {!parsedResult && allResults.length === 0 && (
                     <div className="bg-white rounded-lg p-6 mb-8 shadow-md border border-gray-200">
                         <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">Check Your VTU Results</h2>
                         <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-2xl mx-auto">
-                            <div>
-                                <Label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Result URL
-                                </Label>
-                                <Input
-                                    id="url"
-                                    type="url"
-                                    value={url}
-                                    onChange={e => setUrl(e.target.value)}
-                                    placeholder="Enter the VTU result page URL"
-                                    required
-                                />
+                            <div className="space-y-4 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <Label className="block text-sm font-medium text-gray-700 mb-2">Academic Year</Label>
+                                        <Select value={selectedYear} onValueChange={handleYearChange}>
+                                            <SelectTrigger className="bg-white border-gray-300">
+                                                <SelectValue placeholder="Select Year" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                {uniqueYears.map((year) => (
+                                                    <SelectItem key={year} value={year}>{year}</SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+
+                                    <div>
+                                        <Label className="block text-sm font-medium text-gray-700 mb-2">Exam Event</Label>
+                                        <Select value={selectedExamId} onValueChange={handleExamChange} disabled={!selectedYear}>
+                                            <SelectTrigger className="bg-white border-gray-300">
+                                                <SelectValue placeholder="Select Exam" />
+                                            </SelectTrigger>
+                                            <SelectContent>
+                                                {availableExams.map((exam) => (
+                                                    <SelectItem key={exam.id} value={exam.id}>
+                                                        {exam.title.replace(exam.year, '').trim()} ({exam.session})
+                                                    </SelectItem>
+                                                ))}
+                                            </SelectContent>
+                                        </Select>
+                                    </div>
+                                </div>
+
+                                {selectedExamId && (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-in slide-in-from-top-2 duration-300">
+                                        <div>
+                                            <Label className="block text-sm font-medium text-gray-700 mb-2">Result Type</Label>
+                                            <Select value={selectedType} onValueChange={(val) => {
+                                                setSelectedType(val);
+                                                setSelectedScheme('');
+                                            }}>
+                                                <SelectTrigger className="bg-white border-gray-300">
+                                                    <SelectValue placeholder="Regular / Reval" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    {getAvailableTypes().map((type) => (
+                                                        <SelectItem key={type} value={type}>{type}</SelectItem>
+                                                    ))}
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+
+                                        <div>
+                                            <Label className="block text-sm font-medium text-gray-700 mb-2">Scheme</Label>
+                                            <Select value={selectedScheme} onValueChange={setSelectedScheme} disabled={!selectedType}>
+                                                <SelectTrigger className="bg-white border-gray-300">
+                                                    <SelectValue placeholder="CBCS / Non-CBCS" />
+                                                </SelectTrigger>
+                                                <SelectContent>
+                                                    {getAvailableSchemes().map((scheme) => (
+                                                        <SelectItem key={scheme} value={scheme}>{scheme}</SelectItem>
+                                                    ))}
+                                                </SelectContent>
+                                            </Select>
+                                        </div>
+                                    </div>
+                                )}
+
+                                <div>
+                                    <div className="flex justify-between items-center mb-2">
+                                        <Label htmlFor="url" className="block text-sm font-medium text-gray-700">
+                                            Result URL
+                                        </Label>
+                                        <button 
+                                          type="button" 
+                                          onClick={() => setShowManualUrl(!showManualUrl)}
+                                          className="text-xs text-blue-600 hover:text-blue-800 underline"
+                                        >
+                                          {showManualUrl ? "Hide Manual URL" : "Edit / View URL"}
+                                        </button>
+                                    </div>
+                                    <div className={showManualUrl ? "block" : "hidden"}>
+                                        <Input
+                                            id="url"
+                                            type="url"
+                                            value={url}
+                                            onChange={e => setUrl(e.target.value)}
+                                            placeholder="https://results.vtu.ac.in/..."
+                                            required={selectedScheme === '' && showManualUrl}
+                                            className="bg-white text-gray-600 border-gray-300"
+                                        />
+                                    </div>
+                                    {!showManualUrl && url && (
+                                        <div className="text-xs text-gray-500 font-mono bg-gray-100 p-2 rounded truncate">
+                                            {url}
+                                        </div>
+                                    )}
+                                    {!showManualUrl && !url && (
+                                        <div className="text-xs text-gray-400 italic">
+                                            Select options above to generate link
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                            <div>
-                                <Label htmlFor="usn" className="block text-sm font-medium text-gray-700 mb-2">
-                                    USN (University Seat Number)
-                                </Label>
-                                <Input
-                                    id="usn"
-                                    type="text"
-                                    value={usn}
-                                    onChange={e => setUsn(e.target.value.toUpperCase())}
-                                    placeholder="Enter your USN (e.g., 1AM21CS202)"
-                                    required
-                                    pattern="^[1-4][A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$"
-                                    title="Enter a valid VTU USN (e.g., 1AM21CS202)"
-                                    className="uppercase"
-                                />
+                            <div className="space-y-4">
+                                <div>
+                                    <Label className="block text-sm font-medium text-gray-700 mb-2">Check Type</Label>
+                                    <div className="flex bg-gray-100 p-1 rounded-lg">
+                                        <button
+                                            type="button"
+                                            onClick={() => setSearchMode('single')}
+                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${
+                                                searchMode === 'single' 
+                                                ? 'bg-white text-blue-600 shadow-sm' 
+                                                : 'text-gray-500 hover:text-gray-700'
+                                            }`}
+                                        >
+                                            Single Result
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setSearchMode('multiple')}
+                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${
+                                                searchMode === 'multiple' 
+                                                ? 'bg-white text-blue-600 shadow-sm' 
+                                                : 'text-gray-500 hover:text-gray-700'
+                                            }`}
+                                        >
+                                            Multiple Results
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {searchMode === 'single' ? (
+                                    <div>
+                                        <Label htmlFor="usn" className="block text-sm font-medium text-gray-700 mb-2">
+                                            USN (University Seat Number)
+                                        </Label>
+                                        <Input
+                                            id="usn"
+                                            type="text"
+                                            value={usn}
+                                            onChange={e => setUsn(e.target.value.toUpperCase())}
+                                            placeholder="Enter your USN (e.g., 1AM21CS202)"
+                                            required={searchMode === 'single'}
+                                            pattern="^[1-4][A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$"
+                                            title="Enter a valid VTU USN (e.g., 1AM21CS202)"
+                                            className="uppercase"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <Label htmlFor="start_usn" className="block text-sm font-medium text-gray-700 mb-2">
+                                                Start USN
+                                            </Label>
+                                            <Input
+                                                id="start_usn"
+                                                type="text"
+                                                value={startUsn}
+                                                onChange={e => setStartUsn(e.target.value.toUpperCase())}
+                                                placeholder="e.g., 1AM21CS001"
+                                                required={searchMode === 'multiple'}
+                                                className="uppercase"
+                                            />
+                                        </div>
+                                        <div>
+                                            <Label htmlFor="end_usn" className="block text-sm font-medium text-gray-700 mb-2">
+                                                End USN
+                                            </Label>
+                                            <Input
+                                                id="end_usn"
+                                                type="text"
+                                                value={endUsn}
+                                                onChange={e => setEndUsn(e.target.value.toUpperCase())}
+                                                placeholder="e.g., 1AM21CS010"
+                                                required={searchMode === 'multiple'}
+                                                className="uppercase"
+                                            />
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                             <Button
                                 type="submit"
@@ -367,10 +606,82 @@ const VTUResults = () => {
                         </form>
                     </div>
                 )}
+                
+                {/* Batch Results Table View */}
+                {!parsedResult && allResults.length > 0 && (
+                    <div className="space-y-6">
+                         <div className="flex justify-between items-center">
+                            <h2 className="text-2xl font-bold text-gray-900">Result Summary</h2>
+                            <Button 
+                                variant="outline" 
+                                onClick={() => setAllResults([])}
+                            >
+                                Check New Results
+                            </Button>
+                        </div>
+                        
+                        <Card className="bg-white shadow-lg border border-gray-200 overflow-hidden">
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-sm text-left">
+                                    <thead className="bg-gray-100 text-gray-700 font-semibold border-b">
+                                        <tr>
+                                            <th className="px-6 py-4">USN</th>
+                                            <th className="px-4 py-4">Student Name</th>
+                                            <th className="px-4 py-4 text-center">Semester</th>
+                                            <th className="px-4 py-4 text-center">SGPA (Est)</th>
+                                            <th className="px-4 py-4 text-center">Result</th>
+                                            <th className="px-4 py-4 text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-gray-200">
+                                        {allResults.map((result) => (
+                                            <tr key={result.usn} className="hover:bg-gray-50 transition-colors">
+                                                <td className="px-6 py-4 font-mono font-medium text-gray-900">{result.usn}</td>
+                                                <td className="px-4 py-4 text-gray-700">{result.studentName}</td>
+                                                <td className="px-4 py-4 text-center text-gray-600">{result.semester}</td>
+                                                <td className="px-4 py-4 text-center font-bold text-blue-600">
+                                                    {calculateSGPAValue(result.subjects).toFixed(2)}
+                                                </td>
+                                                <td className="px-4 py-4 text-center">
+                                                     {result.subjects.some(s => s.result === 'F') 
+                                                        ? <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Fail</span>
+                                                        : <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Pass</span>
+                                                     }
+                                                </td>
+                                                <td className="px-4 py-4 text-center">
+                                                    <Button 
+                                                        size="sm" 
+                                                        variant="ghost" 
+                                                        className="text-blue-600 hover:text-blue-800 hover:bg-blue-50"
+                                                        onClick={() => setParsedResult(result)}
+                                                    >
+                                                        View Full
+                                                    </Button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </Card>
+                    </div>
+                )}
 
                 {/* Results Display */}
                 {parsedResult && (
-                    <div className="space-y-8">
+                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                         {allResults.length > 1 && (
+                            <div className="mb-4">
+                                <Button 
+                                    variant="outline" 
+                                    onClick={() => setParsedResult(null)}
+                                    className="flex items-center gap-2"
+                                >
+                                    ← Back to Results List
+                                </Button>
+                            </div>
+                        )}
+                        
                         {/* Header */}
                         <div className="text-center">
                             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 mb-6 border border-blue-200">
@@ -545,7 +856,10 @@ const VTUResults = () => {
                                 <Button
                                     onClick={() => {
                                         setParsedResult(null);
+                                        setAllResults([]);
                                         setUsn('');
+                                        setStartUsn('');
+                                        setEndUsn('');
                                         setUrl('');
                                     }}
                                     variant="outline"
@@ -563,3 +877,5 @@ const VTUResults = () => {
 };
 
 export default VTUResults;
+
+
