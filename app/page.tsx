@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { VTU_RESULTS_DATA, ExamEvent, ExamLink } from '@/lib/vtu-data';
+import AdUnit from '@/components/AdSense/AdUnit';
+import InFeedAd from '@/components/AdSense/InFeedAd';
 
 const API_URL = "/api/single-post";
 
@@ -42,6 +44,8 @@ const getGradeFromMarks = (marks: number) => {
     if (marks >= 40) return { grade: 'E', points: 5 };
     return { grade: 'F', points: 0 };
 };
+
+
 
 const parseHTMLResult = (html: string, fallbackUsn: string): ParsedResult | null => {
     try {
@@ -403,6 +407,12 @@ const VTUResults = () => {
             )}
 
             <div className="container mx-auto px-4 max-w-6xl">
+                {/* Top Banner Ad */}
+                <AdUnit 
+                    adSlot="8901234567" 
+                    className="mb-8 flex justify-center overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white"
+                />
+
                 {/* VTU Results Form */}
                 {!parsedResult && allResults.length === 0 && (
                     <div className="bg-white rounded-lg p-6 mb-8 shadow-md border border-gray-200">
@@ -607,6 +617,12 @@ const VTUResults = () => {
                     </div>
                 )}
                 
+                {/* In-Feed Ad between Form and Results */}
+                <InFeedAd 
+                    adSlot="1234567890" 
+                    className="mb-8 bg-white rounded-lg shadow-sm border border-gray-100 p-2"
+                />
+
                 {/* Batch Results Table View */}
                 {!parsedResult && allResults.length > 0 && (
                     <div className="space-y-6">
@@ -871,6 +887,12 @@ const VTUResults = () => {
                         </div>
                     </div>
                 )}
+
+                {/* Bottom Banner Ad */}
+                <AdUnit 
+                    adSlot="1234567890" 
+                    className="mt-8 flex justify-center overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white"
+                />
             </div>
         </div>
     );
