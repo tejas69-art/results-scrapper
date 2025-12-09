@@ -5,6 +5,7 @@ import AutoAds from "@/components/AdSense/AutoAds";
 import CookieConsent from "@/components/CookieConsent";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -116,6 +117,11 @@ export default function RootLayout({
 
                 {/* Cookie Consent */}
                 <CookieConsent />
+
+                {/* Third-party Assessment/Ad Script */}
+                <Script id="al5sm-tag" strategy="afterInteractive">
+                    {`(function(s){s.dataset.zone='10299956',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
+                </Script>
             </body>
         </html>
     );
