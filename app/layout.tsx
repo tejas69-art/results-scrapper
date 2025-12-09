@@ -4,6 +4,7 @@ import "./globals.css";
 import AutoAds from "@/components/AdSense/AutoAds";
 import CookieConsent from "@/components/CookieConsent";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <AutoAds />
+                <Analytics />
             </head>
             <body className={inter.className}>
                 {/* Header Navigation */}
