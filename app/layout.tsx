@@ -119,18 +119,18 @@ export default function RootLayout({
                 <CookieConsent />
 
                 {/* Third-party Assessment/Ad Script */}
-                {/* <script>
-                    {'(function(s){s.dataset.zone='10300315',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))'}
-                </script> */}
-                <script>
-(function () {
-  var s = document.createElement('script');
-  s.src = 'https://nap5k.com/tag.min.js';
-  s.dataset.zone = '10300336';
-  s.async = true;
-  (document.documentElement || document.body).appendChild(s);
-})();
-</script>
+                        <Script id="nap5k-tag" strategy="afterInteractive">
+          {`
+            (function () {
+              var s = document.createElement('script');
+              s.src = 'https://nap5k.com/tag.min.js';
+              s.dataset.zone = '10300336';
+              s.async = true;
+              document.body.appendChild(s);
+            })();
+          `}
+        </Script>
+
 
             </body>
         </html>
