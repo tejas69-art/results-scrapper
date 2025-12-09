@@ -35,7 +35,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Silver Jubilee',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexSJSEJJ25.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexSJSEJJ25.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/SplJulcbcs25/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/SplJulNoncbcs25/index.php' }
         ]
@@ -47,7 +47,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'June/July',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexJJ25.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexJJ25.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJEcbcs25/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJRVcbcs25/index.php' }
         ]
@@ -79,7 +79,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Dec/Jan',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexD4J5.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexD4J5.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/DJcbcs25/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/DJnoncbcs25/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/DJRVcbcs25/index.php' },
@@ -103,7 +103,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'June/July',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexJJ24.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexJJ24.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJEcbcs24/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/JJEnoncbcs24/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJRVcbcs24/index.php' },
@@ -117,7 +117,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Dec/Jan',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexD3J4.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexD3J4.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/DJcbcs24/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/DJnoncbcs24/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/DJRVcbcs24/index.php' },
@@ -142,7 +142,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'June/July',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexjj23.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexjj23.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJEcbcs23/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/JJEnoncbcs23/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JJRVEcbcs23/index.php' },
@@ -156,7 +156,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Jan/Feb',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexjf23.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexjf23.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JFEcbcs23/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/JFEnoncbcs23/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JFRVEcbcs23/index.php' },
@@ -170,7 +170,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Feb/March',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/index_fm.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/index_fm.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/FMEcbcs22/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/FMEnoncbcs22/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/FMRVEcbcsFinal22/index.php' },
@@ -184,7 +184,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'July/Aug',
         program: 'B.E/B.Tech',
         links: [
-            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/index_jj.php' },
+            // { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/index_jj.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JAEcbcs/index.php' },
             { type: 'Regular', scheme: 'Non-CBCS', url: 'https://results.vtu.ac.in/JAEnoncbcs/index.php' },
             { type: 'Revaluation', scheme: 'CBCS', url: 'https://results.vtu.ac.in/JARVEcbcsFinal/index.php' },
