@@ -37,6 +37,18 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: "default",
+        title: "VTU Results",
+    },
+};
+
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    themeColor: "#2563eb",
 };
 
 export default function RootLayout({
@@ -119,9 +131,9 @@ export default function RootLayout({
                 <CookieConsent />
 
                 {/* Third-party Assessment/Ad Script */}
-                <Script id="al5sm-tag" strategy="afterInteractive">
+                {/* <Script id="al5sm-tag" strategy="afterInteractive">
                     {`(function(s){s.dataset.zone='10299956',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
-                </Script>
+                </Script> */}
             </body>
         </html>
     );

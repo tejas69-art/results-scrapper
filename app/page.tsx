@@ -57,7 +57,7 @@ const parseHTMLResult = (html: string, fallbackUsn: string): ParsedResult | null
         const usnRegex = /University Seat Number[\s\S]*?<td[^>]*><b>:\s*<\/b>\s*([^<]+)<\/td>/i;
         const usnMatch = usnRegex.exec(html);
         let usn = usnMatch ? usnMatch[1].trim() : fallbackUsn;
-        
+
         // Use fallback if extracted USN is empty or too short
         if (!usn || usn.length < 5) usn = fallbackUsn;
 
@@ -139,7 +139,7 @@ const VTUResults = () => {
     const [error, setError] = useState<string | null>(null);
     const [parsedResult, setParsedResult] = useState<ParsedResult | null>(null);
     const [allResults, setAllResults] = useState<ParsedResult[]>([]);
-    
+
     // Stats State
     const [sgpa, setSgpa] = useState<number>(0);
     const [totalCredits, setTotalCredits] = useState<number>(0);
@@ -158,7 +158,7 @@ const VTUResults = () => {
 
     // Filtered Options
     const uniqueYears = Array.from(new Set(VTU_RESULTS_DATA.map(d => d.year))).sort().reverse();
-    
+
     // Derived state for available exams based on year
     const availableExams = VTU_RESULTS_DATA.filter(e => e.year === selectedYear);
 
@@ -188,7 +188,7 @@ const VTUResults = () => {
         setSelectedExamId(examId);
         setSelectedType('');
         setSelectedScheme('');
-        
+
         // Auto-select type if only one exists
         const exam = VTU_RESULTS_DATA.find(e => e.id === examId);
         if (exam) {
@@ -258,28 +258,28 @@ const VTUResults = () => {
         }
 
         if (searchMode === 'single' && !usn.trim()) {
-             setError('Please enter USN');
-             setLoading(false);
-             return;
+            setError('Please enter USN');
+            setLoading(false);
+            return;
         }
 
         if (searchMode === 'multiple' && (!startUsn.trim() || !endUsn.trim())) {
-             setError('Please enter both Start and End USNs');
-             setLoading(false);
-             return;
+            setError('Please enter both Start and End USNs');
+            setLoading(false);
+            return;
         }
 
         try {
             const isSingle = searchMode === 'single';
             const endpoint = isSingle ? '/api/single-post' : '/api/multi-post';
-            
-            const payload = isSingle 
+
+            const payload = isSingle
                 ? { usn: usn.trim().toUpperCase(), index_url: url.trim() }
-                : { 
-                    index_url: url.trim(), 
-                    start_usn: startUsn.trim().toUpperCase(), 
-                    end_usn: endUsn.trim().toUpperCase() 
-                  };
+                : {
+                    index_url: url.trim(),
+                    start_usn: startUsn.trim().toUpperCase(),
+                    end_usn: endUsn.trim().toUpperCase()
+                };
 
             const response = await fetch(endpoint, {
                 method: 'POST',
@@ -299,32 +299,32 @@ const VTUResults = () => {
             }
 
             const data = await response.json();
-            
+
             // The API now returns { "USN": "HTML" } or just { ... }
             const results: ParsedResult[] = [];
-            
+
             Object.keys(data).forEach(key => {
-                 const html = data[key];
-                 if (typeof html === 'string' && html.length > 100) { 
-                     // Determine best USN to use as fallback/primary
-                     let currentUsn = key;
-                     // If we are in single mode, and we have a valid USN input, use it 
-                     // This handles cases where the API might return generic keys like "html"
-                     if (searchMode === 'single' && usn) {
-                         currentUsn = usn;
-                     }
-                     
-                     const parsed = parseHTMLResult(html, currentUsn);
-                     if (parsed && parsed.subjects.length > 0) {
-                         results.push(parsed);
-                     }
-                 }
+                const html = data[key];
+                if (typeof html === 'string' && html.length > 100) {
+                    // Determine best USN to use as fallback/primary
+                    let currentUsn = key;
+                    // If we are in single mode, and we have a valid USN input, use it 
+                    // This handles cases where the API might return generic keys like "html"
+                    if (searchMode === 'single' && usn) {
+                        currentUsn = usn;
+                    }
+
+                    const parsed = parseHTMLResult(html, currentUsn);
+                    if (parsed && parsed.subjects.length > 0) {
+                        results.push(parsed);
+                    }
+                }
             });
 
             if (results.length === 0) {
-                 throw new Error('No valid results found. Please check the USNs and URL.');
+                throw new Error('No valid results found. Please check the USNs and URL.');
             }
-            
+
             results.sort((a, b) => a.usn.localeCompare(b.usn));
             setAllResults(results);
 
@@ -357,17 +357,17 @@ const VTUResults = () => {
         if (sgpa >= 5) return 'from-orange-500 to-red-600';
         return 'from-red-500 to-red-700';
     };
-    
+
     // Helper to calculate SGPA for the table view without setting state
     const calculateSGPAValue = (subjects: Subject[]) => {
         let totalGradePoints = 0;
         let totalCreds = 0;
         subjects.forEach(subject => {
             if (subject.total > 0 && subject.credits > 0) { // Note: Credits might be 0 initially if scraping doesn't get them
-                 // For estimation, if credits are 0, we can't calc accurately. 
-                 // But let's use what we have.
-                 totalGradePoints += subject.gradePoints * subject.credits;
-                 totalCreds += subject.credits;
+                // For estimation, if credits are 0, we can't calc accurately. 
+                // But let's use what we have.
+                totalGradePoints += subject.gradePoints * subject.credits;
+                totalCreds += subject.credits;
             }
         });
         return totalCreds > 0 ? (totalGradePoints / totalCreds) : 0;
@@ -481,12 +481,12 @@ const VTUResults = () => {
                                         <Label htmlFor="url" className="block text-sm font-medium text-gray-700">
                                             Result URL
                                         </Label>
-                                        <button 
-                                          type="button" 
-                                          onClick={() => setShowManualUrl(!showManualUrl)}
-                                          className="text-xs text-blue-600 hover:text-blue-800 underline"
+                                        <button
+                                            type="button"
+                                            onClick={() => setShowManualUrl(!showManualUrl)}
+                                            className="text-xs text-blue-600 hover:text-blue-800 underline"
                                         >
-                                          {showManualUrl ? "Hide Manual URL" : "Edit / View URL"}
+                                            {showManualUrl ? "Hide Manual URL" : "Edit / View URL"}
                                         </button>
                                     </div>
                                     <div className={showManualUrl ? "block" : "hidden"}>
@@ -519,22 +519,20 @@ const VTUResults = () => {
                                         <button
                                             type="button"
                                             onClick={() => setSearchMode('single')}
-                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${
-                                                searchMode === 'single' 
-                                                ? 'bg-white text-blue-600 shadow-sm' 
+                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${searchMode === 'single'
+                                                ? 'bg-white text-blue-600 shadow-sm'
                                                 : 'text-gray-500 hover:text-gray-700'
-                                            }`}
+                                                }`}
                                         >
                                             Single Result
                                         </button>
                                         <button
                                             type="button"
                                             onClick={() => setSearchMode('multiple')}
-                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${
-                                                searchMode === 'multiple' 
-                                                ? 'bg-white text-blue-600 shadow-sm' 
+                                            className={`flex-1 py-1.5 text-sm font-medium rounded-md transition-all ${searchMode === 'multiple'
+                                                ? 'bg-white text-blue-600 shadow-sm'
                                                 : 'text-gray-500 hover:text-gray-700'
-                                            }`}
+                                                }`}
                                         >
                                             Multiple Results
                                         </button>
@@ -606,20 +604,20 @@ const VTUResults = () => {
                         </form>
                     </div>
                 )}
-                
+
                 {/* Batch Results Table View */}
                 {!parsedResult && allResults.length > 0 && (
                     <div className="space-y-6">
-                         <div className="flex justify-between items-center">
+                        <div className="flex justify-between items-center">
                             <h2 className="text-2xl font-bold text-gray-900">Result Summary</h2>
-                            <Button 
-                                variant="outline" 
+                            <Button
+                                variant="outline"
                                 onClick={() => setAllResults([])}
                             >
                                 Check New Results
                             </Button>
                         </div>
-                        
+
                         <Card className="bg-white shadow-lg border border-gray-200 overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm text-left">
@@ -643,15 +641,15 @@ const VTUResults = () => {
                                                     {calculateSGPAValue(result.subjects).toFixed(2)}
                                                 </td>
                                                 <td className="px-4 py-4 text-center">
-                                                     {result.subjects.some(s => s.result === 'F') 
+                                                    {result.subjects.some(s => s.result === 'F')
                                                         ? <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Fail</span>
                                                         : <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Pass</span>
-                                                     }
+                                                    }
                                                 </td>
                                                 <td className="px-4 py-4 text-center">
-                                                    <Button 
-                                                        size="sm" 
-                                                        variant="ghost" 
+                                                    <Button
+                                                        size="sm"
+                                                        variant="ghost"
                                                         className="text-blue-600 hover:text-blue-800 hover:bg-blue-50"
                                                         onClick={() => setParsedResult(result)}
                                                     >
@@ -670,10 +668,10 @@ const VTUResults = () => {
                 {/* Results Display */}
                 {parsedResult && (
                     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                         {allResults.length > 1 && (
+                        {allResults.length > 1 && (
                             <div className="mb-4">
-                                <Button 
-                                    variant="outline" 
+                                <Button
+                                    variant="outline"
                                     onClick={() => setParsedResult(null)}
                                     className="flex items-center gap-2"
                                 >
@@ -681,7 +679,7 @@ const VTUResults = () => {
                                 </Button>
                             </div>
                         )}
-                        
+
                         {/* Header */}
                         <div className="text-center">
                             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 mb-6 border border-blue-200">
@@ -711,78 +709,62 @@ const VTUResults = () => {
                                         </CardDescription>
                                     </CardHeader>
                                     <CardContent className="space-y-4">
-                                        {parsedResult.subjects.map((subject, index) => (
-                                            <React.Fragment key={subject.id}>
-                                                <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4">
-                                                        <div className="lg:col-span-3">
-                                                            <Label className="text-gray-700 text-sm font-medium">Subject Code</Label>
-                                                            <div className="bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 font-semibold">
-                                                                {subject.code}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="lg:col-span-4">
-                                                            <Label className="text-gray-700 text-sm font-medium">Subject Name</Label>
-                                                            <div className="bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900">
-                                                                {subject.name}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="lg:col-span-2">
-                                                            <Label className="text-gray-700 text-sm font-medium">Total Marks</Label>
-                                                            <div className="bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-center font-semibold">
-                                                                {subject.total}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="lg:col-span-1">
-                                                            <Label className="text-gray-700 text-sm font-medium">Grade</Label>
-                                                            <div className="bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-center font-semibold">
-                                                                {subject.grade}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="lg:col-span-1">
-                                                            <Label className="text-gray-700 text-sm font-medium">Points</Label>
-                                                            <div className="bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 text-center">
-                                                                {subject.gradePoints}
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="lg:col-span-1">
-                                                            <Label className="text-gray-700 text-sm font-medium">Credits</Label>
-                                                            <Select
-                                                                value={subject.credits.toString()}
-                                                                onValueChange={(value) => updateSubjectCredits(subject.id, Number.parseInt(value, 10))}
-                                                            >
-                                                                <SelectTrigger className="bg-white border-gray-300 text-gray-900">
-                                                                    <SelectValue placeholder="Select Credits" />
-                                                                </SelectTrigger>
-                                                                <SelectContent>
-                                                                    {Array.from({ length: 15 }).map((_, i) => (
-                                                                        <SelectItem key={i + 1} value={(i + 1).toString()}>
-                                                                            {i + 1} Credit{i === 0 ? '' : 's'}
-                                                                        </SelectItem>
-                                                                    ))}
-                                                                </SelectContent>
-                                                            </Select>
-                                                        </div>
-
-                                                        <div className="lg:col-span-1">
-                                                            <Label className="text-gray-700 text-sm font-medium">Result</Label>
-                                                            <div className={`border border-gray-300 rounded-md px-3 py-2 text-center font-semibold ${subject.result === 'P' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'
-                                                                }`}>
-                                                                {subject.result}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="mt-2 text-xs text-gray-500">
-                                                        Internal: {subject.internal} | External: {subject.external} | Announced: {subject.announcedDate}
-                                                    </div>
-                                                </div>
-                                            </React.Fragment>
-                                        ))}
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full text-sm text-left">
+                                                <thead className="bg-gray-100 text-gray-700 font-semibold border-b">
+                                                    <tr>
+                                                        <th className="px-4 py-3 min-w-[100px]">Code</th>
+                                                        <th className="px-4 py-3 min-w-[200px]">Subject Name</th>
+                                                        <th className="px-4 py-3 text-center">Int</th>
+                                                        <th className="px-4 py-3 text-center">Ext</th>
+                                                        <th className="px-4 py-3 text-center">Total</th>
+                                                        <th className="px-4 py-3 text-center">Grd</th>
+                                                        <th className="px-4 py-3 text-center">Pts</th>
+                                                        <th className="px-4 py-3 text-center">Creds</th>
+                                                        <th className="px-4 py-3 text-center">Res</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="divide-y divide-gray-200">
+                                                    {parsedResult.subjects.map((subject) => (
+                                                        <tr key={subject.id} className="hover:bg-gray-50">
+                                                            <td className="px-4 py-3 font-medium text-gray-900">{subject.code}</td>
+                                                            <td className="px-4 py-3 text-gray-700">{subject.name}</td>
+                                                            <td className="px-4 py-3 text-center text-gray-600">{subject.internal}</td>
+                                                            <td className="px-4 py-3 text-center text-gray-600">{subject.external}</td>
+                                                            <td className="px-4 py-3 text-center font-bold text-gray-900">{subject.total}</td>
+                                                            <td className="px-4 py-3 text-center font-medium">{subject.grade}</td>
+                                                            <td className="px-4 py-3 text-center">{subject.gradePoints}</td>
+                                                            <td className="px-4 py-3 text-center">
+                                                                <Select
+                                                                    value={subject.credits.toString()}
+                                                                    onValueChange={(value) => updateSubjectCredits(subject.id, Number.parseInt(value, 10))}
+                                                                >
+                                                                    <SelectTrigger className="h-8 w-16 mx-auto bg-white border-gray-300 text-xs">
+                                                                        <SelectValue />
+                                                                    </SelectTrigger>
+                                                                    <SelectContent>
+                                                                        {Array.from({ length: 6 }).map((_, i) => (
+                                                                            <SelectItem key={i} value={i.toString()}>
+                                                                                {i}
+                                                                            </SelectItem>
+                                                                        ))}
+                                                                        {/* Common specific credits */}
+                                                                        <SelectItem value="10">10</SelectItem>
+                                                                        <SelectItem value="20">20</SelectItem>
+                                                                    </SelectContent>
+                                                                </Select>
+                                                            </td>
+                                                            <td className="px-4 py-3 text-center">
+                                                                <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${subject.result === 'P' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                                                                    }`}>
+                                                                    {subject.result}
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </CardContent>
                                 </Card>
                             </div>
