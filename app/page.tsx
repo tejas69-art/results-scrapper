@@ -49,12 +49,12 @@ const parseHTMLResult = (html: string, fallbackUsn: string): ParsedResult | null
         const doc = parser.parseFromString(html, 'text/html');
 
         // Extract student name
-        const nameRegex = /Student Name[\s\S]*?<td[^>]*><b>:\s*<\/b>\s*([^<]+)<\/td>/i;
+        const nameRegex = /Student Name[\s\S]*?<td[^>]*>[\s\S]*?:\s*[\s\S]*?<\/b>\s*([^<]+)<\/td>/i;
         const nameMatch = nameRegex.exec(html);
         const studentName = nameMatch ? nameMatch[1].trim() : 'Unknown';
 
         // Extract USN
-        const usnRegex = /University Seat Number[\s\S]*?<td[^>]*><b>:\s*<\/b>\s*([^<]+)<\/td>/i;
+        const usnRegex = /University Seat Number[\s\S]*?<td[^>]*>[\s\S]*?:\s*[\s\S]*?<\/b>\s*([^<]+)<\/td>/i;
         const usnMatch = usnRegex.exec(html);
         let usn = usnMatch ? usnMatch[1].trim() : fallbackUsn;
 
@@ -743,13 +743,12 @@ const VTUResults = () => {
                                                                         <SelectValue />
                                                                     </SelectTrigger>
                                                                     <SelectContent>
-                                                                        {Array.from({ length: 6 }).map((_, i) => (
+                                                                        {Array.from({ length: 16 }).map((_, i) => (
                                                                             <SelectItem key={i} value={i.toString()}>
                                                                                 {i}
                                                                             </SelectItem>
                                                                         ))}
                                                                         {/* Common specific credits */}
-                                                                        <SelectItem value="10">10</SelectItem>
                                                                         <SelectItem value="20">20</SelectItem>
                                                                     </SelectContent>
                                                                 </Select>
