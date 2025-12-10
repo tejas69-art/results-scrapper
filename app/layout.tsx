@@ -131,9 +131,19 @@ export default function RootLayout({
                 <CookieConsent />
 
                 {/* Third-party Assessment/Ad Script */}
-                {/* <Script id="al5sm-tag" strategy="afterInteractive">
-                    {`(function(s){s.dataset.zone='10299956',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
-                </Script> */}
+                        <Script id="nap5k-tag" strategy="afterInteractive">
+          {`
+            (function () {
+              var s = document.createElement('script');
+              s.src = 'https://nap5k.com/tag.min.js';
+              s.dataset.zone = '10300336';
+              s.async = true;
+              document.body.appendChild(s);
+            })();
+          `}
+        </Script>
+
+
             </body>
         </html>
     );
