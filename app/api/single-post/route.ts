@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Get backend API URL from environment variable
-        const backendUrl = process.env.VTU_API_BASE_URL || 'https://vtuhub-api-210261297966.us-central1.run.app';
+        const backendUrl = process.env.VTU_API_BASE_URL || 'VTU_API_BASE_URL';
         const apiEndpoint = `${backendUrl}/single-post`;
 
         // Make request to Cloud Run backend

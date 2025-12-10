@@ -131,8 +131,8 @@ export default function RootLayout({
                 <CookieConsent />
 
                 {/* Third-party Assessment/Ad Script */}
-                        <Script id="nap5k-tag" strategy="afterInteractive">
-          {`
+                <Script id="nap5k-tag" strategy="afterInteractive">
+                    {`
             (function () {
               var s = document.createElement('script');
               s.src = 'https://nap5k.com/tag.min.js';
@@ -141,7 +141,7 @@ export default function RootLayout({
               document.body.appendChild(s);
             })();
           `}
-        </Script>
+                </Script>
 
 
             </body>
