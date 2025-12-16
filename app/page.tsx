@@ -798,62 +798,171 @@ const VTUResults = () => {
                                         </div>
                                     </CardContent>
                                 </Card>
-
-                                {/* Performance Metrics */}
-                                <Card className="bg-white shadow-lg border border-gray-200">
-                                    <CardHeader>
-                                        <CardTitle className="text-gray-900 flex items-center gap-2">
-                                            <Target className="w-5 h-5 text-blue-600" />
-                                            Performance Metrics
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <div className="space-y-4">
-                                            <div className="flex justify-between items-center">
-                                                <span className="text-gray-600">Class</span>
-                                                <span className="text-gray-900 font-medium text-sm">
-                                                    {(() => {
-                                                        if (sgpa >= 7.5) return 'First Class with Distinction';
-                                                        if (sgpa >= 6) return 'First Class';
-                                                        if (sgpa >= 5) return 'Second Class';
-                                                        return 'Pass Class';
-                                                    })()}
-                                                </span>
-                                            </div>
-                                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                                <div
-                                                    className={`h-2 rounded-full bg-gradient-to-r ${getSGPAColor(sgpa)}`}
-                                                    style={{ width: `${(sgpa / 10) * 100}%` }}
-                                                ></div>
-                                            </div>
-                                            <div className="text-xs text-gray-500 text-center">
-                                                SGPA Progress: {sgpa.toFixed(2)}/10.0
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-
-                                {/* Action Button */}
-                                <Button
-                                    onClick={() => {
-                                        setParsedResult(null);
-                                        setAllResults([]);
-                                        setUsn('');
-                                        setStartUsn('');
-                                        setEndUsn('');
-                                        setUrl('');
-                                    }}
-                                    variant="outline"
-                                    className="w-full"
-                                >
-                                    Check Another Result
-                                </Button>
                             </div>
                         </div>
+
+
+                        {/* Performance Metrics */}
+                        <Card className="bg-white shadow-lg border border-gray-200">
+                            <CardHeader>
+                                <CardTitle className="text-gray-900 flex items-center gap-2">
+                                    <Target className="w-5 h-5 text-blue-600" />
+                                    Performance Metrics
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="space-y-4">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-gray-600">Class</span>
+                                        <span className="text-gray-900 font-medium text-sm">
+                                            {(() => {
+                                                if (sgpa >= 7.5) return 'First Class with Distinction';
+                                                if (sgpa >= 6) return 'First Class';
+                                                if (sgpa >= 5) return 'Second Class';
+                                                return 'Pass Class';
+                                            })()}
+                                        </span>
+                                    </div>
+                                    <div className="w-full bg-gray-200 rounded-full h-2">
+                                        <div
+                                            className={`h-2 rounded-full bg-gradient-to-r ${getSGPAColor(sgpa)}`}
+                                            style={{ width: `${(sgpa / 10) * 100}%` }}
+                                        ></div>
+                                    </div>
+                                    <div className="text-xs text-gray-500 text-center">
+                                        SGPA Progress: {sgpa.toFixed(2)}/10.0
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        {/* Action Button */}
+                        <Button
+                            onClick={() => {
+                                setParsedResult(null);
+                                setAllResults([]);
+                                setUsn('');
+                                setStartUsn('');
+                                setEndUsn('');
+                                setUrl('');
+                            }}
+                            variant="outline"
+                            className="w-full"
+                        >
+                            Check Another Result
+                        </Button>
                     </div>
                 )}
-            </div>
-        </div>
+
+
+                {/* Content Section for AdSense / SEO */}
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700">
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-bold text-gray-900">How to Check VTU Results Online</h2>
+                        <p className="leading-relaxed">
+                            Checking your Visvesvaraya Technological University (VTU) exam results is a straightforward process with our tool.
+                            We connect directly to the official VTU servers to fetch your latest semester results securely and quickly.
+                        </p>
+                        <ol className="list-decimal pl-5 space-y-2">
+                            <li><strong>Select Your Academic Year:</strong> Choose the year your exams were conducted.</li>
+                            <li><strong>Choose the Exam:</strong> Select the specific examination event (e.g., June/July 2024).</li>
+                            <li><strong>Enter Your USN:</strong> Type your 10-character University Seat Number (e.g., 1AM21CS001).</li>
+                            <li><strong>View Results:</strong> Click "Get Results" to see your marks, grades, and SGPA instantly.</li>
+                        </ol>
+                        <p className="text-sm text-gray-600 italic">
+                            Note: Ensure you have a stable internet connection for the fastest experience.
+                        </p>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-bold text-gray-900">Understanding Your SGPA & Grades</h2>
+                        <p className="leading-relaxed">
+                            The Semester Grade Point Average (SGPA) is a key metric used by VTU to evaluate academic performance for a specific semester.
+                            It is a weighted average of the grade points secured in all subjects.
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2">
+                            <li><strong>S Grade (90-100 marks):</strong> Outstanding performance, 10 grade points.</li>
+                            <li><strong>A Grade (80-89 marks):</strong> Excellent performance, 9 grade points.</li>
+                            <li><strong>B Grade (70-79 marks):</strong> Very Good performance, 8 grade points.</li>
+                            <li><strong>F Grade (below 40 marks):</strong> Fail, 0 grade points.</li>
+                        </ul>
+                        <p>
+                            Our built-in <strong>VTU SGPA Calculator</strong> automatically computes this for you using the credits assigned to each subject.
+                            You can also manually adjust credits if needed.
+                        </p>
+                    </section>
+
+                    <section className="space-y-4 md:col-span-2">
+                        <h2 className="text-2xl font-bold text-gray-900">Frequently Asked Questions (FAQ)</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h3 className="font-semibold text-lg mb-2">Why are my results not showing?</h3>
+                                <p className="text-sm text-gray-600">
+                                    This can happen if the VTU server is down or overloaded, or if you entered an incorrect USN.
+                                    Please double-check your USN and try again in a few minutes.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h3 className="font-semibold text-lg mb-2">Is this data official?</h3>
+                                <p className="text-sm text-gray-600">
+                                    We fetch data directly from the public result pages provided by VTU. However, for official transcripts and legal purposes,
+                                    always refer to the physical marks cards issued by the university.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h3 className="font-semibold text-lg mb-2">How is SGPA calculated?</h3>
+                                <p className="text-sm text-gray-600">
+                                    SGPA = Σ(Course Credits × Grade Points) / Σ(Total Course Credits). Our tool handles this math for you instantly.
+                                </p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                                <h3 className="font-semibold text-lg mb-2">Can I check Revaluation results?</h3>
+                                <p className="text-sm text-gray-600">
+                                    Yes! Use the "Result Type" dropdown to switch between "Regular" and "Revaluation" results when available.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-bold text-gray-900">Official VTU Website & Resources</h2>
+                        <p className="leading-relaxed">
+                            For the most authoritative and up-to-date notifications, circulars, and official result announcements, always refer to the
+                            Visvesvaraya Technological University's official portal.
+                        </p>
+                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                            <ul className="space-y-2 text-sm text-blue-800">
+                                <li className="flex items-center gap-2">
+                                    <span className="font-semibold">Main Website:</span>
+                                    <a href="https://vtu.ac.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">vtu.ac.in</a>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="font-semibold">Results Portal:</span>
+                                    <a href="https://results.vtu.ac.in" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">results.vtu.ac.in</a>
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className="font-semibold">Exam Time Table:</span>
+                                    <a href="https://vtu.ac.in/en/category/examination/time-table/" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">View Time Tables</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-2xl font-bold text-gray-900">How to Improve Your Scores</h2>
+                        <p className="leading-relaxed">
+                            Improving your SGPA requires a strategic approach to your studies. Here are some proven tips to help you boost your academic performance:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                            <li><strong>Understand the Scheme:</strong> Familiarize yourself with the VTU marking scheme and credit system (CBCS/Non-CBCS). Focus more on high-credit subjects.</li>
+                            <li><strong>Consistent Study Schedule:</strong> Regular study habits prevent last-minute cramming. Dedicate fixed hours daily for review.</li>
+                            <li><strong>Solve Previous Papers:</strong> VTU often repeats question patterns. Solving previous years' question papers is one of the most effective ways to prepare.</li>
+                            <li><strong>Internal Assessment (IA):</strong> maximize your IA scores. They form a significant chunk of your total marks and are easier to score in than external exams.</li>
+                        </ul>
+                    </section>
+                </div>
+            </div >
+        </div >
     );
 };
 
