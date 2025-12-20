@@ -61,6 +61,7 @@ export default function RootLayout({
             <head>
                 <AutoAds />
                 <Analytics />
+                <meta name="google-site-verification" content="AsaD0fwpq5RcANj2FkiBquGleiQDu5hcXa6CD1x1lTE" />
             </head>
             <body className={inter.className}>
                 {/* Header Navigation */}
