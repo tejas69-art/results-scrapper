@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { VTU_RESULTS_DATA, ExamEvent, ExamLink } from '@/lib/vtu-data';
+import { HomeContent } from '@/components/HomeContent';
 
 const API_URL = "/api/single-post";
 
@@ -962,10 +963,11 @@ const VTUResults = () => {
                     </section>
                 </div>
             </div >
+            {/* Content Section for AdSense Compliance */}
+            <HomeContent />
         </div >
     );
 };
 
 export default VTUResults;
-
 
