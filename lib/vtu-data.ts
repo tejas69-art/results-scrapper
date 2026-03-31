@@ -19,6 +19,26 @@ export interface ExamEvent {
 
 export const VTU_RESULTS_DATA: ExamEvent[] = [
     {
+        id: 'dec-2025-jan-2026',
+        title: 'Dec 2025 / Jan 2026 Exam',
+        year: '2026',
+        session: 'Dec/Jan',
+        program: 'B.E/B.Tech',
+        links: [
+            { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/D25J26Ecbcs/index.php' }
+        ]
+    },
+    {
+        id: 'special-jan-2025',
+        title: 'January 2025 Special Examination',
+        year: '2025',
+        session: 'Special',
+        program: 'B.E/B.Tech',
+        links: [
+            { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/SplJcbcs25/index.php' }
+        ]
+    },
+    {
         id: 'makeup-2025',
         title: 'Makeup Exam 2025 (UG / PG)',
         year: '2025',
@@ -59,6 +79,7 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
         session: 'Summer',
         program: 'B.E/B.Tech',
         links: [
+            { type: 'Regular', scheme: 'Main', url: 'https://results.vtu.ac.in/indexSUMU25.php' },
             { type: 'Regular', scheme: 'CBCS', url: 'https://results.vtu.ac.in/SEcbcs25/index.php' }
         ]
     },

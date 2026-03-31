@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { usn, index_url } = body;
+        const { usn, index_url, token, cookies, captcha_code } = body;
 
         // Validate input
         if (!usn || !index_url) {
@@ -14,8 +14,17 @@ export async function POST(request: NextRequest) {
         }
 
         // Get backend API URL from environment variable
-        const backendUrl = process.env.VTU_API_BASE_URL || 'vtu.results';
+        const backendUrl = process.env.VTU_API_BASE_URL || 'http://localhost:8000';
         const apiEndpoint = `${backendUrl}/single-post`;
+
+        const payload: any = {
+            index_url: index_url,
+            usn: usn.toUpperCase()
+        };
+
+        if (token) payload.token = token;
+        if (cookies) payload.cookies = cookies;
+        if (captcha_code) payload.captcha_code = captcha_code;
 
         // Make request to Cloud Run backend
         const response = await fetch(apiEndpoint, {
@@ -23,10 +32,7 @@ export async function POST(request: NextRequest) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                index_url: index_url,
-                usn: usn.toUpperCase()
-            }),
+            body: JSON.stringify(payload),
         });
 
         if (!response.ok) {
