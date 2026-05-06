@@ -72,6 +72,12 @@ export default function RootLayout({
                                 VTU Results
                             </Link>
                             <nav className="flex gap-6">
+                                <Link href="/check-results" className="text-blue-600 font-semibold hover:text-blue-800 text-sm transition-colors">
+                                    Check Results
+                                </Link>
+                                <Link href="/articles" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
+                                    Articles
+                                </Link>
                                 <Link href="/about" className="text-gray-600 hover:text-blue-600 text-sm transition-colors">
                                     About
                                 </Link>
@@ -95,35 +101,43 @@ export default function RootLayout({
                 </main>
 
                 {/* Footer */}
-                <footer className="bg-gray-900 text-white py-8 mt-12">
+                <footer className="bg-gray-900 text-white py-12 mt-12 border-t-4 border-blue-600">
                     <div className="container mx-auto px-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div>
-                                <h3 className="text-lg font-bold mb-4">VTU Results</h3>
-                                <p className="text-gray-400 text-sm">
-                                    Check your VTU exam results and calculate SGPA instantly.
-                                    We provide a simple and fast way to view your academic performance.
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div className="md:col-span-2">
+                                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                                    <span className="bg-blue-600 text-white px-2 py-1 rounded text-sm">VTU</span>
+                                    Results & Resources
+                                </h3>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-md">
+                                    Your ultimate unofficial companion for navigating Visvesvaraya Technological University. 
+                                    We provide lightning-fast result checking, SGPA calculation, and high-quality academic guides.
+                                </p>
+                                <p className="text-gray-500 text-xs italic border-l-2 border-gray-700 pl-3">
+                                    Disclaimer: This is an independent, unofficial platform and is not affiliated with, endorsed by, or sponsored by VTU.
                                 </p>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-                                <ul className="space-y-2 text-sm">
-                                    <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-                                    <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                                    <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+                                <h3 className="text-lg font-bold mb-4 text-gray-200">Quick Links</h3>
+                                <ul className="space-y-3 text-sm">
+                                    <li><Link href="/" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Home</Link></li>
+                                    <li><Link href="/check-results" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Check Results</Link></li>
+                                    <li><Link href="/articles" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Articles & Guides</Link></li>
+                                    <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>About Us</Link></li>
                                 </ul>
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold mb-4">Legal</h3>
-                                <ul className="space-y-2 text-sm">
-                                    <li><Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
-                                    <li><Link href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
+                                <h3 className="text-lg font-bold mb-4 text-gray-200">Legal & Support</h3>
+                                <ul className="space-y-3 text-sm">
+                                    <li><Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Privacy Policy</Link></li>
+                                    <li><Link href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Terms of Service</Link></li>
+                                    <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Contact Support</Link></li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400 text-sm">
+                        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
                             <p>&copy; {new Date().getFullYear()} VTU Results Checker. All rights reserved.</p>
-                            <p className="mt-2">Not affiliated with VTU. For official results, visit the VTU website.</p>
+                            <p className="mt-2 md:mt-0">Designed for students, by students.</p>
                         </div>
                     </div>
                 </footer>

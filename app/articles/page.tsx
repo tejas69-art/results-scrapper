@@ -21,6 +21,18 @@ export default function ArticlesIndex() {
             slug: 'vtu-grading-system',
             description: 'Demystifying the Choice Based Credit System (CBCS), grade points, and what each letter grade means for your degree.',
             date: '2024-05-18'
+        },
+        {
+            title: 'VTU Attendance Rules Explained',
+            slug: 'vtu-attendance-rules',
+            description: 'Everything you need to know about the 85% attendance rule, condonation policies, and what happens if you fall short.',
+            date: '2024-06-01'
+        },
+        {
+            title: 'Tips for VTU External Exams',
+            slug: 'exam-preparation-tips',
+            description: 'Proven strategies for preparing for your semester-end external exams and maximizing your final grades.',
+            date: '2024-06-05'
         }
     ];
 

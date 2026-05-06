@@ -2,15 +2,9 @@
 
 import React from 'react';
 import { GraduationCap, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export const HeroSection = () => {
-    const scrollToForm = () => {
-        const formElement = document.getElementById('results-form');
-        if (formElement) {
-            formElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <section className="relative bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
             {/* Background Pattern */}
@@ -43,13 +37,13 @@ export const HeroSection = () => {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button
-                            onClick={scrollToForm}
+                        <Link
+                            href="/check-results"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-700 font-bold rounded-xl hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                         >
                             <GraduationCap className="w-5 h-5" />
                             Check Your Results Now
-                        </button>
+                        </Link>
                         <a
                             href="#services"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-medium rounded-xl border border-white/30 hover:bg-white/20 transition-all"
