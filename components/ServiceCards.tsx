@@ -1,46 +1,43 @@
 'use client';
 
 import React from 'react';
-import { Calculator, FileSearch, Users, ArrowRight } from 'lucide-react';
+import { ArrowRightLeft, Briefcase, Network, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
     {
-        icon: Calculator,
-        title: 'SGPA & CGPA Calculator',
-        description: 'Calculate your SGPA, CGPA and percentage here easily and accurately with VTU formula. Get instant results with our precise calculator.',
+        icon: ArrowRightLeft,
+        title: 'Compare Results',
+        description: 'Compare your academic performance across different semesters or against your peers with our intuitive comparison tools.',
         color: 'from-purple-500 to-indigo-600',
         bgColor: 'bg-purple-50',
         iconBg: 'bg-purple-100',
         iconColor: 'text-purple-600',
+        link: '/services/compare-results'
     },
     {
-        icon: FileSearch,
-        title: 'VTU Exam Results',
-        description: 'Get your VTU exam result links to download the marks report from VTU. Check results for all semesters and exam sessions instantly.',
+        icon: Briefcase,
+        title: 'Placements Guidance & Preparation',
+        description: 'Comprehensive resources, mock interviews, and strategic guidance to help you land your dream job in top companies.',
         color: 'from-blue-500 to-cyan-600',
         bgColor: 'bg-blue-50',
         iconBg: 'bg-blue-100',
         iconColor: 'text-blue-600',
+        link: '/services/placements-guidance'
     },
     {
-        icon: Users,
-        title: 'Batch Results Checker',
-        description: 'Check results for multiple USNs at once. Perfect for class representatives and faculty to view batch performance quickly.',
+        icon: Network,
+        title: 'Networking Tips',
+        description: 'Master the art of professional networking. Learn how to build meaningful connections that accelerate your career growth.',
         color: 'from-emerald-500 to-teal-600',
         bgColor: 'bg-emerald-50',
         iconBg: 'bg-emerald-100',
         iconColor: 'text-emerald-600',
+        link: '/services/networking-tips'
     },
 ];
 
 export const ServiceCards = () => {
-    const scrollToForm = () => {
-        const formElement = document.getElementById('results-form');
-        if (formElement) {
-            formElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <section className="py-16 bg-gray-50">
             <div className="container mx-auto px-4">
@@ -49,8 +46,7 @@ export const ServiceCards = () => {
                         Our Services
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        VTU Results provides comprehensive tools for VTU students to check results,
-                        calculate grades, and track academic performance efficiently.
+                        VTU Results provides comprehensive tools and resources for VTU students to track academic performance, prepare for careers, and build professional networks.
                     </p>
                 </div>
 
@@ -76,13 +72,13 @@ export const ServiceCards = () => {
                                 </p>
 
                                 {/* Link */}
-                                <button
-                                    onClick={scrollToForm}
+                                <Link
+                                    href={service.link}
                                     className={`inline-flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:gap-3 transition-all`}
                                 >
                                     Get Started
                                     <ArrowRight className={`w-4 h-4 ${service.iconColor}`} />
-                                </button>
+                                </Link>
 
                                 {/* Decorative gradient */}
                                 <div className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${service.color} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity`}></div>

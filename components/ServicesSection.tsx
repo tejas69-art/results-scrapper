@@ -1,60 +1,47 @@
 'use client';
 
 import React from 'react';
-import { Calculator, BookOpen, Bell, GraduationCap, CheckCircle } from 'lucide-react';
+import { ArrowRightLeft, Briefcase, Network, CheckCircle } from 'lucide-react';
 
 const serviceDetails = [
     {
         number: '1',
-        icon: Calculator,
-        title: 'VTU SGPA/CGPA Calculator',
-        description: 'Utilize our standout feature, the VTU SGPA/CGPA calculator, to simplify grade calculations. Enter your marks, select your branch, and instantly determine your SGPA and CGPA, saving time and reducing the risk of errors.',
+        icon: ArrowRightLeft,
+        title: 'Compare Results',
+        description: 'Track your academic trajectory with precision. Compare your performance across semesters or benchmark against your peers to stay motivated and improve your grades.',
         features: [
-            'Automatic grade point calculation based on VTU formula',
-            'Support for both CBCS and Non-CBCS schemes',
-            'Editable credits for custom calculations',
-            'Instant percentage conversion'
-        ],
-        color: 'blue',
-    },
-    {
-        number: '2',
-        icon: BookOpen,
-        title: 'Comprehensive Results Access',
-        description: 'Access a wealth of exam results across all semesters and academic years. Whether you need regular results or revaluation marks, find everything in one place with our organized exam event selection.',
-        features: [
-            'All exam sessions from 2021 onwards',
-            'Regular and Revaluation results',
-            'Multiple scheme support (CBCS, Non-CBCS)',
-            'Batch result checking for entire class'
+            'Semester vs. Semester tracking',
+            'Peer comparison insights',
+            'Visual progress charts',
+            'Detailed subject-wise breakdown'
         ],
         color: 'purple',
     },
     {
-        number: '3',
-        icon: Bell,
-        title: 'Staying Informed',
-        description: 'Stay updated with VTU\'s dynamic environment through our platform. Get access to the latest exam results as soon as they are published, ensuring you never miss an important update.',
+        number: '2',
+        icon: Briefcase,
+        title: 'Placements Guidance & Preparation',
+        description: 'Your gateway to starting a successful career. Get access to essential resources, preparation strategies, and expert advice to ace your campus placements and land your dream job.',
         features: [
-            'Real-time result fetching from VTU servers',
-            'Instant notifications when new results are added',
-            'Historical result archives',
-            'Direct links to official VTU resources'
+            'Aptitude and coding preparation',
+            'Interview strategies and tips',
+            'Resume building workshops',
+            'Core subjects review'
         ],
-        color: 'emerald',
+        color: 'blue',
     },
     {
-        number: '4',
-        icon: GraduationCap,
-        title: 'Academic Performance Tracking',
-        description: 'Track your academic journey with detailed performance metrics. View your grades, calculate your class standing, and understand where you stand compared to passing criteria.',
+        number: '3',
+        icon: Network,
+        title: 'Networking Tips',
+        description: '"Your network is your net worth." Learn how to build meaningful professional relationships that can open doors to incredible career opportunities and industry insights.',
         features: [
-            'Visual SGPA progress tracking',
-            'Class categorization (FCD, FC, SC)',
-            'Subject-wise grade breakdown',
-            'Performance improvement suggestions'
+            'LinkedIn profile optimization',
+            'Cold outreach strategies',
+            'Networking event etiquette',
+            'Alumni connection building'
         ],
-        color: 'orange',
+        color: 'emerald',
     },
 ];
 
@@ -80,13 +67,6 @@ const colorClasses = {
         iconColor: 'text-emerald-600',
         numberBg: 'bg-emerald-600',
     },
-    orange: {
-        bg: 'bg-orange-50',
-        border: 'border-orange-200',
-        iconBg: 'bg-orange-100',
-        iconColor: 'text-orange-600',
-        numberBg: 'bg-orange-600',
-    },
 };
 
 export const ServicesSection = () => {
@@ -101,7 +81,7 @@ export const ServicesSection = () => {
                         </h2>
                         <p className="text-gray-600 max-w-2xl mx-auto">
                             At VTU Results, we offer a range of services designed to empower VTU students
-                            throughout their academic careers. Here's what we provide:
+                            throughout their academic and professional careers. Here's what we provide:
                         </p>
                     </div>
 
