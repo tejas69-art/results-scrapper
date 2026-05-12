@@ -1,7 +1,10 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.vercel.app'
+    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.vercel.app';
+    if (!baseUrl.startsWith('http')) {
+        baseUrl = `https://${baseUrl}`;
+    }
 
     return {
         rules: {
