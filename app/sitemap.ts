@@ -1,10 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    let baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.vercel.app';
-    if (!baseUrl.startsWith('http')) {
-        baseUrl = `https://${baseUrl}`;
-    }
+    const baseUrl = 'https://result-scrapper.vercel.app';
 
     return [
         {
