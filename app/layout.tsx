@@ -145,19 +145,6 @@ export default function RootLayout({
                 {/* Cookie Consent */}
                 <CookieConsent />
 
-                {/* Third-party Assessment/Ad Script */}
-                <Script id="nap5k-tag" strategy="afterInteractive">
-                    {`
-            (function () {
-              var s = document.createElement('script');
-              s.src = 'https://nap5k.com/tag.min.js';
-              s.dataset.zone = '10300336';
-              s.async = true;
-              document.body.appendChild(s);
-            })();
-          `}
-                </Script>
-
 
             </body>
         </html>
