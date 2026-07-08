@@ -1,148 +1,172 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, Briefcase } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Career After VTU Engineering: What to Do Next After Graduation',
-    description: 'A complete guide for VTU graduates on career options — placements, higher studies (MTech/MS/MBA), GATE preparation, startup ecosystem, government jobs, and building your profile.',
+    title: 'Career After VTU Engineering: Your Complete Roadmap — Placements, GATE, MS & More',
+    description: 'All career options after a VTU B.E. degree — campus placements, GATE, MS abroad, MBA, government jobs, PSUs, and entrepreneurship. With actionable steps for each path.',
 };
 
-export default function CareerAfterVTUPage() {
+export default function CareerAfterVtu() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-indigo-600 hover:text-indigo-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-indigo-600 to-violet-700 flex items-center justify-center">
-                        <Briefcase className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full">Career</span>
+                        <span className="text-xs text-slate-400">August 2024 · 15 min read</span>
                     </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        Career After VTU Engineering: Your Complete Roadmap
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        A VTU B.E. degree opens more doors than most students realise. This guide covers every realistic path — with honest assessment of what each requires and how to start preparing.
+                    </p>
+                </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                Career After VTU Engineering: Your Complete Roadmap After Graduation
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on August 01, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>11 min read</span>
-                            </div>
-                        </header>
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
 
-                        <div className="prose prose-indigo max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                Completing a B.E. from a VTU-affiliated college is a significant achievement — but for many students, the bigger challenge begins right after graduation: figuring out what to do next. Whether you want to get placed in a company, pursue higher studies, prepare for GATE, or explore entrepreneurship, this guide lays out your realistic options and how to pursue each one effectively.
-                            </p>
+                    <h2>Overview: Your Options After VTU</h2>
+                    <p>
+                        The six broad career paths available to VTU B.E. graduates are:
+                    </p>
+                    <ol>
+                        <li>Campus and Off-Campus Placements (private sector employment)</li>
+                        <li>GATE — for M.Tech or PSU recruitment</li>
+                        <li>MS Abroad — for a graduate degree in a foreign university</li>
+                        <li>MBA — for a management career</li>
+                        <li>Government Jobs — UPSC, SSC, banking, state PSCs</li>
+                        <li>Entrepreneurship — building your own venture</li>
+                    </ol>
+                    <p>
+                        These paths are not mutually exclusive. Many students pursue placements while preparing for GATE or MS applications simultaneously. Planning early — ideally from 5th or 6th semester — gives you the most flexibility.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 1: Campus Placements</h2>
-                            <p>
-                                The most common immediate path after a VTU degree is campus placement through your college's Training and Placement (T&P) cell. Companies visit campuses between August and March of your final year, and they recruit across different profiles:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>IT/Software roles:</strong> System Engineer, Software Developer, Associate Engineer — the most abundant roles for CSE, ISE, and ECE graduates from companies like Infosys, Wipro, TCS, Cognizant, and Capgemini.</li>
-                                <li><strong>Core engineering roles:</strong> Manufacturing, design, and R&D roles for Mechanical, Civil, EEE, and Chemical graduates from companies in automotive, construction, and energy sectors.</li>
-                                <li><strong>Product companies (FAANG-adjacent):</strong> Companies like Amazon, Microsoft, Cisco, and Samsung recruit from select VTU colleges with higher GPA cutoffs and a more rigorous selection process.</li>
-                            </ul>
-                            <p>
-                                To maximize your placement chances: maintain a CGPA above 6.5 (ideally 7.5+), have zero active backlogs at the time of applying, build a portfolio with projects and internships, and prepare for aptitude tests (Quantitative + Verbal + Logical Reasoning) alongside DSA for software roles.
-                            </p>
+                    <h2>Path 1: Campus and Off-Campus Placements</h2>
+                    <p>
+                        Campus placements remain the most common first step for VTU graduates. The Bengaluru IT corridor and VTU's proximity to major tech companies creates a strong placement ecosystem.
+                    </p>
+                    <h3>Eligibility requirements (typical)</h3>
+                    <ul>
+                        <li>CGPA: 6.0 – 6.5 minimum (7.0 – 7.5 for premium companies)</li>
+                        <li>No active backlogs (all subjects cleared by time of joining)</li>
+                        <li>No year gaps</li>
+                    </ul>
+                    <h3>Key skills for IT placements</h3>
+                    <ul>
+                        <li><strong>Aptitude and reasoning:</strong> TCS, Infosys, Wipro all conduct aptitude rounds. Practice quantitative, logical, and verbal reasoning on platforms like IndiaBix and PrepInsta.</li>
+                        <li><strong>Coding skills:</strong> Data Structures and Algorithms (DSA) is tested in all tech companies. Start with LeetCode Easy/Medium from 5th semester.</li>
+                        <li><strong>Communication:</strong> Group discussions and HR interviews assess communication. Regular English speaking practice is essential.</li>
+                    </ul>
+                    <h3>VTU-specific notes</h3>
+                    <p>
+                        VTU colleges with NAAC A+ or NBA-accredited programs attract better companies for campus placements. If your college's placement cell is limited, off-campus drives are equally viable — companies like TCS, Wipro, and Cognizant conduct massive off-campus drives for engineering graduates annually. AMCAT and CoCubes are the common assessment platforms for such off-campus applications.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 2: GATE and MTech</h2>
-                            <p>
-                                The Graduate Aptitude Test in Engineering (GATE) is the gateway to:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Admission to MTech programs at IITs, NITs, and top state universities</li>
-                                <li>Recruitment at PSUs (Public Sector Undertakings) like BHEL, NTPC, IOCL, BSNL, and DRDO</li>
-                                <li>Research fellowships at CSIR and BARC</li>
-                            </ul>
-                            <p>
-                                GATE is highly competitive, with a good score typically requiring 6–12 months of dedicated preparation. Start early — ideally in your 7th semester — and focus on core fundamentals of your branch. VTU's curriculum aligns reasonably well with GATE syllabus for most branches.
-                            </p>
+                    <h2>Path 2: GATE (Graduate Aptitude Test in Engineering)</h2>
+                    <p>
+                        GATE is a national-level examination that provides access to two different paths: M.Tech admissions at IITs/NITs, and direct PSU recruitment.
+                    </p>
+                    <h3>M.Tech through GATE</h3>
+                    <p>
+                        A GATE score above 600 (out of 1000) opens IIT seats in non-premium branches. For IIT Bombay, Delhi, Madras in CSE — you need 750+. NITs are accessible with scores above 450–500. GATE M.Tech typically leads to research roles, senior technical positions, or academia. The stipend for M.Tech students is ₹12,400/month funded by MHRD.
+                    </p>
+                    <h3>PSU recruitment through GATE</h3>
+                    <p>
+                        Over 50 Public Sector Undertakings (PSUs) use GATE scores for direct recruitment into engineer roles. Companies include BHEL, NTPC, GAIL, ONGC, BPCL, and Power Grid. Salaries range from ₹7–12 LPA CTC for entry-level engineer roles. GATE-PSU recruitment is extremely competitive with thousands of applicants per seat.
+                    </p>
+                    <h3>How to start GATE preparation at VTU</h3>
+                    <ul>
+                        <li>Start from 5th semester by strengthening core subjects (Algorithms, OS, DBMS, Networks for CSE; Signals and Systems, Circuits for ECE).</li>
+                        <li>Enrol in a dedicated GATE course from 7th semester (MADE Easy, Gate Academy, or online platforms like NPTEL).</li>
+                        <li>Practice previous 10 years of GATE papers — this is non-negotiable for scoring above 600.</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 3: MS Abroad</h2>
-                            <p>
-                                Pursuing a Master of Science (MS) at a foreign university — particularly in the United States, Canada, Germany, or Australia — is a popular path for VTU graduates, especially those in CSE, ECE, and Mechanical.
-                            </p>
-                            <p>
-                                What you typically need:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>A CGPA above 7.0 (higher for top schools — 8.0+ for universities in the US top 50)</li>
-                                <li>GRE score (required by US and some other universities, though some have made it optional post-COVID)</li>
-                                <li>IELTS/TOEFL for English proficiency</li>
-                                <li>Strong Statement of Purpose (SOP) and Letters of Recommendation (LORs) from faculty</li>
-                                <li>Research experience or internships are significant differentiators</li>
-                            </ul>
-                            <p>
-                                Germany and France offer tuition-free or low-cost MS programs, making them increasingly popular alternatives to expensive US programs.
-                            </p>
+                    <h2>Path 3: MS Abroad</h2>
+                    <p>
+                        A Master's degree abroad (USA, Canada, Germany, UK, Australia) is a popular path for VTU graduates with strong academic records or research interests.
+                    </p>
+                    <h3>Requirements</h3>
+                    <ul>
+                        <li><strong>GRE:</strong> Required for most US universities. Target 320+ (160Q/160V) for competitive programs. Some universities have made GRE optional post-COVID.</li>
+                        <li><strong>IELTS/TOEFL:</strong> English proficiency test. IELTS 6.5+ or TOEFL 90+ for most programs.</li>
+                        <li><strong>CGPA:</strong> 7.0+ (70%) for most mid-tier US universities. Top universities (CMU, MIT, Stanford) expect 8.0+ along with research experience.</li>
+                        <li><strong>Statement of Purpose (SOP) and Letters of Recommendation (LOR):</strong> Often the deciding factor for borderline applicants.</li>
+                    </ul>
+                    <h3>Germany: A special case</h3>
+                    <p>
+                        Germany offers excellent MS programs at low to zero tuition (most public universities charge only a semester contribution fee). Programs in CSE, EE, and Automotive Engineering are particularly strong. Language is a barrier for non-German courses, but over 300 English-taught programs exist. TU Munich, RWTH Aachen, and KIT are top destinations.
+                    </p>
+                    <h3>Timeline for MS application</h3>
+                    <ul>
+                        <li>6th Semester: Research universities, shortlist programs.</li>
+                        <li>7th Semester: Give GRE and IELTS/TOEFL. Start SOP drafts. Approach professors for LOR.</li>
+                        <li>8th Semester: Submit applications (US Fall intake: Nov–Jan deadline; Germany: ongoing)</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 4: MBA After Engineering</h2>
-                            <p>
-                                An MBA from a reputable institution (IIM, XLRI, ISB, or top state B-schools) can pivot your career from a technical track to management, product management, consulting, or finance. The CAT exam is the primary gateway to IIMs. Engineering students historically perform well in CAT's Quantitative Aptitude section, making this a viable path.
-                            </p>
-                            <p>
-                                Most MBA programs prefer 2+ years of work experience, so it is common to work for 2–3 years after your VTU degree before pursuing an MBA. This work experience also strengthens your MBA application.
-                            </p>
+                    <h2>Path 4: MBA</h2>
+                    <p>
+                        An MBA opens management, consulting, finance, and product management roles. For VTU engineers, an MBA is a strong pivot especially for those interested in product strategy, operations, or entrepreneurship.
+                    </p>
+                    <ul>
+                        <li><strong>CAT:</strong> The primary MBA entrance exam for IIMs and top B-Schools. VTU engineers with strong quant scores are well-positioned for the quant section.</li>
+                        <li><strong>GMAT:</strong> For international B-Schools or ISB. Score 700+ for strong programs.</li>
+                        <li>Most top IIMs prefer 2+ years of work experience. Consider placement first, then MBA to get the most out of the program.</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 5: Government Jobs and PSUs</h2>
-                            <p>
-                                Multiple government sector opportunities are open to VTU B.E. graduates:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>PSU recruitment via GATE score:</strong> ONGC, BPCL, IOCL, BHEL, NTPC, and many more recruit engineers based on GATE scores — no additional interview required in some cases.</li>
-                                <li><strong>KPSC (Karnataka Public Service Commission):</strong> State-level government engineering jobs including PWD, KEB, and KRIDL.</li>
-                                <li><strong>Indian Engineering Services (IES):</strong> Conducted by UPSC, this is the most prestigious government engineering exam. Opens central government technical roles.</li>
-                                <li><strong>Defence jobs:</strong> Technical roles in the Indian Army, Navy, and Air Force (through TES, SSB, and other routes).</li>
-                            </ul>
+                    <h2>Path 5: Government Jobs</h2>
+                    <p>
+                        Government jobs offer stability, defined career progression, and strong long-term benefits including pension.
+                    </p>
+                    <ul>
+                        <li><strong>UPSC Engineering Services Examination (IES):</strong> Leads to Class 1 officer roles in Central government departments. Highly competitive with technical and aptitude examination stages.</li>
+                        <li><strong>SSC JE (Junior Engineer):</strong> State-level and central infrastructure departments. Civil, Electrical, and Mechanical branches. Written test + interview.</li>
+                        <li><strong>KPSC (Karnataka Public Service Commission):</strong> State government engineering roles. Requires Karnataka domicile in most cases.</li>
+                        <li><strong>Banking (IBPS PO/SO):</strong> IT specialist officer roles for engineering graduates. Regular IBPS calendar with predictable exam schedule.</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Option 6: Entrepreneurship and Startups</h2>
-                            <p>
-                                Karnataka's startup ecosystem — particularly in Bengaluru — is one of India's most vibrant. VTU graduates have started companies in fintech, edtech, agritech, and SaaS. Resources available to you include:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>VTU's Technology Business Incubators (TBIs) at select colleges — these offer mentorship, seed funding, and office space</li>
-                                <li>Karnataka Startup Cell and iStart Karnataka programs for funding support</li>
-                                <li>NASSCOM 10,000 Startups and other accelerator programs</li>
-                            </ul>
-                            <p>
-                                Even if you don't start a company immediately, joining an early-stage startup as one of the first 10–20 employees can give you disproportionate learning and equity opportunity.
-                            </p>
+                    <h2>Path 6: Entrepreneurship and Startups</h2>
+                    <p>
+                        Bengaluru's startup ecosystem is one of the most active in India, and VTU's position within this city creates natural opportunities. Many VTU graduates have gone on to found funded startups.
+                    </p>
+                    <ul>
+                        <li>Start building domain expertise during engineering — participate in hackathons, open-source projects, and startup weekends.</li>
+                        <li>Consider a 2–3 year industry stint first to build savings, skills, and professional network before starting.</li>
+                        <li>Explore VTU's Technology Business Incubators (TBIs) available at select colleges for early-stage support.</li>
+                        <li>Government schemes like Startup India, MSME loans, and BIRAC grants offer funding for early ventures.</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Building Your Profile: What Matters Most</h2>
-                            <p>
-                                Regardless of which path you choose, these actions will strengthen your position:
-                            </p>
-                            <ol className="list-decimal pl-6 space-y-2">
-                                <li>Maintain a CGPA above 7.0 — it is a gating criterion for most paths.</li>
-                                <li>Clear all backlogs before graduation. Active backlogs during placements or applications are serious red flags.</li>
-                                <li>Do at least one substantive internship during your 6th or 7th semester — internship-to-PPO conversions are increasingly common at good companies.</li>
-                                <li>Build a portfolio of 2–3 projects (hosted on GitHub, deployed as live apps) if you are pursuing software roles.</li>
-                                <li>Get LinkedIn-active early — connect with seniors, alumni, and recruiters from your target companies well before placement season.</li>
-                            </ol>
-                        </div>
+                    <h2>Building Your Profile from 1st Semester</h2>
+                    <p>
+                        Regardless of which path you choose, certain activities in every semester improve your options:
+                    </p>
+                    <ul>
+                        <li><strong>Internships:</strong> Even unpaid internships in 3rd/4th year signal industry exposure to recruiters and grad school admission committees.</li>
+                        <li><strong>Projects:</strong> Build 2–3 end-to-end projects (GitHub-hosted) in your domain. Projects substitute for experience in early career applications.</li>
+                        <li><strong>Certifications:</strong> AWS, Azure, Google Cloud; Coursera specialisations; Cisco Networking — industry certifications are valued by placement companies.</li>
+                        <li><strong>CGPA maintenance:</strong> A CGPA above 7.5 keeps all paths open. Below 6.0 closes several options permanently. Balance academics with extracurricular exploration, but don't let CGPA slip.</li>
+                    </ul>
 
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/how-to-calculate-sgpa" className="text-sm text-blue-600 hover:underline">How to Calculate Your SGPA →</Link>
-                                    <Link href="/articles/vtu-backlogs-guide" className="text-sm text-blue-600 hover:underline">Clearing VTU Backlogs →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Your Results Now
-                                </span>
-                            </Link>
-                        </div>
+                    <div className="callout">
+                        <strong>Check where you stand academically:</strong> Use the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-700 font-semibold underline">CGPA Calculator</Link> to see your current CGPA and model what SGPA you need this semester to reach your target by graduation.
                     </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'VTU Backlogs — Impact on Career', href: '/articles/vtu-backlogs-guide' },
+                        { title: 'CGPA vs SGPA — What Matters More', href: '/articles/cgpa-vs-sgpa-vtu' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

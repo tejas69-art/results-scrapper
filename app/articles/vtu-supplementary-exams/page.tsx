@@ -1,143 +1,164 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, RefreshCw } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'VTU Supplementary Exams: Complete Guide to Registration, Dates & Preparation',
-    description: 'Everything VTU students need to know about supplementary examinations — eligibility, registration process, timelines, how CIE marks carry forward, and how to prepare effectively.',
+    title: 'VTU Supplementary Exams: Complete Guide to Registration, Preparation, and What Comes After',
+    description: 'Everything about VTU back/supplementary exams — eligibility, registration steps, how CIE marks carry forward, focused preparation strategy, and what happens if you pass or fail again.',
 };
 
-export default function VTUSupplementaryExamsPage() {
+export default function VtuSupplementaryExams() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-orange-600 hover:text-orange-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center">
-                        <RefreshCw className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-700 bg-orange-50 border border-orange-100 px-2 py-0.5 rounded-full">Guide</span>
+                        <span className="text-xs text-slate-400">August 2024 · 9 min read</span>
                     </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        VTU Supplementary Exams: Complete Guide to Registration and Preparation
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        A supplementary exam is your most direct path to clearing a backlog. Here's everything you need to know — registration, preparation, CIE marks rules, and how clearing one affects your academic record.
+                    </p>
+                </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                VTU Supplementary Exams: Your Complete Guide to Eligibility, Registration, and Preparation
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on August 20, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>9 min read</span>
-                            </div>
-                        </header>
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
 
-                        <div className="prose prose-orange max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                If you have received an 'F' grade in one or more subjects at VTU, the supplementary examination is your primary route to clearing those backlogs. Understanding the process — from when the exam is held, to how to register, to how your marks are calculated — is critical to making the most of this opportunity. This guide covers everything you need to know about VTU supplementary exams.
-                            </p>
+                    <h2>What Is a VTU Supplementary Exam?</h2>
+                    <p>
+                        A VTU supplementary exam (also called a "back exam," "arrear exam," or "ex-students exam") is an examination conducted alongside regular semester exams, specifically for students who need to clear failed or missed subjects from previous semesters.
+                    </p>
+                    <p>
+                        Unlike regular exams where the entire class appears simultaneously for the current semester, supplementary exams allow students from any year to appear for subjects from any semester they haven't cleared. A final year student can appear for a 3rd semester subject's supplementary alongside the current batch writing 3rd semester papers.
+                    </p>
+                    <p>
+                        Supplementary exams are conducted for <strong>both even and odd semester subjects</strong> during each exam session:
+                    </p>
+                    <ul>
+                        <li>The June–July session includes supplementary exams for even semester subjects (2nd, 4th, 6th, 8th sem papers)</li>
+                        <li>The December–January/February session includes supplementary exams for odd semester subjects (1st, 3rd, 5th, 7th sem papers)</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What is a VTU Supplementary Examination?</h2>
-                            <p>
-                                A supplementary examination (also informally called a "re-exam," "arrear exam," or "backlog exam") is a university-conducted examination that allows students who have failed one or more subjects to reappear for the Semester End Examination (SEE) component of those subjects. It is NOT a separate course — you are retaking the same exam, for the same syllabus, under the same marking scheme.
-                            </p>
-                            <p>
-                                Key points:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>The supplementary exam only covers the SEE component. Your CIE (internal) marks from when you originally took the course are retained and carry forward.</li>
-                                <li>If you pass the supplementary exam, the new grade replaces your 'F' in your academic record for that original semester.</li>
-                                <li>Your SGPA for that original semester is recalculated with the new grade — improving your academic record retroactively.</li>
-                            </ul>
+                    <h2>Eligibility for Supplementary Exams</h2>
+                    <p>
+                        You are eligible to appear for VTU supplementary exams if:
+                    </p>
+                    <ul>
+                        <li>You have received an F grade (fail) in a subject in any previous semester — including due to being absent (AB) in the original exam.</li>
+                        <li>You had NSAR status (attendance shortage) in a previous semester and have since completed that academic year, making you eligible for supplementary.</li>
+                        <li>You are a repeat year student (year drop).</li>
+                        <li>You are an ex-student who has completed 8 semesters but has outstanding backlogs preventing degree award.</li>
+                    </ul>
+                    <p>
+                        <strong>Not eligible:</strong> If you passed a subject in the regular exam, you cannot appear for supplementary to try to improve your grade. Supplementary exams are only for clearing existing backlogs.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Who is Eligible for the Supplementary Exam?</h2>
-                            <p>Any VTU student who has received an 'F' grade in a subject is eligible to appear for the supplementary exam for that subject, subject to these conditions:</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>Attendance requirement for the supplementary:</strong> Since you already attended the original course, there is no new attendance requirement for the supplementary exam itself. You simply register and appear.</li>
-                                <li><strong>Maximum duration limit:</strong> If you have been in the program for more than the maximum allowed duration (typically 6 years for a 4-year program), you may not be eligible. Consult your college's examination cell.</li>
-                                <li><strong>Fee payment:</strong> Supplementary exam registration requires payment of a per-subject fee. This fee is non-refundable, so register only for subjects you intend to appear for.</li>
-                            </ul>
+                    <h2>How CIE Marks Carry Forward</h2>
+                    <p>
+                        This is one of the most important and least understood aspects of supplementary exams: <strong>your CIE (internal marks) from the original semester carry forward permanently</strong>. You do not need to re-earn internal marks — they are fixed from when you originally attended the semester.
+                    </p>
+                    <p>
+                        Practical implications:
+                    </p>
+                    <ul>
+                        <li>If you scored 32/40 in CIE originally, you need only 8/60 in SEE to pass (combined 40/100).</li>
+                        <li>If you scored 20/40 in CIE, you need 20/60 in SEE (minimum) — and also need to pass the 40% SEE threshold (minimum 24/60). So you'd need 24/60 in SEE regardless.</li>
+                        <li>CIE marks also affect your final grade — strong CIE can push you from E (5 GPs) to D (6 GPs) with only slightly better SEE performance.</li>
+                    </ul>
+                    <p>
+                        The CIE marks you see on the supplementary result will be the same as your original CIE marks — this is normal and correct.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">When Are VTU Supplementary Exams Held?</h2>
-                            <p>
-                                VTU typically conducts supplementary examinations once a year, though the exact scheduling can vary:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>Odd semester supplementary (for subjects failed in odd semester SEE):</strong> Usually held around February–April, a few months after the odd semester results are published.</li>
-                                <li><strong>Even semester supplementary:</strong> Usually held around August–October, following the even semester results.</li>
-                                <li>Sometimes VTU conducts a combined supplementary (odd + even semester arrears together). The actual dates are announced through official VTU circulars and your college's exam notice boards.</li>
-                            </ul>
-                            <p className="font-medium text-orange-700 bg-orange-50 border border-orange-200 rounded-lg p-4">
-                                Important: There is no fixed calendar. Always watch for official VTU notifications and your college's examination cell announcements. Missing the registration deadline typically means waiting another full year.
-                            </p>
+                    <h2>The Registration Process</h2>
+                    <ol>
+                        <li>
+                            <strong>Watch for VTU notification:</strong> VTU publishes a notification for supplementary exam registration approximately 30–45 days before the exam date. This appears on vtu.ac.in and is typically communicated by your college. Sign up for VTU notifications or check the website regularly after your regular results are published.
+                        </li>
+                        <li>
+                            <strong>Get the application form:</strong> Visit your college's examination section. Many colleges now have online registration through the VTU student portal — ask your exam section for the current process for your batch.
+                        </li>
+                        <li>
+                            <strong>Fill in subject details:</strong> List all subjects you're registering for (subject code, subject name, semester). You can register for multiple subjects across multiple semesters in a single application.
+                        </li>
+                        <li>
+                            <strong>Pay the fee:</strong> Approximate fee — ₹500 base + ₹1,200 per subject. Payment via Demand Draft drawn in favour of "Finance Officer, VTU, Belagavi" or through the online payment portal if your college uses one. Check with your exam section for the current payment method.
+                        </li>
+                        <li>
+                            <strong>Submit with required documents:</strong> Fee receipt, college ID, and signed application form. Submit to the examination section before the deadline.
+                        </li>
+                        <li>
+                            <strong>Collect hall ticket:</strong> Hall tickets are issued 7–10 days before exam date. Do not go to the exam centre without it — you will not be allowed to appear.
+                        </li>
+                    </ol>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Registration Process: Step by Step</h2>
-                            <ol className="list-decimal pl-6 space-y-3">
-                                <li>
-                                    <strong>Wait for the official notification.</strong> VTU publishes a circular announcing the supplementary exam schedule, including registration dates and fees. This is usually published 6–8 weeks before the exam.
-                                </li>
-                                <li>
-                                    <strong>Contact your college's examination cell.</strong> Registration for supplementary exams is done through your college, not directly with VTU. Approach the college exam cell as soon as the notification is out.
-                                </li>
-                                <li>
-                                    <strong>Select your subjects carefully.</strong> You must specify which failed subjects you want to appear for. Cross-check your result to confirm the subject codes of your arrears. See our <Link href="/articles/reading-vtu-marksheet" className="text-orange-600 hover:underline">marksheet reading guide</Link> for help identifying subject codes.
-                                </li>
-                                <li>
-                                    <strong>Pay the exam fee.</strong> Fees are typically paid via Demand Draft (DD) in favor of "The Registrar, VTU" or through an online payment portal, depending on the current process. Confirm the payment method with your college.
-                                </li>
-                                <li>
-                                    <strong>Collect your hall ticket.</strong> A few days before the exam, your hall ticket (admit card) will be issued through your college. You MUST carry it to the exam hall along with your original college ID.
-                                </li>
-                            </ol>
+                    <h2>Preparation Strategy for Supplementary Exams</h2>
+                    <p>
+                        Your preparation approach for supplementary exams should be different from how you prepared for the regular exam:
+                    </p>
+                    <h3>Start with your previous SEE marks</h3>
+                    <p>
+                        If you failed, understanding where you lost marks is more valuable than generic revision. Apply for a photocopy of your answer script (₹300) to see exactly which modules you attempted, where marks were lost, and what the evaluator awarded. This is the highest ROI preparation investment for supplementary exams.
+                    </p>
+                    <h3>Calculate your SEE target</h3>
+                    <p>
+                        Given your CIE marks, compute the minimum SEE marks you need to pass. Then add a buffer: aim for 10–15 marks above the minimum. For example, if you need 24/60 to pass (combined 40/100 with your CIE of 32), aim for 35/60 — this gives you an E or D grade instead of just barely passing.
+                    </p>
+                    <h3>Use PYQPs from supplementary sessions</h3>
+                    <p>
+                        VTU supplementary papers from previous years often follow the same pattern as regular papers from the same module. Collect both sets of past papers for maximum coverage.
+                    </p>
+                    <h3>Focus on guaranteed-attempt modules</h3>
+                    <p>
+                        If you're appearing for 3 subjects, identify the 2–3 modules in each subject with the highest question frequency in PYQPs and fully prepare those. You don't need to prepare everything to pass — strategic preparation is more effective than spreading revision thin.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How CIE Marks Carry Forward</h2>
-                            <p>
-                                Your CIE marks from the original attempt of the course are automatically carried forward. This means:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>If you had 40/50 in CIE and scored 30/50 (60/100 in the SEE) — which scales to 15/50 — giving a total of 55, you would pass with a 'D' grade. No need to redo any internal assessments.</li>
-                                <li>If your CIE itself was very low (e.g., 20/50) and you were unable to score enough in the SEE, the high SEE score required to compensate is substantial. In such cases, check with your college whether there is any mechanism to improve CIE marks (some colleges allow this under exceptional circumstances, but it is not a standard VTU provision).</li>
-                            </ul>
+                    <h2>What Happens After the Supplementary Exam?</h2>
+                    <p>
+                        Supplementary exam results are typically published 30–45 days after the exam date, following the same valuation and tabulation process as regular results. You can check them on <Link href="/vtu-results" className="text-indigo-600 underline">this site</Link> or on results.vtu.ac.in.
+                    </p>
+                    <h3>If you pass</h3>
+                    <ul>
+                        <li>The backlog is cleared — the F grade on that subject is replaced by your new passing grade (E, D, C, B, A, or S).</li>
+                        <li>Your CGPA is recalculated including the new grade. This can meaningfully improve your CGPA if the subject has high credits.</li>
+                        <li>The pass in supplementary attempt is visible on your marksheet — the fact that it was a supplementary attempt is noted.</li>
+                    </ul>
+                    <h3>If you fail again</h3>
+                    <ul>
+                        <li>The F grade remains. You must register for the next available supplementary session.</li>
+                        <li>If you believe the marks are wrong, apply for revaluation or photocopy within the stipulated window.</li>
+                        <li>There is no limit on the number of supplementary attempts in VTU, as long as you have not exceeded the maximum registration period (typically 6 years from first registration).</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Prepare for the Supplementary Exam</h2>
-                            <p>Since you are only required to pass the SEE component (scoring 35+ out of the actual 100-mark exam), your preparation strategy should be highly focused:</p>
-                            <ol className="list-decimal pl-6 space-y-3">
-                                <li><strong>Start with PYQPs.</strong> Solve the last 5 years of question papers for your specific subject and scheme. Identify which questions and topics are repeated most frequently. These are your highest priority areas.</li>
-                                <li><strong>Focus on the 3-module strategy.</strong> The exam has 5 modules; you answer one question from each. Master at least 3 modules completely before attempting to cover everything — this guarantees 60 marks.</li>
-                                <li><strong>Don't re-study everything from scratch.</strong> Focus only on the topics that appear in PYQPs. The supplementary exam typically follows the same question pattern as the regular exam.</li>
-                                <li><strong>Practice writing neatly and quickly.</strong> Presentation matters even in supplementary exams. Use bullet points, diagrams, and clear headings. See our full exam tips guide for detailed presentation strategies.</li>
-                                <li><strong>Give yourself at least 4–6 weeks of preparation</strong> for each failed subject. Cramming a 5-module course in less time rarely yields passing results.</li>
-                            </ol>
+                    <h2>Maximum Exam Attempts and Registration Validity</h2>
+                    <p>
+                        VTU regulations specify a maximum registration validity period — the total time within which a student must complete their degree requirements. For most schemes, this is <strong>6 years from the year of first registration</strong>. After this period, a student is typically de-registered and must apply for re-admission to continue.
+                    </p>
+                    <p>
+                        Within the registration validity period, there is no limit on the number of attempts for any subject. However, your CGPA will reflect the best passing grade achieved, and the full examination history is part of your academic record.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">After the Supplementary Exam: What Happens Next</h2>
-                            <p>
-                                Results for supplementary exams are published separately from the regular semester results, usually 4–8 weeks after the exam. You can check your result on the VTU results portal using your USN, or use our result checker tool.
-                            </p>
-                            <p>
-                                If you pass, your academic record is updated — the 'F' grade is replaced, and your SGPA/CGPA for the relevant semester is recalculated. Your degree certificate and consolidated marksheet (issued at graduation) will show the improved grades, though it will still note that the subject was cleared in a supplementary attempt.
-                            </p>
-                            <p>
-                                If you still fail the supplementary exam, you can appear again in the next supplementary window. There is no limit on the number of supplementary attempts within the maximum duration policy.
-                            </p>
-                        </div>
-
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/vtu-backlogs-guide" className="text-sm text-blue-600 hover:underline">VTU Backlogs Complete Guide →</Link>
-                                    <Link href="/articles/exam-preparation-tips" className="text-sm text-blue-600 hover:underline">VTU Exam Preparation Tips →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Your Results Now
-                                </span>
-                            </Link>
-                        </div>
+                    <div className="callout">
+                        <strong>Estimate your fee:</strong> Use the <Link href="/backlog-fee-estimator" className="text-indigo-700 font-semibold underline">Backlog Fee Estimator</Link> to calculate the approximate cost for your supplementary registration. Also check the <Link href="/articles/vtu-backlogs-guide" className="text-indigo-700 font-semibold underline">VTU Backlogs Guide</Link> for broader career context.
                     </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'VTU Backlogs — How They Impact You', href: '/articles/vtu-backlogs-guide' },
+                        { title: 'Backlog Fee Estimator', href: '/backlog-fee-estimator' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

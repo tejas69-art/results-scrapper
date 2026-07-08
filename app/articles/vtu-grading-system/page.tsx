@@ -1,158 +1,201 @@
 import type { Metadata } from 'next';
-import { Card, CardContent } from '@/components/ui/card';
-import { Award, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'VTU Grading System (CBCS) Fully Explained - Grades, Credits & CGPA',
-    description: 'A complete explanation of the VTU CBCS grading system. Covers letter grades, grade points, internal vs external marks, grace marks, CGPA to percentage conversion, and more.',
+    title: 'The VTU Grading System (CBCS): Complete Guide to Grades, SGPA & Class',
+    description: 'Everything about the VTU CBCS grading system — absolute vs relative grading, CIE and SEE marks explained, grace marks policy, class declaration thresholds, and CGPA to percentage conversion.',
 };
 
-export default function GradingSystemPage() {
+export default function VtuGradingSystem() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-emerald-600 to-teal-700 flex items-center justify-center">
-                        <Award className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">Explained</span>
+                        <span className="text-xs text-slate-400">May 2024 · 10 min read</span>
+                    </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        The VTU Grading System (CBCS): Everything Explained
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        VTU's grading system confuses students across schemes. This guide demystifies how marks become grades, how grades become SGPA, and how SGPA ultimately determines your degree class.
+                    </p>
+                </div>
+
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
+
+                    <h2>What Is the VTU CBCS Scheme?</h2>
+                    <p>
+                        Visvesvaraya Technological University introduced the <strong>Choice Based Credit System (CBCS)</strong> for students admitted from the academic year 2015–16. Since then, multiple scheme revisions have been released — the 2018 CBCS Scheme, the 2021 CBCS Scheme, and the 2022 NEP Scheme — but the fundamental grading logic has remained consistent across all of them.
+                    </p>
+                    <p>
+                        Under CBCS, each subject has a specified number of credits, and your performance is measured not in raw marks but in <strong>grade points</strong> on a 10-point scale. Your semester performance is summarised as SGPA, and your overall performance across semesters is your CGPA.
+                    </p>
+
+                    <h2>How Marks Are Calculated: CIE + SEE</h2>
+                    <p>
+                        Every theory subject in VTU has two components of assessment:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Component</th><th>Full Form</th><th>Max Marks</th><th>Passing Threshold</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>CIE</td><td>Continuous Internal Evaluation</td><td>40</td><td>No minimum (but 40% of total required)</td></tr>
+                            <tr><td>SEE</td><td>Semester End Examination</td><td>60</td><td>Minimum 24/60 (40% of SEE)</td></tr>
+                            <tr><td><strong>Total</strong></td><td>Combined Score</td><td><strong>100</strong></td><td><strong>Minimum 40/100 overall</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <strong>Important:</strong> A student must score at least 40% in the SEE component independently (minimum 24 out of 60), regardless of how high their CIE marks are. A student who scores 38/40 in internals but only 20/60 in SEE will still receive an F grade and must reappear for the supplementary exam.
+                    </p>
+
+                    <h3>How CIE is Calculated</h3>
+                    <p>
+                        Internal Assessment (CIE) typically comprises:
+                    </p>
+                    <ul>
+                        <li>2–3 internal test papers (best of N considered)</li>
+                        <li>Assignment or quiz marks</li>
+                        <li>Attendance marks (in some schemes)</li>
+                    </ul>
+                    <p>
+                        The exact CIE structure may vary by department and scheme. Internal marks are finalized by your college and uploaded to the VTU portal before the semester exam schedule begins.
+                    </p>
+
+                    <h2>From Marks to Grades: The VTU Grade Matrix</h2>
+                    <p>
+                        Once the combined total (CIE + SEE, out of 100) is computed, a letter grade is assigned based on the following scale:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Combined Marks</th><th>Letter Grade</th><th>Grade Points</th><th>Performance Level</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>90 – 100</td><td>S</td><td>10</td><td>Outstanding</td></tr>
+                            <tr><td>80 – 89</td><td>A</td><td>9</td><td>Excellent</td></tr>
+                            <tr><td>70 – 79</td><td>B</td><td>8</td><td>Very Good</td></tr>
+                            <tr><td>60 – 69</td><td>C</td><td>7</td><td>Good</td></tr>
+                            <tr><td>50 – 59</td><td>D</td><td>6</td><td>Average</td></tr>
+                            <tr><td>40 – 49</td><td>E</td><td>5</td><td>Pass</td></tr>
+                            <tr><td>Below 40</td><td>F</td><td>0</td><td>Fail</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        VTU uses <strong>absolute grading</strong> — grades are assigned based on fixed mark ranges, not relative to the class average or a bell curve. This is significant because it means one student's grade is not affected by how well or poorly the rest of the batch performs.
+                    </p>
+
+                    <h2>Special Grade Codes on Your Marksheet</h2>
+                    <p>
+                        Beyond the standard letter grades, your VTU result may show some of these codes:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Code</th><th>Meaning</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>AB</td><td>Absent — student was absent for the SEE paper</td></tr>
+                            <tr><td>W</td><td>Withheld — result withheld (typically due to malpractice suspicion or pending fees)</td></tr>
+                            <tr><td>NSAR</td><td>Not Eligible for SEE due to Attendance Shortage</td></tr>
+                            <tr><td>P</td><td>Pass (used in some schemes for practical subjects)</td></tr>
+                            <tr><td>NP</td><td>Not Pass (failed practical component)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Grace Marks Policy</h2>
+                    <p>
+                        VTU permits grace marks under specific conditions to help students pass. The grace marks policy, as per VTU regulations:
+                    </p>
+                    <ul>
+                        <li>A student who falls short of passing in one or two subjects may receive up to <strong>5 grace marks</strong> per subject, subject to conditions.</li>
+                        <li>Grace marks are applicable only if the student would pass or improve their class with the grace.</li>
+                        <li>Grace marks are not applied automatically to all students — they are considered during the tabulation process.</li>
+                        <li>Grace marks do not apply if the student has more than 2 failed subjects or is detained (NSAR).</li>
+                    </ul>
+                    <p>
+                        The grace marks policy has been revised across schemes. Check the specific regulation document for your year of admission for the exact applicability criteria.
+                    </p>
+
+                    <h2>How SGPA Is Calculated</h2>
+                    <p>
+                        Once letter grades are assigned to all subjects, SGPA is computed as the credit-weighted average of grade points:
+                    </p>
+                    <div className="formula-box">SGPA = Σ (Credits × Grade Points) / Total Credits</div>
+                    <p>
+                        See our detailed guide on <Link href="/articles/how-to-calculate-sgpa" className="text-indigo-600 underline">how to calculate SGPA in VTU</Link> for a full worked example with a typical 3rd semester CSE schedule.
+                    </p>
+
+                    <h2>How CGPA Is Calculated</h2>
+                    <p>
+                        CGPA (Cumulative Grade Point Average) is the credit-weighted average of all SGPA values across your completed semesters:
+                    </p>
+                    <div className="formula-box">CGPA = Σ (SGPA_j × Credits_j) / Total Credits (all semesters)</div>
+                    <p>
+                        Note: CGPA is <em>not</em> a simple average of all SGPAs. Semesters with more credits have more influence. In VTU, semesters typically range from 18 to 26 credits, so a heavy semester with a low SGPA can drag your CGPA down significantly.
+                    </p>
+
+                    <h2>Degree Class Declaration</h2>
+                    <p>
+                        At the end of 8 semesters, VTU declares your degree class based on your final CGPA:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Final CGPA</th><th>Equivalent Percentage</th><th>Class Declared</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>7.50 and above</td><td>75% and above</td><td>First Class with Distinction</td></tr>
+                            <tr><td>6.00 – 7.49</td><td>60% – 74.9%</td><td>First Class</td></tr>
+                            <tr><td>5.00 – 5.99</td><td>50% – 59.9%</td><td>Second Class</td></tr>
+                            <tr><td>4.00 – 4.99</td><td>40% – 49.9%</td><td>Pass Class</td></tr>
+                            <tr><td>Below 4.00</td><td>Below 40%</td><td>Fail (degree not awarded)</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        To be eligible for degree award, you must have cleared all subject backlogs. A student with even one outstanding backlog (unconclared F grade) will not have their degree declared by VTU regardless of their overall CGPA.
+                    </p>
+
+                    <h2>CGPA to Percentage Conversion</h2>
+                    <p>
+                        VTU uses a simple multiplier: <strong>Percentage = CGPA × 10</strong>. A student with a final CGPA of 8.42 has an equivalent percentage of 84.2%. Use our <Link href="/cgpa-to-percentage" className="text-indigo-600 underline">CGPA to Percentage converter</Link> for quick calculations.
+                    </p>
+
+                    <h2>2018 vs 2021 vs 2022 NEP Scheme — Key Grading Differences</h2>
+                    <p>
+                        The fundamental grading scale (S to F) is the same across all three schemes. However, there are some notable differences:
+                    </p>
+                    <ul>
+                        <li><strong>2018 CBCS:</strong> 8-semester structure. CIE typically consists of 3 internal tests + assignments. Labs are 1–2 credits each.</li>
+                        <li><strong>2021 CBCS:</strong> Introduced Open Electives and minor specialisations. Some subjects have online course components. Credit structure revised for some branches.</li>
+                        <li><strong>2022 NEP:</strong> Introduces 4+1 structure (4 semesters per year), choice of multiple entry/exit points, and a wider range of electives. Grade calculation formula remains the same but credit allocation varies significantly by branch.</li>
+                    </ul>
+                    <p>
+                        Always verify your credit structure using the official VTU scheme document for your batch year and branch.
+                    </p>
+
+                    <div className="callout">
+                        <strong>Calculate your own SGPA:</strong> Use the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-700 font-semibold underline">SGPA & CGPA Calculator</Link> to enter your subjects, credits, and grades — your SGPA is computed instantly without any manual arithmetic.
                     </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                The VTU Grading System (CBCS): Everything Explained
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on May 18, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>10 min read</span>
-                            </div>
-                        </header>
-
-                        <div className="prose prose-blue max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                The grading system at Visvesvaraya Technological University can feel like a maze, especially for first-year students transitioning from the percentage-based marking of the 10+2 system. This article demystifies the entire structure — from how your raw marks translate into letter grades, to how those grades affect your CGPA, and ultimately what that means for your degree certificate and career prospects.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">A Brief History: From Old Scheme to CBCS to NEP</h2>
-                            <p>
-                                VTU has undergone several grading scheme reforms over the years. The traditional "Old Scheme" (pre-2010) used a straightforward percentage-based system where students received raw marks and a percentage. This changed with the introduction of the Choice Based Credit System (CBCS) around 2015, which brought in letter grades and grade points — aligning VTU with national and international educational standards.
-                            </p>
-                            <p>
-                                The 2021 Scheme (and subsequently the NEP 2021 / OBE-CBCS scheme for newer batches) refined this further, making Outcome Based Education (OBE) the framework for teaching and assessment. While the core letter grade system remains the same, the structure of subjects, credit distribution, and the inclusion of mandatory skill development courses have all changed. Always confirm which scheme your batch follows, as it affects the number of credits per semester and the exact grade boundaries.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Absolute vs. Relative Grading</h2>
-                            <p>
-                                VTU uses <strong>absolute grading</strong>. This means your letter grade is determined solely by the absolute marks you score — not by how you perform relative to your classmates. If you score 85, you get an 'A' grade regardless of whether the class average was 50 or 80. This is different from some universities that use a bell-curve or relative grading system where only the top X% of students get a certain grade.
-                            </p>
-                            <p>
-                                For students, this is both good and bad. It means your grade is entirely in your own hands — performing well guarantees a good grade. But it also means there is no "grade inflation" based on overall class difficulty.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Letter Grade Table</h2>
-                            <p>Your total marks (CIE + SEE, out of 100) map to these letter grades and grade points:</p>
-                            <div className="overflow-x-auto my-6">
-                                <table className="w-full text-left border-collapse border border-gray-200">
-                                    <thead className="bg-gray-50">
-                                        <tr>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Marks Range</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Letter Grade</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Grade Points</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Performance Level</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-100">
-                                        <tr className="bg-emerald-50"><td className="py-3 px-4 font-mono">90 – 100</td><td className="py-3 px-4 font-bold text-emerald-700">S</td><td className="py-3 px-4 font-bold">10</td><td className="py-3 px-4">Outstanding</td></tr>
-                                        <tr><td className="py-3 px-4 font-mono">80 – 89</td><td className="py-3 px-4 font-bold text-blue-700">A</td><td className="py-3 px-4 font-bold">9</td><td className="py-3 px-4">Excellent</td></tr>
-                                        <tr><td className="py-3 px-4 font-mono">70 – 79</td><td className="py-3 px-4 font-bold text-indigo-700">B</td><td className="py-3 px-4 font-bold">8</td><td className="py-3 px-4">Very Good</td></tr>
-                                        <tr><td className="py-3 px-4 font-mono">60 – 69</td><td className="py-3 px-4 font-bold text-yellow-700">C</td><td className="py-3 px-4 font-bold">7</td><td className="py-3 px-4">Good</td></tr>
-                                        <tr><td className="py-3 px-4 font-mono">55 – 59</td><td className="py-3 px-4 font-bold text-orange-600">D</td><td className="py-3 px-4 font-bold">6</td><td className="py-3 px-4">Average</td></tr>
-                                        <tr><td className="py-3 px-4 font-mono">40 – 54</td><td className="py-3 px-4 font-bold text-orange-700">E</td><td className="py-3 px-4 font-bold">5</td><td className="py-3 px-4">Pass</td></tr>
-                                        <tr className="bg-red-50"><td className="py-3 px-4 font-mono">&lt; 40</td><td className="py-3 px-4 font-bold text-red-700">F</td><td className="py-3 px-4 font-bold">0</td><td className="py-3 px-4">Fail / Backlog</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How Internal (CIE) and External (SEE) Marks Combine</h2>
-                            <p>
-                                Your final marks out of 100 for each subject are a combination of two components:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li>
-                                    <strong>Continuous Internal Evaluation (CIE) — 50 marks:</strong> This includes your internal tests (usually two tests, best one or average of two counted), lab records, assignments, and sometimes a quiz or project component. The exact breakdown varies by subject type (theory vs. lab vs. project).
-                                </li>
-                                <li>
-                                    <strong>Semester End Examination (SEE) — 50 marks (scaled from 100):</strong> This is the main university exam. You write an exam worth 100 marks, and the marks are then scaled down to 50 for the final grade calculation. So if you score 70/100 in the SEE, it counts as 35/50.
-                                </li>
-                            </ul>
-                            <p>
-                                The CIE and SEE scores are added to give a total out of 100, which is then mapped to a letter grade using the table above.
-                            </p>
-                            <Card className="bg-yellow-50 border-yellow-200 my-6">
-                                <CardContent className="p-5">
-                                    <p className="font-semibold text-yellow-900">Important Passing Condition</p>
-                                    <p className="text-yellow-800 text-sm mt-1">
-                                        To pass a subject, you must score a minimum of <strong>35 out of 100 in the SEE</strong> (i.e., 35 marks in the university exam after scaling). Even if your CIE is perfect (50/50), failing to clear the 35-mark SEE threshold results in an automatic 'F' grade for the subject, regardless of your total.
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Grace Marks Policy</h2>
-                            <p>
-                                VTU does have a grace marks provision, though it is limited and applied at the discretion of the university. Typically, grace marks are awarded to help a student cross a critical threshold — for example, bringing a student from 39 to 40 to help them pass, or from 89 to 90 to move them into the 'S' grade bracket. However, the exact policy and limits change from time to time, and not all students are automatically eligible. Always check the latest VTU circular for the current academic year's grace marks rules.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Class Declaration Based on CGPA</h2>
-                            <p>At the end of all 8 semesters (for a 4-year B.E. program), your final degree class is declared based on your overall CGPA:</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>First Class with Distinction:</strong> CGPA ≥ 7.75 (no active backlogs at time of graduation)</li>
-                                <li><strong>First Class:</strong> 6.75 ≤ CGPA &lt; 7.75</li>
-                                <li><strong>Second Class:</strong> 6.25 ≤ CGPA &lt; 6.75</li>
-                                <li><strong>Pass Class:</strong> CGPA &lt; 6.25</li>
-                            </ul>
-                            <p>Note that the thresholds above are approximate and subject to change. Verify against the official VTU regulations document for your scheme year.</p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Convert CGPA to Percentage</h2>
-                            <p>
-                                Many job applications, especially government jobs and bank PO exams, ask for your percentage rather than CGPA. VTU does not have a single official CGPA-to-percentage conversion formula. However, the widely accepted formula (used by most employers and as recommended by the Ministry of Education) is:
-                            </p>
-                            <Card className="bg-gray-50 border-blue-100 my-6">
-                                <CardContent className="p-6 text-center">
-                                    <p className="text-xl font-mono font-bold text-blue-800">
-                                        Percentage = CGPA × 10
-                                    </p>
-                                    <p className="text-sm text-gray-500 mt-2">
-                                        Example: A CGPA of 8.2 = <strong>82%</strong>
-                                    </p>
-                                </CardContent>
-                            </Card>
-                            <p>
-                                If an employer specifically asks for a VTU-certified conversion, you can request a percentage conversion certificate from your college or from VTU directly, which uses their official formula for your specific scheme.
-                            </p>
-                        </div>
-
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/how-to-calculate-sgpa" className="text-sm text-blue-600 hover:underline">How to Calculate Your SGPA →</Link>
-                                    <Link href="/articles/cgpa-vs-sgpa-vtu" className="text-sm text-blue-600 hover:underline">CGPA vs SGPA Differences →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Results Now
-                                </span>
-                            </Link>
-                        </div>
-                    </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'How to Calculate SGPA in VTU', href: '/articles/how-to-calculate-sgpa' },
+                        { title: 'How to Read Your VTU Marksheet', href: '/articles/reading-vtu-marksheet' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

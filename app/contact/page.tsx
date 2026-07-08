@@ -1,187 +1,180 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
-import { Mail, Send } from 'lucide-react';
+import type { Metadata } from 'next';
+import { Mail, Send, CheckCircle, HelpCircle } from 'lucide-react';
+import Link from 'next/link';
+
+const faqs = [
+    {
+        q: 'Where does the result data come from?',
+        a: 'Results are fetched in real time from the official VTU results server (results.vtu.ac.in). We do not modify or store the data — it\'s displayed exactly as returned by VTU\'s servers.',
+    },
+    {
+        q: 'Why is the SGPA showing 0 or wrong?',
+        a: 'SGPA estimation depends on the credit values assigned to each subject. The credits shown in your result are defaults — adjust them in the SGPA calculator to match your actual scheme. Also check that all subjects have a valid grade (not "AB" or "NSAR").',
+    },
+    {
+        q: 'Why does the CAPTCHA image not load?',
+        a: 'The CAPTCHA is fetched live from VTU\'s server. If it doesn\'t appear, VTU\'s results server may be under load or temporarily down. Try again after a few minutes.',
+    },
+    {
+        q: 'Is this site affiliated with VTU?',
+        a: 'No. This is an independent, student-built platform. It is not affiliated with, endorsed by, or officially connected to Visvesvaraya Technological University. See our Disclaimer for more details.',
+    },
+    {
+        q: 'Are my USN and results stored anywhere?',
+        a: 'No. Your USN is sent to our API proxy, which forwards the request to VTU\'s server, and the result is returned to your browser. Nothing is stored in any database.',
+    },
+    {
+        q: 'What does "NSAR" mean in my result?',
+        a: '"Not Eligible for Semester Examination due to Attendance Shortage" — this means the student was barred from appearing in the exam for that subject due to insufficient attendance. Read our attendance guide for details on condonation.',
+    },
+];
 
 export default function ContactPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-    const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // In a real application, you would send this data to a backend
-        setSubmitted(true);
+    const mailtoLink = `mailto:vtu.results.help@gmail.com?subject=${encodeURIComponent(subject || 'VTU Results — Enquiry')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-            setName('');
-            setEmail('');
-            setMessage('');
-            setSubmitted(false);
-        }, 3000);
-    };
+    const isReady = name.trim() && email.trim() && message.trim();
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 mb-6 border border-blue-200">
-                        <Mail className="w-5 h-5 text-blue-600" />
-                        <span className="text-sm font-medium text-blue-700">Contact</span>
+        <div className="min-h-screen bg-slate-50/50 py-12">
+            <div className="container mx-auto max-w-4xl px-4 sm:px-6">
+
+                <div className="mb-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-700 text-xs font-bold uppercase tracking-wider mb-4">
+                        <Mail className="w-3.5 h-3.5" /> Contact
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Have questions, feedback, or need assistance? We'd love to hear from you!
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Get in Touch</h1>
+                    <p className="text-slate-600 max-w-xl leading-relaxed">
+                        Have a question, found a bug, or want to give feedback? Fill out the form and your email client will open with the message ready to send.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {/* Contact Form */}
-                    <Card className="shadow-lg">
-                        <CardHeader>
-                            <CardTitle className="text-2xl">Send us a Message</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            {submitted ? (
-                                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Send className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-green-900 mb-2">Message Sent!</h3>
-                                    <p className="text-green-700">
-                                        Thank you for contacting us. We'll get back to you soon.
-                                    </p>
-                                </div>
-                            ) : (
-                                <form onSubmit={handleSubmit} className="space-y-4">
-                                    <div>
-                                        <Label htmlFor="name">Name</Label>
-                                        <Input
-                                            id="name"
-                                            type="text"
-                                            value={name}
-                                            onChange={(e) => setName(e.target.value)}
-                                            placeholder="Your full name"
-                                            required
-                                            className="mt-2"
-                                        />
-                                    </div>
-                                    <div>
-                                        <Label htmlFor="email">Email</Label>
-                                        <Input
-                                            id="email"
-                                            type="email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="your.email@example.com"
-                                            required
-                                            className="mt-2"
-                                        />
-                                    </div>
-                                    <div>
-                                        <Label htmlFor="message">Message</Label>
-                                        <textarea
-                                            id="message"
-                                            value={message}
-                                            onChange={(e) => setMessage(e.target.value)}
-                                            placeholder="How can we help you?"
-                                            required
-                                            rows={6}
-                                            className="mt-2 flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                        />
-                                    </div>
-                                    <Button
-                                        type="submit"
-                                        className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                                    >
-                                        <Send className="w-4 h-4 mr-2" />
-                                        Send Message
-                                    </Button>
-                                </form>
-                            )}
-                        </CardContent>
-                    </Card>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
 
-                    {/* Contact Information & FAQ */}
-                    <div className="space-y-6">
-                        <Card className="shadow-lg">
-                            <CardHeader>
-                                <CardTitle className="text-2xl">Contact Information</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-4 text-gray-700">
+                    {/* Contact form */}
+                    <div className="md:col-span-3 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                        <h2 className="font-semibold text-slate-900 mb-5">Send a Message</h2>
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Email Support</h3>
-                                    <p className="text-sm">
-                                        For general inquiries and support, please use the contact form.
-                                        We typically respond within 24-48 hours.
-                                    </p>
+                                    <label htmlFor="contact-name" className="block text-sm font-semibold text-slate-700 mb-1.5">Your Name</label>
+                                    <input
+                                        id="contact-name"
+                                        type="text"
+                                        value={name}
+                                        onChange={e => setName(e.target.value)}
+                                        placeholder="Rahul Sharma"
+                                        className="w-full h-10 px-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-colors"
+                                    />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Response Time</h3>
-                                    <p className="text-sm">
-                                        We aim to respond to all inquiries within 1-2 business days.
-                                        During peak periods (exam result season), it may take slightly longer.
-                                    </p>
+                                    <label htmlFor="contact-email" className="block text-sm font-semibold text-slate-700 mb-1.5">Email Address</label>
+                                    <input
+                                        id="contact-email"
+                                        type="email"
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
+                                        placeholder="rahul@example.com"
+                                        className="w-full h-10 px-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-colors"
+                                    />
                                 </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                            <div>
+                                <label htmlFor="contact-subject" className="block text-sm font-semibold text-slate-700 mb-1.5">Subject</label>
+                                <input
+                                    id="contact-subject"
+                                    type="text"
+                                    value={subject}
+                                    onChange={e => setSubject(e.target.value)}
+                                    placeholder="e.g. Result not loading / SGPA calculation question"
+                                    className="w-full h-10 px-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-colors"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-700 mb-1.5">Message</label>
+                                <textarea
+                                    id="contact-message"
+                                    value={message}
+                                    onChange={e => setMessage(e.target.value)}
+                                    placeholder="Describe your question or issue in detail…"
+                                    rows={5}
+                                    className="w-full px-3 py-2.5 border border-slate-200 rounded-lg text-sm resize-none focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-colors"
+                                />
+                            </div>
+                            <a
+                                href={isReady ? mailtoLink : undefined}
+                                aria-disabled={!isReady}
+                                className={`inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold transition-colors ${isReady ? 'bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer' : 'bg-slate-100 text-slate-400 cursor-not-allowed pointer-events-none'}`}
+                            >
+                                <Send className="w-4 h-4" /> Open in Email Client
+                            </a>
+                            <p className="text-xs text-slate-400 text-center leading-relaxed">
+                                Clicking the button opens your default email app with the message pre-filled. We typically respond within 2 business days.
+                            </p>
+                        </div>
+                    </div>
 
-                        <Card className="shadow-lg bg-blue-50 border-blue-200">
-                            <CardHeader>
-                                <CardTitle className="text-xl">Frequently Asked Questions</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Where do I find the result URL?</h3>
-                                    <p className="text-sm text-gray-700">
-                                        Visit the official VTU website and navigate to the results section.
-                                        Copy the URL of the result page where you would normally enter your USN.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Is my data secure?</h3>
-                                    <p className="text-sm text-gray-700">
-                                        Yes! We don't store your USN or results. All data is fetched in real-time
-                                        from VTU servers and displayed directly to you.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Why is the SGPA showing 0?</h3>
-                                    <p className="text-sm text-gray-700">
-                                        You need to manually select the credits for each subject in the dropdown.
-                                        Once you set the credits, the SGPA will be calculated automatically.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-gray-900 mb-2">Are you affiliated with VTU?</h3>
-                                    <p className="text-sm text-gray-700">
-                                        No, we are an independent service. For official results, please visit
-                                        the VTU website.
-                                    </p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                    {/* Sidebar info */}
+                    <div className="md:col-span-2 space-y-4">
 
-                        <Card className="shadow-lg">
-                            <CardContent className="p-6">
-                                <h3 className="font-semibold text-gray-900 mb-3">Need Help?</h3>
-                                <p className="text-sm text-gray-700 mb-4">
-                                    Before contacting us, check our{' '}
-                                    <a href="/about" className="text-blue-600 hover:underline">About page</a>{' '}
-                                    for more information about how our service works.
-                                </p>
-                                <p className="text-sm text-gray-700">
-                                    For privacy-related questions, please review our{' '}
-                                    <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a>.
-                                </p>
-                            </CardContent>
-                        </Card>
+                        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                            <h3 className="font-semibold text-slate-900 text-sm">Response Times</h3>
+                            <div className="space-y-2 text-sm text-slate-600">
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    Bug reports: 1–2 business days
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    General questions: 2–3 business days
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0" />
+                                    Result season: slightly longer
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                            <h3 className="font-semibold text-slate-900 text-sm">Social Media</h3>
+                            <div className="space-y-2 text-sm text-slate-500">
+                                {/* TODO: Replace # with real social media URLs when accounts are created */}
+                                <p><a href="#" className="hover:text-pink-500 transition-colors font-medium">Instagram</a> — coming soon</p>
+                                <p><a href="#" className="hover:text-sky-500 transition-colors font-medium">Twitter / X</a> — coming soon</p>
+                                <p><a href="#" className="hover:text-blue-500 transition-colors font-medium">LinkedIn</a> — coming soon</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm text-sm text-slate-600 space-y-2">
+                            <h3 className="font-semibold text-slate-900">Before Contacting</h3>
+                            <ul className="space-y-1.5">
+                                <li><Link href="/about" className="text-indigo-600 hover:underline">About page</Link> — what this site is</li>
+                                <li><Link href="/disclaimer" className="text-indigo-600 hover:underline">Disclaimer</Link> — VTU affiliation notice</li>
+                                <li><Link href="/privacy-policy" className="text-indigo-600 hover:underline">Privacy Policy</Link> — data handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* FAQ */}
+                <div className="mt-8 bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
+                    <h2 className="font-outfit text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <HelpCircle className="w-5 h-5 text-indigo-600" /> Frequently Asked Questions
+                    </h2>
+                    <div className="divide-y divide-slate-100">
+                        {faqs.map((faq, i) => (
+                            <div key={i} className="py-5 first:pt-0 last:pb-0">
+                                <h3 className="font-semibold text-slate-900 mb-1.5 text-sm">{faq.q}</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

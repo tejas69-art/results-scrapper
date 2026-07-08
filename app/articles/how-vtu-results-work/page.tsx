@@ -1,143 +1,156 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, FileText } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'How VTU Results Are Published: A Complete Guide',
-    description: 'Understand exactly how VTU publishes semester examination results — the process from paper valuation to website publishing, typical timelines, and what to do when results are delayed.',
+    title: 'How VTU Results Are Published — Behind-the-Scenes Process Explained',
+    description: 'The complete behind-the-scenes process of VTU result publication — from valuation camps to the results portal. Includes typical timelines, what to do right after results, and why results appear in stages.',
 };
 
-export default function HowVTUResultsWorkPage() {
+export default function HowVtuResultsWork() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center">
-                        <FileText className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full">Guide</span>
+                        <span className="text-xs text-slate-400">July 2024 · 7 min read</span>
                     </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        How VTU Results Are Published: A Complete Guide
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        VTU results don't appear instantly after exams — there's a multi-stage process that takes 30–45 days. Understanding it helps you know what to expect, when, and why results sometimes trickle out in stages.
+                    </p>
+                </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                How VTU Results Are Published: A Complete Guide
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on July 10, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>9 min read</span>
-                            </div>
-                        </header>
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
 
-                        <div className="prose prose-blue max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                Every VTU student knows the anxiety of waiting for semester results. But very few understand the complex, multi-stage process that happens behind the scenes before those results appear on the VTU website. Understanding this process can help you set realistic expectations, understand why delays happen, and know exactly what to do the moment results are published.
-                            </p>
+                    <h2>The VTU Results Publication Pipeline</h2>
+                    <p>
+                        After your semester exams conclude, your answer scripts go through a structured evaluation and verification process before marks are published. Here's the complete sequence:
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Step 1: The Semester End Examination (SEE)</h2>
-                            <p>
-                                The process begins with the Semester End Examination (SEE) itself. VTU conducts centralized examinations for all affiliated colleges simultaneously across Karnataka. The exam schedule is released weeks in advance through official VTU circulars and is also communicated by your college's examination cell.
-                            </p>
-                            <p>
-                                Answer scripts are collected from examination centers and transported to VTU's central valuation camps. VTU uses a <strong>centralized valuation system</strong> — meaning your answer script is not evaluated by your own college's faculty. Instead, faculty from different affiliated colleges are assigned to value scripts from other colleges. This is designed to minimize bias.
-                            </p>
+                    <h3>Stage 1: Answer Script Collection and Dispatch</h3>
+                    <p>
+                        Immediately after each exam paper, sealed answer booklets are collected from examination centres across Karnataka and dispatched to VTU-designated <strong>valuation camps</strong>. VTU operates a centralised valuation system — papers are evaluated by faculty members from different colleges than the one you attend, ensuring anonymity.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Step 2: Centralized Valuation Camps</h2>
-                            <p>
-                                VTU organizes large valuation camps at designated centers across the state, typically spanning 2–3 weeks after the examination concludes. Hundreds of faculty members participate in these camps.
-                            </p>
-                            <p>
-                                The valuation is organized as follows:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Each faculty member is assigned a specific subject and a batch of answer scripts.</li>
-                                <li>A "Chief Examiner" oversees the valuation for each subject and moderates the marking process to ensure consistency.</li>
-                                <li>Scripts that fall in borderline cases — for example, a student who scored 39 and might qualify for grace marks — go through an additional review.</li>
-                                <li>Answer scripts that score very low (potential failures) or very high (potential distinction) are often cross-checked by a second examiner.</li>
-                            </ul>
+                    <h3>Stage 2: Valuation Camps</h3>
+                    <p>
+                        Valuation camps are typically held at engineering colleges designated by VTU. Faculty evaluators are assigned to subjects within their expertise. A Chief Examiner oversees each subject's evaluation to ensure consistency. Each evaluator is expected to evaluate a minimum number of papers per day.
+                    </p>
+                    <p>
+                        For major subjects (Maths, core engineering subjects), two independent evaluators may assess each paper. If the two scores differ by more than a threshold (typically 15%), a third evaluation is triggered automatically.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Step 3: Data Entry and Digitization</h2>
-                            <p>
-                                After physical valuation, the marks are entered into VTU's digital system. This is done subject-by-subject, college-by-college. The marks data goes through multiple verification stages before it is finalized:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>Initial entry:</strong> Raw marks are entered from the physical mark sheets by data entry operators.</li>
-                                <li><strong>Verification:</strong> A second team cross-checks the entered data against the physical mark sheets for errors.</li>
-                                <li><strong>Tabulation:</strong> CIE marks (submitted earlier by colleges) are combined with SEE marks to compute the final total for each student and each subject.</li>
-                                <li><strong>Grade assignment:</strong> The system automatically assigns letter grades and grade points based on the final totals.</li>
-                                <li><strong>SGPA/CGPA computation:</strong> The system calculates SGPA for the current semester and CGPA cumulatively.</li>
-                            </ul>
+                    <h3>Stage 3: Data Entry and Tabulation</h3>
+                    <p>
+                        After evaluation, marks are entered into VTU's examination management system. Each mark entry is verified by a data entry operator. The data is then checked for anomalies — suspiciously high or low scores trigger a review.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Step 4: Audit and Approval</h2>
-                            <p>
-                                Before results are published, VTU's examination department conducts a final audit. This involves checking for anomalies — students with unusually high or low scores compared to their historical performance, discrepancies between CIE and SEE scores, or statistical outliers for specific subjects at specific colleges.
-                            </p>
-                            <p>
-                                Any flagged cases are resolved before publication. Once the Controller of Examinations signs off on the results, the data is cleared for publishing to the VTU website.
-                            </p>
+                    <h3>Stage 4: CIE + SEE Combination</h3>
+                    <p>
+                        VTU combines the SEE (external exam) marks with the CIE (internal marks) that were submitted by your college at the start of the semester. The final combined score is computed and letter grades are assigned based on the grade matrix.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Step 5: Publication on the VTU Website</h2>
-                            <p>
-                                VTU publishes results on its official results portal at <strong>results.vtu.ac.in</strong>. Results for different semesters and different branches are often published in batches — even and odd semester results are typically published at different times, and lateral entry batches may have different timelines.
-                            </p>
-                            <p>
-                                The results portal uses a captcha-based system to prevent automated scraping. You enter your USN (University Seat Number) and solve a captcha to retrieve your individual marksheet. The result is displayed as a formatted HTML page showing your subject-wise marks, grades, and SGPA.
-                            </p>
-                            <p>
-                                Our result checker tool on this website helps you retrieve that page quickly and clearly, with your marks laid out in a readable format.
-                            </p>
+                    <h3>Stage 5: Audit and Approval</h3>
+                    <p>
+                        The tabulated results go through an internal audit by VTU's examination department. This includes checks for:
+                    </p>
+                    <ul>
+                        <li>Students who appear in SEE but were marked NSAR</li>
+                        <li>Mismatched CIE vs SEE records</li>
+                        <li>Suspected malpractice cases (these may be withheld — shown as "W")</li>
+                        <li>Statistical anomalies (entire class failing one subject triggers a review)</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Typical Timeline: How Long Does it Take?</h2>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>Even semester (Jan–May) exams:</strong> Results typically published in July–August, around 6–10 weeks after the last exam.</li>
-                                <li><strong>Odd semester (Aug–Nov) exams:</strong> Results typically published in January–February of the next year.</li>
-                                <li>Supplementary/backlog exam results: Published separately, typically 6–8 weeks after the supplementary exam.</li>
-                            </ul>
-                            <p>
-                                These are approximate timelines and can vary by a few weeks. VTU may delay results due to high volume of scripts, administrative bottlenecks, or exceptional circumstances.
-                            </p>
+                    <h3>Stage 6: Publication on results.vtu.ac.in</h3>
+                    <p>
+                        Once approved, results are published on the official VTU results portal in batches — typically by exam type and semester. This is why results appear "in stages": 6th and 8th semester results often come first (final year students have priority due to placement season and degree declaration deadlines), followed by 4th, 2nd, and then lateral entry semesters.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Why Are Results Sometimes Delayed?</h2>
-                            <p>
-                                VTU evaluates results for over 5 lakh (500,000+) students across 200+ affiliated colleges. The sheer volume makes the process inherently complex. Common causes of delay include:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Faculty absenteeism at valuation camps (particularly during academic events or holidays)</li>
-                                <li>Discrepancies found during the final audit requiring manual resolution</li>
-                                <li>Technical issues with the marks entry or data management systems</li>
-                                <li>Re-valuation or photocopy requests from the previous semester that need to be resolved first</li>
-                                <li>Administrative and legal challenges (which have historically been common at VTU)</li>
-                            </ul>
+                    <h2>Typical VTU Results Timeline</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Exam Session</th><th>Exams Held</th><th>Results Expected</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Even Semester (June/July)</td><td>June – July</td><td>September – October</td></tr>
+                            <tr><td>Odd Semester (Dec/Jan)</td><td>December – February</td><td>March – May</td></tr>
+                            <tr><td>Supplementary Exams</td><td>With regular sessions</td><td>30–45 days after supplementary exam date</td></tr>
+                            <tr><td>Revaluation Results</td><td>N/A (desk review)</td><td>45–60 days after application</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        These are approximate ranges based on historical patterns. Actual dates vary by year and can be affected by factors like faculty availability for valuation camps, unforeseen events, or administrative delays.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What to Do Immediately After Results Are Published</h2>
-                            <ol className="list-decimal pl-6 space-y-3">
-                                <li><strong>Check your result immediately</strong> using the VTU results portal or our tool. Note down your subject-wise marks and grades.</li>
-                                <li><strong>Verify your CIE marks</strong> are correctly reflected. If you believe your internal marks are wrong, report it to your college immediately — there is a limited window to raise CIE-related objections.</li>
-                                <li><strong>If you've failed a subject</strong>, immediately enquire about re-valuation or photocopy request deadlines. VTU allows students to apply for a photocopy of their valued answer script and, if warranted, a re-valuation. These applications have strict deadlines (usually 2–4 weeks after result publication).</li>
-                                <li><strong>Calculate your SGPA and CGPA</strong> to understand your standing. Use our SGPA guide or the check results tool to see your grades laid out clearly.</li>
-                            </ol>
-                        </div>
+                    <h2>Why Are Some Results Delayed or Published in Stages?</h2>
+                    <p>
+                        VTU evaluates hundreds of thousands of answer scripts per examination session across dozens of subjects. Several factors can cause delays:
+                    </p>
+                    <ul>
+                        <li><strong>Faculty availability:</strong> Evaluators are college faculty who have their own teaching schedules. Valuation camps are typically held during semester breaks.</li>
+                        <li><strong>Volume of answer scripts:</strong> VTU has ~200,000+ students across all affiliated colleges. Large subjects like Mathematics have a correspondingly large volume to evaluate.</li>
+                        <li><strong>Third evaluations:</strong> Papers requiring a third evaluation add 1–2 weeks.</li>
+                        <li><strong>Malpractice reviews:</strong> Cases flagged for suspected malpractice undergo a separate committee review.</li>
+                        <li><strong>Technical issues:</strong> The VTU results server (results.vtu.ac.in) often experiences high load when results are first published, causing slowdowns or timeouts.</li>
+                    </ul>
 
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/reading-vtu-marksheet" className="text-sm text-blue-600 hover:underline">How to Read Your VTU Marksheet →</Link>
-                                    <Link href="/articles/vtu-supplementary-exams" className="text-sm text-blue-600 hover:underline">VTU Supplementary Exams Guide →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Your Results Now
-                                </span>
-                            </Link>
-                        </div>
+                    <h2>What to Do Right After Results Are Published</h2>
+                    <ol>
+                        <li><strong>Check results immediately</strong> using the <Link href="/vtu-results" className="text-indigo-600 underline">VTU Results Checker</Link> — VTU's server is often slow on day 1 of publication due to heavy traffic. Our service caches and displays results more reliably.</li>
+                        <li><strong>Verify marks carefully</strong> — Compare CIE marks with what you received in class. Errors in CIE data entry do occasionally occur.</li>
+                        <li><strong>Calculate your SGPA</strong> — Use the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-600 underline">SGPA & CGPA Calculator</Link> to instantly estimate your semester performance.</li>
+                        <li><strong>Decide on revaluation</strong> — If any subject mark seems too low given your SEE performance, consider applying for a photocopy of your answer script first (₹300) before committing to a full revaluation (₹750).</li>
+                        <li><strong>Plan for backlogs</strong> — If you've failed a subject, identify the next supplementary exam session and start preparation early.</li>
+                    </ol>
+
+                    <h2>Result Discrepancy: What to Do</h2>
+                    <p>
+                        If you believe there's an error in your marks (e.g., CIE marks don't match what your college uploaded, or your result shows "NSAR" but you had sufficient attendance):
+                    </p>
+                    <ul>
+                        <li>Contact your college's examination section immediately — they have access to the VTU portal and can raise queries on your behalf.</li>
+                        <li>Apply for a photocopy of your answer script to verify SEE marks.</li>
+                        <li>For CIE mark errors, your department HOD must raise a correction request with VTU's exam department with supporting documentation.</li>
+                    </ul>
+
+                    <h2>Checking Results on This Site vs the Official Portal</h2>
+                    <p>
+                        The official VTU portal (results.vtu.ac.in) is the authoritative source for your marks. This site fetches the same data from the same server in real time — the data shown here is identical to what the official site would show. However, this site:
+                    </p>
+                    <ul>
+                        <li>Displays marks in a cleaner, mobile-optimised layout</li>
+                        <li>Handles server congestion better during peak traffic periods</li>
+                        <li>Automatically estimates your SGPA based on the returned marks</li>
+                        <li>Does not store your USN or result data</li>
+                    </ul>
+                    <p>
+                        For official documents, hall tickets, degree certificates, and any formal academic verification, always use the official VTU portal or your college's examination section.
+                    </p>
+
+                    <div className="callout">
+                        <strong>Results out?</strong> <Link href="/vtu-results" className="text-indigo-700 font-semibold underline">Check your VTU results now</Link> — enter your USN, solve the CAPTCHA, and get your marks with instant SGPA estimation.
                     </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'How to Read Your VTU Marksheet', href: '/articles/reading-vtu-marksheet' },
+                        { title: 'VTU Supplementary Exams Guide', href: '/articles/vtu-supplementary-exams' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

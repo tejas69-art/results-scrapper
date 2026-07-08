@@ -1,156 +1,160 @@
 import type { Metadata } from 'next';
-import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'CGPA vs SGPA in VTU: Key Differences, How They Are Calculated, and What They Mean',
-    description: 'Understand the difference between CGPA and SGPA in VTU — how each is calculated, how they relate to your degree class, and which one matters more for placements and higher studies.',
+    title: 'CGPA vs SGPA in VTU: Key Differences and What Actually Matters',
+    description: 'Clear definitions of CGPA and SGPA in VTU, the difference in calculation, a 4-semester worked example, and which metric matters more for placements, GATE, MS abroad applications, and your final degree class.',
 };
 
-export default function CGPAVsSGPAPage() {
+export default function CgpaVsSgpaVtu() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
-                        <TrendingUp className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full">Explained</span>
+                        <span className="text-xs text-slate-400">September 2024 · 8 min read</span>
                     </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        CGPA vs SGPA in VTU: Key Differences and What Actually Matters
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        Students often confuse SGPA and CGPA, or don't understand how one affects the other. This guide clears it up with definitions, a worked 4-semester example, and an honest answer to which number matters more for your career.
+                    </p>
+                </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                CGPA vs SGPA in VTU: Key Differences, Calculations, and What Actually Matters
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on September 01, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>8 min read</span>
-                            </div>
-                        </header>
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
 
-                        <div className="prose prose-blue max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                Two of the most important numbers in a VTU student's academic life are SGPA and CGPA. While most students have a general sense of what these mean, many confuse them or don't fully understand how they interact — and which one matters more for different situations like placements, GATE, or higher studies abroad. This article clears up the confusion once and for all.
-                            </p>
+                    <h2>Definitions: SGPA and CGPA</h2>
+                    <p>
+                        <strong>SGPA (Semester Grade Point Average)</strong> is a numerical measure of your academic performance in a <em>single semester</em>. It is calculated using the credits and grade points of all subjects in that semester only.
+                    </p>
+                    <p>
+                        <strong>CGPA (Cumulative Grade Point Average)</strong> is a numerical measure of your overall academic performance <em>across all completed semesters</em>. It is a credit-weighted average of all your semester-level grade points.
+                    </p>
+                    <p>
+                        Both are expressed on a 0–10 scale. CGPA is the number that appears on your consolidated marksheet and degree certificate. SGPA is a semester-level metric.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Core Definitions</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-                                <Card className="bg-blue-50 border-blue-200">
-                                    <CardContent className="p-6">
-                                        <h3 className="font-bold text-blue-900 text-xl mb-2">SGPA</h3>
-                                        <p className="text-blue-800 text-sm font-semibold mb-1">Semester Grade Point Average</p>
-                                        <p className="text-blue-700 text-sm">Measures your academic performance in a <strong>single semester</strong>. Calculated at the end of each semester, from Semester 1 through Semester 8. Scale: 0 to 10.</p>
-                                    </CardContent>
-                                </Card>
-                                <Card className="bg-purple-50 border-purple-200">
-                                    <CardContent className="p-6">
-                                        <h3 className="font-bold text-purple-900 text-xl mb-2">CGPA</h3>
-                                        <p className="text-purple-800 text-sm font-semibold mb-1">Cumulative Grade Point Average</p>
-                                        <p className="text-purple-700 text-sm">Measures your <strong>overall academic performance</strong> from all semesters combined, up to and including the most recent one. Scale: 0 to 10.</p>
-                                    </CardContent>
-                                </Card>
-                            </div>
+                    <h2>The Formulas</h2>
+                    <div className="formula-box">SGPA = Σ(Credits_i × GradePoints_i) / TotalCredits (single semester)</div>
+                    <div className="formula-box">CGPA = Σ(SGPA_j × TotalCredits_j) / TotalCredits (all semesters)</div>
+                    <p>
+                        Where j represents each completed semester. Note: CGPA is NOT a simple average of all SGPAs — semesters with more credits have a greater weight.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How SGPA is Calculated</h2>
-                            <p>SGPA for a single semester is calculated using the formula:</p>
-                            <Card className="bg-gray-50 border-gray-200 my-4">
-                                <CardContent className="p-5 text-center">
-                                    <p className="text-lg font-mono font-bold text-blue-800">SGPA = Σ(Ci × Gi) / ΣCi</p>
-                                    <p className="text-sm text-gray-500 mt-1">Ci = credit of subject i, Gi = grade points in subject i</p>
-                                </CardContent>
-                            </Card>
-                            <p>For example, if in Semester 3 you have 5 subjects with a total of 20 credits and your weighted grade point total is 172, your SGPA = 172 / 20 = <strong>8.6</strong>.</p>
-                            <p>See our <Link href="/articles/how-to-calculate-sgpa" className="text-blue-600 hover:underline">detailed SGPA calculation guide</Link> for a complete step-by-step example with all 8 subjects.</p>
+                    <h2>Worked Example: 4 Semesters</h2>
+                    <p>Consider a student with the following semester performance:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Semester</th>
+                                <th>SGPA</th>
+                                <th>Credits</th>
+                                <th>SGPA × Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1st Semester</td><td>7.20</td><td>20</td><td>144.0</td></tr>
+                            <tr><td>2nd Semester</td><td>8.10</td><td>22</td><td>178.2</td></tr>
+                            <tr><td>3rd Semester</td><td>6.50</td><td>24</td><td>156.0</td></tr>
+                            <tr><td>4th Semester</td><td>8.80</td><td>22</td><td>193.6</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        Total Credits = 20 + 22 + 24 + 22 = <strong>88</strong>
+                    </p>
+                    <p>
+                        Total SGPA × Credits = 144.0 + 178.2 + 156.0 + 193.6 = <strong>671.8</strong>
+                    </p>
+                    <div className="formula-box">CGPA = 671.8 / 88 = 7.63</div>
+                    <p>
+                        Notice: a simple average of the four SGPAs would be (7.20 + 8.10 + 6.50 + 8.80) / 4 = 7.65. The credit-weighted result is slightly different — 7.63 — because the 3rd semester (low SGPA of 6.50) has the highest credits (24).
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How CGPA is Calculated</h2>
-                            <p>CGPA is a weighted average of your SGPAs, weighted by the total number of credits in each semester:</p>
-                            <Card className="bg-gray-50 border-gray-200 my-4">
-                                <CardContent className="p-5 text-center">
-                                    <p className="text-lg font-mono font-bold text-purple-800">CGPA = Σ(SGPAn × Cn) / ΣCn</p>
-                                    <p className="text-sm text-gray-500 mt-1">SGPAn = SGPA of semester n, Cn = total credits in semester n</p>
-                                </CardContent>
-                            </Card>
-                            <p>
-                                This means semesters with more credits have a larger influence on your CGPA. Typically, final-year semesters (Semester 7 and especially Semester 8, where the project often carries 12–15 credits) have higher total credits. A strong performance in these semesters can meaningfully improve your final CGPA.
-                            </p>
+                    <h2>Why They're Different: A Key Insight</h2>
+                    <p>
+                        The 3rd semester in the example above had 24 credits — the most of any semester. This means a low SGPA of 6.50 in that semester has an outsized negative effect on CGPA. The 1st semester has only 20 credits, so even a relatively low 7.20 SGPA there does less damage.
+                    </p>
+                    <p>
+                        The practical implication: <strong>identify which of your semesters have the most credits, and prioritise those for strong performance.</strong> In VTU, 3rd and 5th semesters tend to be heavy credit semesters for most branches.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">A Practical Example Across 4 Semesters</h2>
-                            <div className="overflow-x-auto my-6">
-                                <table className="w-full text-left border-collapse border border-gray-200">
-                                    <thead className="bg-gray-50">
-                                        <tr>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Semester</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">Total Credits</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">SGPA</th>
-                                            <th className="py-3 px-4 border-b font-semibold text-gray-900">SGPA × Credits</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-100">
-                                        <tr><td className="py-3 px-4">Semester 1</td><td className="py-3 px-4">20</td><td className="py-3 px-4">7.5</td><td className="py-3 px-4 font-mono">150</td></tr>
-                                        <tr><td className="py-3 px-4">Semester 2</td><td className="py-3 px-4">22</td><td className="py-3 px-4">8.0</td><td className="py-3 px-4 font-mono">176</td></tr>
-                                        <tr><td className="py-3 px-4">Semester 3</td><td className="py-3 px-4">21</td><td className="py-3 px-4">8.6</td><td className="py-3 px-4 font-mono">180.6</td></tr>
-                                        <tr><td className="py-3 px-4">Semester 4</td><td className="py-3 px-4">23</td><td className="py-3 px-4">9.0</td><td className="py-3 px-4 font-mono">207</td></tr>
-                                        <tr className="bg-blue-50 font-bold"><td className="py-3 px-4">Total</td><td className="py-3 px-4">86</td><td className="py-3 px-4">—</td><td className="py-3 px-4 font-mono">713.6</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p className="font-semibold">CGPA after 4 semesters = 713.6 / 86 = <span className="text-blue-600">8.3</span></p>
+                    <h2>Can a Single Low SGPA Ruin Your CGPA?</h2>
+                    <p>
+                        Yes — a very bad semester can permanently limit your CGPA. Let's model the impact:
+                    </p>
+                    <p>
+                        Suppose a student has an 8.0 CGPA through 7 semesters (total ~150 credits). In 8th semester (20 credits), they get a low SGPA of 5.0 (due to a backlog):
+                    </p>
+                    <ul>
+                        <li>CGPA after 7 semesters: (8.0 × 150) / 150 = 8.0</li>
+                        <li>After 8th semester: (8.0 × 150 + 5.0 × 20) / 170 = (1200 + 100) / 170 = <strong>7.65</strong></li>
+                    </ul>
+                    <p>
+                        A single disastrous 8th semester dropped CGPA from 8.0 to 7.65 — from strong distinction to just above the threshold. Conversely, a great final semester can only marginally improve a long-established CGPA.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">SGPA vs CGPA: Which Matters More and When?</h2>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li>
-                                    <strong>Campus placements:</strong> Most companies look at your <strong>CGPA</strong> as the primary filter. A typical cutoff is 6.0 or 7.0 CGPA. Individual SGPAs are rarely scrutinized unless you have a very low SGPA in a recent semester, which might be probed in an interview.
-                                </li>
-                                <li>
-                                    <strong>GATE and MTech:</strong> Your <strong>CGPA</strong> is listed on the GATE application and later on university applications. Most IITs and NITs have a CGPA cutoff around 6.0–6.5 for MTech admissions.
-                                </li>
-                                <li>
-                                    <strong>MS abroad:</strong> Foreign universities typically look at your CGPA converted to their scale. Individual SGPAs may be reviewed if there is a significant dip (e.g., a very low SGPA in one semester) — you may be asked to explain it in your SOP.
-                                </li>
-                                <li>
-                                    <strong>Government PSU recruitment via GATE:</strong> CGPA is listed in the application but GATE score is the primary selection criterion. Some PSUs do have minimum CGPA requirements.
-                                </li>
-                                <li>
-                                    <strong>Degree class declaration:</strong> VTU declares your final degree class based on your overall <strong>CGPA</strong> across all 8 semesters (First Class with Distinction: ≥7.75, First Class: 6.75–7.74).
-                                </li>
-                            </ul>
+                    <h2>What Matters More: SGPA or CGPA?</h2>
+                    <p>
+                        The short answer: <strong>CGPA matters for formal requirements; SGPA matters for monitoring and course correction.</strong> Here's the detailed breakdown:
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Can a Bad Early SGPA Kill Your CGPA?</h2>
-                            <p>
-                                A poor SGPA in Semester 1 or 2 is damaging, but not irreversible. Since CGPA is credit-weighted, and early semesters often have slightly fewer credits than later ones, strong performance in semesters 4–8 can substantially recover your CGPA. However, the recovery is gradual — each semester's weight is roughly equal (15–25 credits out of a total ~170 credits for the degree), so one good semester won't erase the impact of one bad one.
-                            </p>
-                            <p>
-                                The clearest path: consistently improve semester-on-semester. Even going from a 6.5 SGPA in Sem 1 to 8.0+ in Sems 5–8 can bring a final CGPA into the 7.5–8.0 range — which is respectable for most opportunities.
-                            </p>
+                    <h3>Campus Placements</h3>
+                    <p>
+                        Companies ask for CGPA, not SGPA. Eligibility cutoffs are CGPA-based (typically 6.0, 6.5, or 7.0). However, some companies ask for semester-wise marksheets during background verification — a very low SGPA in a specific semester may require explanation, but it's usually not disqualifying if CGPA is above the threshold.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Checking Your Current SGPA and CGPA</h2>
-                            <p>
-                                As soon as your VTU results are published, you can check your SGPA and CGPA directly from your result page. Use our result checker tool to retrieve your marksheet — your SGPA and CGPA are listed at the bottom of the subject table.
-                            </p>
-                        </div>
+                    <h3>GATE Applications</h3>
+                    <p>
+                        GATE eligibility requires a minimum degree aggregate (or equivalent CGPA). For IIT M.Tech admissions, your GATE score is primary — but CGPA is also considered in shortlisting. Your SGPA in core technical semesters (3rd, 4th, 5th) may be referenced in interviews to assess subject knowledge depth.
+                    </p>
 
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/how-to-calculate-sgpa" className="text-sm text-blue-600 hover:underline">How to Calculate Your SGPA →</Link>
-                                    <Link href="/articles/vtu-grading-system" className="text-sm text-blue-600 hover:underline">VTU Grading System Explained →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Your Results Now
-                                </span>
-                            </Link>
-                        </div>
+                    <h3>MS Abroad Applications</h3>
+                    <p>
+                        US and European universities typically look at your overall CGPA converted to a GPA on a 4.0 scale or as a percentage. Some universities ask for semester-wise transcripts — they can see individual SGPAs. A strong recovery trajectory (improving SGPAs over semesters) is often viewed positively in SOP narratives.
+                    </p>
+
+                    <h3>Government Jobs</h3>
+                    <p>
+                        Government recruitment (UPSC IES, PSU GATE recruitment, SSC JE) uses aggregate percentage or equivalent CGPA × 10 as the academic eligibility criteria. CGPA is what matters.
+                    </p>
+
+                    <h3>MBA Admissions</h3>
+                    <p>
+                        IIMs and top B-schools use CGPA as one of the academic components in their selection score (WAT/PI). SGPA patterns may be discussed in interviews, especially if there's a significant drop in a particular year.
+                    </p>
+
+                    <h2>How to Maximise Both SGPA and CGPA</h2>
+                    <ul>
+                        <li><strong>Never let a backlog linger:</strong> An F grade in a high-credit subject (4 credits) devastates SGPA and, cumulatively, CGPA. Clear backlogs in the very next supplementary session.</li>
+                        <li><strong>Prioritise CIE marks:</strong> Strong internals (30+/40) reduce the pressure on SEE and provide a safety net in every subject.</li>
+                        <li><strong>Model your target CGPA:</strong> Use the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-600 underline">CGPA Calculator</Link> to see what SGPA you need this semester to reach your final target.</li>
+                        <li><strong>Don't sacrifice high-credit subjects:</strong> Identify which subjects carry the most credits in an upcoming semester and allocate study time proportionally.</li>
+                        <li><strong>Early semesters matter less — but still matter:</strong> A poor 1st semester SGPA can be recovered from over 7 semesters. But recovering from a poor 7th semester with only one semester remaining is nearly impossible.</li>
+                    </ul>
+
+                    <div className="callout">
+                        <strong>Calculate your CGPA right now:</strong> Open the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-700 font-semibold underline">SGPA & CGPA Calculator</Link>, enter your semester SGPAs and total credits, and see your current cumulative average instantly.
                     </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'How to Calculate SGPA in VTU', href: '/articles/how-to-calculate-sgpa' },
+                        { title: 'CGPA to Percentage Converter', href: '/cgpa-to-percentage' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

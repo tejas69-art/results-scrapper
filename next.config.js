@@ -4,6 +4,38 @@ const nextConfig = {
     poweredByHeader: false,
     compress: true,
 
+    async redirects() {
+        return [
+            // Dead pages → homepage (301 permanent redirects to preserve link equity)
+            {
+                source: '/placement-salary-calculator',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/pw-coupon-code',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/services',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/services/:path*',
+                destination: '/',
+                permanent: true,
+            },
+            // check-results → vtu-results (canonical results page)
+            {
+                source: '/check-results',
+                destination: '/vtu-results',
+                permanent: true,
+            },
+        ]
+    },
+
     async headers() {
         return [
             {

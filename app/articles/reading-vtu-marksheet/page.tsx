@@ -1,149 +1,175 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, FileSearch } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'How to Read Your VTU Marksheet: A Complete Guide to Grades and Fields',
-    description: 'Understand every field on your VTU marksheet — USN, subject codes, CIE/SEE marks, letter grades, SGPA, result status, and what each column means for your academic record.',
+    title: 'How to Read Your VTU Marksheet: Every Column and Code Explained',
+    description: 'A complete guide to reading your VTU result marksheet — USN format, subject codes, CIE/SEE marks, grade columns, SGPA, status codes (AB, NSAR, W, P, NP), and what to do if you find an error.',
 };
 
-export default function ReadingVTUMarksheetPage() {
+export default function ReadingVtuMarksheet() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-teal-600 hover:text-teal-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-teal-500 to-cyan-600 flex items-center justify-center">
-                        <FileSearch className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded-full">Explained</span>
+                        <span className="text-xs text-slate-400">August 2024 · 6 min read</span>
                     </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        How to Read Your VTU Marksheet: Every Field Explained
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        VTU marksheets are dense with codes, abbreviations, and columns. This guide decodes every field so you know exactly what your result is telling you.
+                    </p>
+                </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                How to Read Your VTU Marksheet: Every Field Explained
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on August 10, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>8 min read</span>
-                            </div>
-                        </header>
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
 
-                        <div className="prose prose-teal max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                When your VTU results are published, the result page can feel overwhelming at first glance — a table full of subject codes, numbers, letter grades, and result statuses. This guide decodes every single field on your VTU marksheet, so you know exactly what you are looking at and what each value means for your academic standing.
-                            </p>
+                    <h2>The Structure of a VTU Marksheet</h2>
+                    <p>
+                        A VTU result, as displayed on the official portal (and on this site), typically contains:
+                    </p>
+                    <ol>
+                        <li>Student identification information (USN, name, college)</li>
+                        <li>Exam metadata (exam year/month, scheme, result type)</li>
+                        <li>Subject-wise marks table (one row per subject)</li>
+                        <li>Summary (total marks, SGPA, result status)</li>
+                    </ol>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Basic Identifying Information</h2>
-                            <p>At the top of your VTU result page, you will find:</p>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li>
-                                    <strong>USN (University Seat Number):</strong> Your unique identifier at VTU. It follows a specific pattern: e.g., <code>1MH21CS001</code>. Breaking it down — <code>1</code> = lateral entry marker (for regular students it is typically absent or represented differently), <code>MH</code> = college code (MSRIT in this example), <code>21</code> = year of joining, <code>CS</code> = branch code (Computer Science), <code>001</code> = roll number. Your USN is used for all official purposes — exam registration, results, degree certificate.
-                                </li>
-                                <li>
-                                    <strong>Student Name:</strong> As registered with VTU. This must match your school certificates exactly. Any discrepancy needs to be corrected through VTU's name correction process before you graduate.
-                                </li>
-                                <li>
-                                    <strong>Semester:</strong> Which semester's results are being displayed. Results for different semesters are published separately.
-                                </li>
-                                <li>
-                                    <strong>Scheme:</strong> The regulation/scheme under which you are studying (e.g., 2021 Scheme, 2018 Scheme). The scheme determines your syllabus, credit structure, and grade boundaries.
-                                </li>
-                            </ul>
+                    <h2>Decoding Your USN</h2>
+                    <p>
+                        Your University Seat Number (USN) is a 10-character code that contains encoded information about your admission:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Characters</th><th>What it represents</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1st character</td><td>Always "1" — indicates university affiliation</td><td>1</td></tr>
+                            <tr><td>Characters 2–3</td><td>College code (two letters identifying your college)</td><td>AM = AMIT, BM = BMSCE, MS = MSRIT</td></tr>
+                            <tr><td>Characters 4–5</td><td>Year of admission (last two digits)</td><td>21 = 2021, 22 = 2022</td></tr>
+                            <tr><td>Characters 6–7</td><td>Branch code (two letters)</td><td>CS = CSE, EC = ECE, ME = Mech, CV = Civil</td></tr>
+                            <tr><td>Characters 8–10</td><td>Roll number within branch and college</td><td>001 to 999</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        Example: USN <strong>1AM21CS202</strong> = 1 (VTU) + AM (AMIT College) + 21 (admitted 2021) + CS (CSE branch) + 202 (roll number 202).
+                    </p>
+                    <p>
+                        Lateral entry students (admitted to 3rd semester) have slightly different codes — the year corresponds to their lateral entry admission year, and roll numbers typically start from a different range.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Subject-Wise Marks Table</h2>
-                            <p>The main body of your marksheet is a table. Here is what each column means:</p>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li>
-                                    <strong>Subject Code:</strong> A unique alphanumeric code identifying the subject. For example, <code>21CS31</code> means: 2021 Scheme (21), Computer Science branch (CS), 3rd semester (3), 1st subject (1). Subject codes are used in applications, re-valuation requests, and wherever you need to specify a subject.
-                                </li>
-                                <li>
-                                    <strong>Subject Name:</strong> The full name of the course as per the VTU syllabus.
-                                </li>
-                                <li>
-                                    <strong>Credits:</strong> The number of credits assigned to this subject. This is what determines how much it weighs in your SGPA calculation.
-                                </li>
-                                <li>
-                                    <strong>CIE (Continuous Internal Evaluation):</strong> Your internal assessment marks, out of 50. This is submitted by your college to VTU before the semester-end exam. It includes your internal tests, lab records, assignments, and any other internal assessments.
-                                </li>
-                                <li>
-                                    <strong>SEE (Semester End Examination):</strong> Your university exam score, shown here out of 50 (scaled from the actual 100-mark exam). So if you see 38 in the SEE column, you actually scored 76 out of 100 in the university exam.
-                                </li>
-                                <li>
-                                    <strong>Total:</strong> CIE + SEE = your combined marks out of 100. This total determines your letter grade.
-                                </li>
-                                <li>
-                                    <strong>Grade:</strong> The letter grade corresponding to your total (S, A, B, C, D, E, or F). See our <Link href="/articles/vtu-grading-system" className="text-teal-600 hover:underline">VTU Grading System guide</Link> for the full breakdown.
-                                </li>
-                                <li>
-                                    <strong>Grade Points:</strong> The numerical grade point value corresponding to your letter grade (10 for S, 9 for A, 8 for B, etc.). This is the value used in the SGPA formula.
-                                </li>
-                                <li>
-                                    <strong>Result:</strong> Either P (Pass) or F (Fail) for each subject. You must have P in all subjects to be eligible for the next semester without a backlog.
-                                </li>
-                            </ul>
+                    <h2>Understanding Subject Codes</h2>
+                    <p>
+                        VTU subject codes follow a pattern that encodes information about the subject:
+                    </p>
+                    <ul>
+                        <li><strong>First 2 characters:</strong> Branch code (e.g., CS for Computer Science, EC for Electronics)</li>
+                        <li><strong>Characters 3–4:</strong> Scheme year or semester context (e.g., 21 for 2021 scheme)</li>
+                        <li><strong>Remaining characters:</strong> Subject identifier</li>
+                    </ul>
+                    <p>
+                        Common subject codes for CSE under 2021 CBCS: CS21EC (Engineering Chemistry), CS21MA (Mathematics), CS21DS (Data Structures). The exact coding varies by scheme — your college's examination section or VTU's scheme document is the definitive reference.
+                    </p>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Summary Row: SGPA and Overall Result</h2>
-                            <p>At the bottom of the subject table, you will find a summary row with:</p>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li>
-                                    <strong>SGPA:</strong> Your Semester Grade Point Average, calculated using the formula Σ(Ci × Gi) / ΣCi. This is the key academic metric for the semester. For a detailed breakdown of how this is computed, see our <Link href="/articles/how-to-calculate-sgpa" className="text-teal-600 hover:underline">SGPA calculation guide</Link>.
-                                </li>
-                                <li>
-                                    <strong>CGPA:</strong> Your Cumulative Grade Point Average up to and including this semester — a weighted average of all your SGPAs from semester 1 to the current one.
-                                </li>
-                                <li>
-                                    <strong>Overall Result:</strong> "PASS" (all subjects cleared, no active backlogs) or "FAIL" (one or more subjects with an F grade). If "FAIL," the number of failed subjects may also be listed.
-                                </li>
-                            </ul>
+                    <h2>The Subject-Wise Marks Table</h2>
+                    <p>
+                        Each row in the marks table represents one subject. The columns are:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Column Name</th><th>What It Means</th><th>Max Value</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Subject Code</td><td>VTU's code for the subject</td><td>—</td></tr>
+                            <tr><td>Subject Name</td><td>Full name of the paper</td><td>—</td></tr>
+                            <tr><td>CIE</td><td>Continuous Internal Evaluation (internals)</td><td>40</td></tr>
+                            <tr><td>SEE</td><td>Semester End Examination (external exam)</td><td>60</td></tr>
+                            <tr><td>Total</td><td>CIE + SEE combined</td><td>100</td></tr>
+                            <tr><td>Grade</td><td>Letter grade (S/A/B/C/D/E/F)</td><td>—</td></tr>
+                            <tr><td>Result</td><td>Pass (P), Fail (F), or status code</td><td>—</td></tr>
+                        </tbody>
+                    </table>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Special Status Codes and Abbreviations</h2>
-                            <p>You may encounter these codes on your marksheet, particularly in the result or grade columns:</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li><strong>AB (Absent):</strong> You did not appear for the SEE of this subject. An AB is treated as a fail for grade purposes and creates a backlog.</li>
-                                <li><strong>P (Pending):</strong> Sometimes seen during partial result publication — the marks for this subject are not yet finalized. Recheck after a few days.</li>
-                                <li><strong>W (Withheld):</strong> Your result for this subject has been withheld, typically due to a malpractice or exam violation inquiry. No grade is assigned until the inquiry is resolved.</li>
-                                <li><strong>NSAR:</strong> Not Satisfied Attendance Requirement — your attendance in this subject was too low to be eligible for the SEE. This is handled at the college level before the exam, but if it appears on your result, it means you were barred from writing that paper.</li>
-                                <li><strong>EX (Exempted):</strong> In some older schemes, students with very high CIE marks could be exempted from re-appearing in the SEE for a subject they had marginally failed. This is rare in newer schemes.</li>
-                            </ul>
+                    <h2>Status Codes Explained</h2>
+                    <p>
+                        Instead of numeric marks, some subjects may show one of these codes in the marks columns:
+                    </p>
+                    <table>
+                        <thead>
+                            <tr><th>Code</th><th>Meaning</th><th>What Happens Next</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>AB</td><td>Absent from SEE paper</td><td>Treated as a fail (F grade). Must appear in supplementary exam.</td></tr>
+                            <tr><td>NSAR</td><td>Not Eligible for SEE due to Attendance Shortage</td><td>Cannot appear in this exam. Must clear attendance in a later semester and then write supplementary paper.</td></tr>
+                            <tr><td>W</td><td>Withheld</td><td>Result is on hold — may be due to pending fees, malpractice investigation, or CIE data dispute. Contact college exam section.</td></tr>
+                            <tr><td>P</td><td>Pass (for lab/practical subjects)</td><td>Satisfactory performance in practicals.</td></tr>
+                            <tr><td>NP</td><td>Not Pass (for lab/practical subjects)</td><td>Failed practical component. Must reappear in supplementary practical exam.</td></tr>
+                            <tr><td>EX</td><td>Exempted (rare)</td><td>Subject exempted under specific scheme provisions.</td></tr>
+                        </tbody>
+                    </table>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">What to Do If You Spot an Error</h2>
-                            <p>
-                                Errors on VTU marksheets — though uncommon — do occur. If you believe there is a mistake, take these steps immediately:
-                            </p>
-                            <ol className="list-decimal pl-6 space-y-3">
-                                <li><strong>Check your CIE marks:</strong> If the CIE marks seem wrong, contact your college's examination cell first. CIE discrepancies must be raised with the college, not directly with VTU.</li>
-                                <li><strong>Apply for a photocopy of your SEE answer script:</strong> VTU allows students to request a photocopy of their valued answer book. This is the first step before any re-valuation claim. There is a fee per subject and a deadline of usually 2–4 weeks from result publication.</li>
-                                <li><strong>Apply for re-valuation:</strong> If the photocopy reveals that marks are incorrectly totaled or that valid answers were not credited, you can apply for re-valuation. The re-valued marks (higher or lower) replace the original marks.</li>
-                                <li><strong>Contact your college's examination cell:</strong> For any discrepancy involving your student details (name spelling, USN errors, missing subjects), the college must initiate the correction through VTU.</li>
-                            </ol>
+                    <h2>Understanding the SGPA on Your Marksheet</h2>
+                    <p>
+                        The SGPA displayed on the official VTU marksheet may differ from what our Results Checker estimates. Reasons:
+                    </p>
+                    <ul>
+                        <li>VTU's official SGPA on the marksheet is computed using the actual credits of each subject as registered in your academic record.</li>
+                        <li>Our SGPA estimate uses default credit values, which may not perfectly match your specific scheme's credit allocation.</li>
+                        <li>For the most accurate SGPA, enter your actual subject credits in the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-600 underline">SGPA & CGPA Calculator</Link>.</li>
+                    </ul>
 
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Checking Your Results Online</h2>
-                            <p>
-                                VTU publishes results on <strong>results.vtu.ac.in</strong>. The page requires your full USN and a captcha code. Our results checker tool on this website simplifies this process — enter your USN and captcha, and get a clean view of your full marksheet with all the fields decoded as described above.
-                            </p>
-                        </div>
+                    <h2>What to Do If You Find an Error on Your Marksheet</h2>
+                    <p>
+                        Errors on VTU marksheets do occur — most commonly in CIE marks (data entry errors by colleges), or occasionally in SEE marks. Here's what to do:
+                    </p>
+                    <h3>CIE mark error</h3>
+                    <ol>
+                        <li>Contact your department's class teacher or HOD immediately — they submitted the CIE data and can verify what was sent to VTU.</li>
+                        <li>Your college must raise a CIE correction request with VTU's examination department, supported by your internal test papers and marks register.</li>
+                        <li>Act quickly — VTU typically has a window for CIE corrections after results are published.</li>
+                    </ol>
+                    <h3>SEE mark discrepancy</h3>
+                    <ol>
+                        <li>Apply for a photocopy of your evaluated answer script (₹300). This lets you verify that the marks entered match what the evaluator awarded on your paper.</li>
+                        <li>If there's a discrepancy, apply for revaluation (₹750) within the stipulated window.</li>
+                        <li>Use the <Link href="/backlog-fee-estimator" className="text-indigo-600 underline">Backlog Fee Estimator</Link> to estimate photocopy and revaluation costs.</li>
+                    </ol>
 
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/vtu-grading-system" className="text-sm text-blue-600 hover:underline">VTU Grading System Explained →</Link>
-                                    <Link href="/articles/how-to-calculate-sgpa" className="text-sm text-blue-600 hover:underline">How to Calculate Your SGPA →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap">
-                                    Check Your Results Now
-                                </span>
-                            </Link>
-                        </div>
+                    <h2>Official vs Unofficial Result</h2>
+                    <p>
+                        The result displayed on this website and on results.vtu.ac.in is your official result for academic planning purposes. However, for formal purposes — degree declaration, job offer letters, background verification, bank loans, scholarships, and university admissions — you need:
+                    </p>
+                    <ul>
+                        <li><strong>Official VTU provisional certificate:</strong> Issued after 8th semester results are declared.</li>
+                        <li><strong>Consolidated marks card:</strong> Issued by VTU after all semesters are complete.</li>
+                        <li><strong>Degree certificate:</strong> Issued at convocation (or via post-convocation application).</li>
+                    </ul>
+                    <p>
+                        All of the above are obtained through your college's examination section, not through this website.
+                    </p>
+
+                    <div className="callout">
+                        <strong>Need to interpret your result?</strong> <Link href="/vtu-results" className="text-indigo-700 font-semibold underline">Check your VTU result here</Link> for a clean, mobile-friendly view with automatic SGPA estimation. Or use the <Link href="/vtu-sgpa-cgpa-calculator" className="text-indigo-700 font-semibold underline">SGPA Calculator</Link> to compute your grade average manually.
                     </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'VTU Grading System — Grades & Classes', href: '/articles/vtu-grading-system' },
+                        { title: 'How VTU Results Are Published', href: '/articles/how-vtu-results-work' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

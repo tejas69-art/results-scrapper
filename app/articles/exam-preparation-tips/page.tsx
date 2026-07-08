@@ -1,141 +1,162 @@
 import type { Metadata } from 'next';
-import { ArrowLeft, BookOpen, Target } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Top Strategies to Ace VTU External Exams - Complete Preparation Guide',
-    description: 'A complete VTU exam preparation guide covering previous year papers, module strategy, presentation tips, internals maximization, subject-specific tactics, and a 30-day study plan.',
+    title: 'Top Strategies to Ace Your VTU External Exams — Study Plan & Tips',
+    description: 'Proven strategies to score higher in VTU semester exams: PYQP analysis, the 3-module approach, answer writing tips, CIE maximisation, and a 30-day study plan.',
 };
 
-export default function ExamPreparationPage() {
+export default function ExamPreparationTips() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <Link href="/articles" className="inline-flex items-center text-purple-600 hover:text-purple-800 mb-8 transition-colors">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Articles
+        <div className="min-h-screen bg-slate-50/50 py-10">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+                <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+                    <ArrowLeft className="h-4 w-4" /> All Articles
                 </Link>
 
-                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-purple-500 to-fuchsia-600 flex items-center justify-center">
-                        <Target className="w-20 h-20 text-white/90" />
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded-full">Tips</span>
+                        <span className="text-xs text-slate-400">June 2024 · 12 min read</span>
+                    </div>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                        Top Strategies to Ace Your VTU External Exams
+                    </h1>
+                    <p className="text-slate-600 text-base leading-relaxed">
+                        VTU exams follow a predictable pattern that most students don't fully exploit. These strategies are built around how VTU papers are actually set and evaluated — not generic study advice.
+                    </p>
+                </div>
+
+                <article className="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm article-body">
+
+                    <h2>Understanding How VTU Papers Are Structured</h2>
+                    <p>
+                        Before any strategy, understand what you're preparing for. A standard VTU theory paper (SEE) is typically structured as:
+                    </p>
+                    <ul>
+                        <li><strong>Duration:</strong> 3 hours</li>
+                        <li><strong>Total marks:</strong> 60 (out of the 100 combined with CIE)</li>
+                        <li><strong>Structure:</strong> Usually 5 modules × 2 questions each. You answer 1 question per module (choose 1 of 2). Each question is worth 12–15 marks depending on the subject.</li>
+                        <li><strong>Parts within questions:</strong> Each question may have sub-parts (a, b, c) of varying mark weights.</li>
+                    </ul>
+                    <p>
+                        The module-based structure is the most important thing to understand. You need to prepare all 5 modules, but within each module you only need to fully prepare 1 of the 2 questions (the one you'll choose). Understanding which questions repeat is the core of VTU exam strategy.
+                    </p>
+
+                    <h2>Strategy 1: Previous Year Question Paper (PYQP) Analysis</h2>
+                    <p>
+                        This is the highest-leverage preparation strategy for VTU exams. VTU question papers follow strong patterns — the same topics appear repeatedly across years, and frequently from similar angles.
+                    </p>
+                    <p>
+                        For each subject, collect the last 5–7 years of question papers from:
+                    </p>
+                    <ul>
+                        <li>VTU's official question paper repository (vturesource.com, vtupapers, or your college's internal repository)</li>
+                        <li>Senior students or study groups</li>
+                        <li>Your college library or faculty</li>
+                    </ul>
+                    <p>
+                        Then, for each module, list every question that has appeared. You'll quickly notice that certain derivations, algorithms, diagrams, and definitions appear in 4 out of 5 years. Prioritise these. The questions that have never appeared in 5+ years are the least likely to appear next.
+                    </p>
+                    <p>
+                        Create a matrix: Module × Question type × Year. This takes 2–3 hours per subject but is the most valuable preparation investment you'll make.
+                    </p>
+
+                    <h2>Strategy 2: The 3-Module Deep Dive</h2>
+                    <p>
+                        In a 5-module paper, you need to answer all 5 modules but can choose 1 of 2 questions per module. The key insight: if you have 3 weeks before an exam, go deep on 3 modules rather than shallow on all 5.
+                    </p>
+                    <p>
+                        Identify which 3 modules you're strongest in (or which have the most high-yield repeated questions), and prepare both questions in those modules. For the remaining 2 modules, prepare the most commonly repeated question only. This gives you a fail-safe: even if the unusual question appears in your weak module, you can attempt the module — just without optimal marks.
+                    </p>
+
+                    <h2>Strategy 3: Answer Writing Technique</h2>
+                    <p>
+                        VTU evaluators are working through hundreds of papers in a valuation camp setting. The presentation of your answer significantly affects the marks you get — especially in the grey zone between 6 and 10 marks for a 10-mark question.
+                    </p>
+                    <h3>Use diagrams liberally</h3>
+                    <p>
+                        Almost every VTU answer benefits from a labelled diagram. Even questions that don't ask for a diagram often reward students who include one. A clear block diagram, circuit diagram, or flowchart signals understanding and makes your answer stand out in a pile of text-only responses.
+                    </p>
+                    <h3>Start every question with a definition or context sentence</h3>
+                    <p>
+                        For example, if asked "Explain the OSI model," don't jump straight into Layer 1. Start with: "The OSI (Open Systems Interconnection) model is a conceptual framework that standardises communication functions in a computer network into seven layers." This shows the evaluator you understand what you're about to explain.
+                    </p>
+                    <h3>Structure long answers with headers</h3>
+                    <p>
+                        Use underlined or circled headings within your answer (Module 1 Question A — a, b, c structure). Evaluators scan for structure. A well-partitioned 12-mark answer is easier to grade generously than a wall of text.
+                    </p>
+                    <h3>Attempt all questions</h3>
+                    <p>
+                        VTU evaluators cannot award marks for blank space, but they can be generous with partially correct answers. If you're unsure about a module, write whatever related theory you know. An evaluator seeing effort will often award 4–5 marks out of 10 even for a partially correct answer — but 0 for a blank.
+                    </p>
+
+                    <h2>Strategy 4: Maximise Your CIE (Internal Marks)</h2>
+                    <p>
+                        CIE contributes up to 40 marks out of 100. A student with 36/40 in internals needs only 4/60 in SEE to pass — while a student with 20/40 needs 20/60. The importance of internals is massively underestimated.
+                    </p>
+                    <ul>
+                        <li><strong>Take all internal test papers seriously.</strong> Most colleges take the best 2 of 3 (or 3 of 4) tests. Missing even one reduces your options.</li>
+                        <li><strong>Submit all assignments on time</strong> — these are often 5–10 marks of CIE with minimal effort required.</li>
+                        <li><strong>Attend all practicals</strong> — lab viva marks and journal submission marks are frequently the difference between 35 and 40 in CIE.</li>
+                        <li><strong>Be visible in class</strong> — many faculty have a small discretionary component in CIE. Regular attendance and engagement can influence this.</li>
+                    </ul>
+
+                    <h2>Strategy 5: Branch-Specific Tactics</h2>
+                    <h3>CSE / ISE / AI</h3>
+                    <p>
+                        Focus on algorithms with step-by-step traces, data structure operations, and code snippets. VTU CSE papers reward students who can write pseudo-code or example traces rather than just theory.
+                    </p>
+                    <h3>ECE / EEE</h3>
+                    <p>
+                        Circuit derivations and waveform diagrams are high-value. Practise drawing accurate circuit diagrams quickly. Questions on op-amps, frequency response curves, and network theorems are consistently high-scoring.
+                    </p>
+                    <h3>ME / Civil</h3>
+                    <p>
+                        Problems with numerical working are the majority of marks. Practice solving numerical problems under time pressure. Show all steps — partial credit is given even for incorrect final answers when working is shown.
+                    </p>
+
+                    <h2>30-Day Study Plan Template</h2>
+                    <table>
+                        <thead>
+                            <tr><th>Days</th><th>Focus</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Days 1–3</td><td>Collect PYQPs (5+ years) for all subjects. Build question-frequency matrix per subject.</td></tr>
+                            <tr><td>Days 4–10</td><td>Module 1 & 2: Deep preparation of highest-frequency questions in all subjects simultaneously.</td></tr>
+                            <tr><td>Days 11–17</td><td>Module 3 & 4: Deep preparation. Practice writing answers with diagrams and structure.</td></tr>
+                            <tr><td>Days 18–22</td><td>Module 5 + review weak modules. Solve at least 2 full past papers under timed conditions per subject.</td></tr>
+                            <tr><td>Days 23–27</td><td>Rapid revision of all modules. Focus on definitions, formulas, and diagram accuracy.</td></tr>
+                            <tr><td>Days 28–30</td><td>Light revision only. Review your own notes. Sleep well. Exam time management planning.</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Time Management During the Exam</h2>
+                    <p>
+                        With 60 marks in 3 hours (180 minutes), allocate roughly 30–36 minutes per module. Don't spend 50 minutes on Module 1 and rush Modules 4 and 5 — partially completed answers in all 5 modules typically score better than perfect answers in 3 modules and blanks in 2.
+                    </p>
+                    <p>
+                        Read the full paper in the first 5 minutes before writing a single word. Choose your question for each module before starting. This prevents the costly mistake of starting a question mid-way and realising the second option was easier.
+                    </p>
+
+                    <div className="callout">
+                        <strong>After exams:</strong> Use the <Link href="/vtu-results" className="text-indigo-700 font-semibold underline">Results Checker</Link> to view your marks the moment VTU publishes them. Our tool displays your CIE, SEE, and combined marks in a clean table with instant SGPA estimation.
                     </div>
 
-                    <div className="p-8 md:p-12">
-                        <header className="mb-8">
-                            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                                Top Strategies to Ace Your VTU External Exams
-                            </h1>
-                            <div className="flex items-center text-gray-500 text-sm">
-                                <span>Published on June 05, 2024</span>
-                                <span className="mx-2">•</span>
-                                <span>12 min read</span>
-                            </div>
-                        </header>
-
-                        <div className="prose prose-purple max-w-none text-gray-700 space-y-6">
-                            <p className="text-lg leading-relaxed">
-                                Preparing for VTU external examinations can feel overwhelming — a vast syllabus, technical subjects, and the pressure of university-level evaluation. But thousands of students score distinctions every semester not by studying around the clock, but by studying <em>smart</em>. This guide compiles the most effective, field-tested strategies for VTU exams: from how to use previous year papers, to a 30-day study plan, to the often-overlooked art of answer presentation.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. The Power of Previous Year Question Papers (PYQPs)</h2>
-                            <p>
-                                If there is a single most impactful tip for VTU exams, it is this: <strong>solve previous year question papers before anything else</strong>. VTU has a well-documented tendency to repeat question patterns — and sometimes exact questions — from past years. This is not a shortcut; it is a strategic approach to understanding what the university considers important.
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Collect at least the last <strong>5 years</strong> of question papers for your specific scheme and subject. Papers from a different scheme may have a different syllabus structure.</li>
-                                <li>Analyze which topics appear repeatedly. You will often find that 60–70% of marks come from a core set of 15–20 recurring questions.</li>
-                                <li>Practice solving these under <strong>timed conditions</strong>. Timing is critical — VTU gives 3 hours for a 100-mark paper, but many students run out of time because they write slowly or aren't concise.</li>
-                                <li>Don't just read the answers — write them out by hand. Muscle memory for formulas, derivations, and diagrams matters a lot in an examination hall.</li>
-                            </ul>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Understand the Exam Structure (CBCS Module Strategy)</h2>
-                            <p>
-                                Under the CBCS/OBE scheme, the VTU syllabus is divided into <strong>5 modules</strong>. The question paper typically has 10 full questions (2 per module), and you must answer 5 — one from each module.
-                            </p>
-                            <div className="bg-purple-50 border border-purple-200 rounded-lg p-5 my-4">
-                                <h3 className="font-bold text-purple-900 mb-2">The 3-Module Strategy</h3>
-                                <p className="text-sm text-purple-800">
-                                    Prepare all 5 modules, but make sure you are <strong>100% thorough</strong> with at least 3 entire modules. This gives you a guaranteed 60 marks from those modules. For the remaining 2 modules, focus only on the most frequently asked questions (use PYQPs). This approach virtually eliminates the risk of not being able to answer a question.
-                                </p>
-                            </div>
-                            <p>
-                                Also look at each module's sub-questions. Questions are often structured as "Q1a (8 marks) + Q1b (12 marks)" or "Q1a (6 marks) + Q1b (6 marks) + Q1c (8 marks)". Knowing this helps you allocate your time proportionally during the exam.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Presentation: The Hidden Marks Multiplier</h2>
-                            <p>
-                                VTU evaluators check hundreds of answer scripts under a tight deadline. A well-presented paper will <em>always</em> score more than a poorly organized one with the same content. Never underestimate this.
-                            </p>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li><strong>Write neatly.</strong> Use a good ballpoint or gel pen. Messy handwriting forces the evaluator to work harder to understand your answer — that effort often results in lower marks.</li>
-                                <li><strong>Underline key terms and final answers</strong> with a pencil. Evaluators visually scan for keywords. Underlining them ensures you get credit even if the evaluator only skims the answer.</li>
-                                <li><strong>Draw large, labeled diagrams.</strong> In engineering, a clearly drawn block diagram, circuit, flowchart, or architecture diagram is worth significantly more than a paragraph of text. Every time a question can be answered with a diagram, draw one — even if it's not explicitly asked for.</li>
-                                <li><strong>Use numbered points instead of paragraphs.</strong> Break answers into crisp, numbered or bulleted points. It's easier to grade a list of 5 clear points than a wall of text.</li>
-                                <li><strong>Start each full question on a new page.</strong> Don't continue Q1 and Q2 on the same page. Evaluators work question by question, and confusing the layout can cause marks to be missed.</li>
-                            </ul>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Maximize Your Internals (CIE) Score</h2>
-                            <p>
-                                Your CIE (Continuous Internal Evaluation) contributes 50 marks to your final grade. This is a massive opportunity because you have direct control over it — there is no university-level randomness here.
-                            </p>
-                            <p>
-                                If you score <strong>45 out of 50 in internals</strong>, you only need 45 out of 100 in the SEE (scaled to 22.5 out of 50) to secure a passing grade. More importantly, high internal marks mean you need to score far fewer marks in the SEE to achieve an 'A' or even 'S' grade. Students who neglect internals put immense and unnecessary pressure on themselves in the SEE.
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Treat your internal assessment tests as seriously as the SEE. Study properly for them — don't rely on copying or guessing.</li>
-                                <li>Submit assignments on time and make them neat. Many faculty give higher marks for well-presented assignments.</li>
-                                <li>Maintain your lab record neatly. Lab records are a significant component of lab CIE marks.</li>
-                            </ul>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Subject-Specific Strategies</h2>
-                            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Mathematics</h3>
-                            <p>
-                                For maths subjects (Mathematics 1 through 4, or equivalent in your branch), the key is practice, not memorization. Understand the process for each problem type and practice variations. Focus heavily on integration techniques, differential equations, and the topics that appear every single year in PYQPs. Show all your working steps clearly — even a partially correct solution can fetch partial marks.
-                            </p>
-                            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Programming Subjects (C, Java, Python, DSA)</h3>
-                            <p>
-                                For programming subjects, examiners generally look for correct logic and syntax — even in a written exam. Write programs cleanly with proper indentation (yes, even on paper). Include comments for clarity. If you forget a specific syntax, write pseudo-code and explain your logic — examiners often award marks for correct logic even if the syntax is slightly off.
-                            </p>
-                            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Circuit-Based Subjects (DELD, EDC, Analog Circuits)</h3>
-                            <p>
-                                These subjects are diagram-heavy. Spend a significant portion of your preparation drawing circuit diagrams repeatedly. Practice drawing them from memory. In the exam, always label all components, voltage levels, and signal names. Draw characteristic curves wherever applicable — they often carry dedicated marks.
-                            </p>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. A Simple 30-Day Study Plan</h2>
-                            <ul className="list-disc pl-6 space-y-3">
-                                <li><strong>Days 1–5 (Assessment):</strong> Go through PYQPs for all subjects. Identify which questions/topics repeat most. Make a list of the top 10 recurring questions per subject.</li>
-                                <li><strong>Days 6–20 (Core Study):</strong> Systematically cover all 5 modules for each subject. Prioritize your 3 "strong" modules. Use textbooks for concepts, local author books for condensed notes and solved examples.</li>
-                                <li><strong>Days 21–26 (Diagram & Formula Revision):</strong> Dedicate this phase to drawing all diagrams from memory and revising formulas. Create a one-page "formula/diagram cheat sheet" for each subject.</li>
-                                <li><strong>Days 27–29 (Mock Tests):</strong> Solve two full previous year papers per day under timed conditions. Review your mistakes and fill gaps.</li>
-                                <li><strong>Day 30 (Light Revision):</strong> Light revision only. No new topics. Review your cheat sheets, get a good night's sleep.</li>
-                            </ul>
-
-                            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Managing Exam Anxiety</h2>
-                            <p>
-                                Many students underperform not from lack of knowledge, but from anxiety. A few proven tactics: In the first 15 minutes of the exam, quickly skim all questions and mark the ones you know best. Start with a question you feel most confident about — this builds momentum and calms nerves. If you get stuck on a specific part, skip it and return later. Never waste 20 minutes on a stuck point when you could be scoring marks elsewhere.
-                            </p>
-                            <p>
-                                After the exam, use our result checker to view your marks as soon as they are published by VTU, so you can plan re-attempts or your next semester strategy early.
-                            </p>
-                        </div>
-
-                        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-                            <div>
-                                <h3 className="font-bold text-gray-900 mb-1">Related Articles</h3>
-                                <div className="flex flex-wrap gap-3 mt-2">
-                                    <Link href="/articles/vtu-attendance-rules" className="text-sm text-blue-600 hover:underline">VTU Attendance Rules →</Link>
-                                    <Link href="/articles/vtu-backlogs-guide" className="text-sm text-blue-600 hover:underline">Clearing VTU Backlogs →</Link>
-                                </div>
-                            </div>
-                            <Link href="/check-results">
-                                <span className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded-lg transition-colors text-sm whitespace-nowrap">
-                                    Check Results Now
-                                </span>
-                            </Link>
-                        </div>
-                    </div>
                 </article>
+
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                        { title: 'How VTU Results Are Published', href: '/articles/how-vtu-results-work' },
+                        { title: 'How to Read Your VTU Marksheet', href: '/articles/reading-vtu-marksheet' },
+                    ].map(link => (
+                        <Link key={link.href} href={link.href} className="group flex items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <span className="text-sm font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors">{link.title}</span>
+                            <ArrowLeft className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors rotate-180 shrink-0" />
+                        </Link>
+                    ))}
+                </div>
             </div>
         </div>
     );

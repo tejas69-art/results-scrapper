@@ -1,213 +1,138 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { FileText } from 'lucide-react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Terms of Service - VTU Results Checker',
-    description: 'Terms of Service for using VTU Results Checker. Read our terms and conditions.',
+    title: 'Terms of Service — VTU Results',
+    description: 'Terms of Service for VTU Results. Read the terms and conditions that govern use of our results checker, calculators, and academic guides.',
 };
+
+const lastUpdated = 'July 2025';
 
 export default function TermsOfServicePage() {
     return (
-        <div className="min-h-screen bg-gray-50 py-12">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-100 mb-6 border border-blue-200">
-                        <FileText className="w-5 h-5 text-blue-600" />
-                        <span className="text-sm font-medium text-blue-700">Legal</span>
+        <div className="min-h-screen bg-slate-50/50 py-12">
+            <div className="container mx-auto max-w-3xl px-4 sm:px-6">
+
+                <div className="mb-10">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 border border-slate-200 rounded-full text-slate-700 text-xs font-bold uppercase tracking-wider mb-4">
+                        <FileText className="w-3.5 h-3.5" /> Legal
                     </div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms of Service</h1>
-                    <p className="text-gray-600">Last updated: {new Date().toLocaleDateString()}</p>
+                    <h1 className="font-outfit text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">Terms of Service</h1>
+                    <p className="text-slate-500 text-sm">Last updated: {lastUpdated}</p>
                 </div>
 
-                <Card className="shadow-lg">
-                    <CardContent className="p-8 space-y-6 text-gray-700">
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
-                            <p>
-                                By accessing and using VTU Results Checker ("the Service"), you accept and agree to be bound by the
-                                terms and provisions of this agreement. If you do not agree to these Terms of Service, please do not
-                                use the Service.
-                            </p>
-                        </section>
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm divide-y divide-slate-100 overflow-hidden">
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
-                            <p className="mb-4">
-                                VTU Results Checker is a web-based service that allows students to:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Check their VTU (Visvesvaraya Technological University) examination results</li>
-                                <li>Calculate SGPA (Semester Grade Point Average)</li>
-                                <li>View detailed subject-wise performance</li>
-                            </ul>
-                            <p className="mt-4">
-                                The Service fetches result data from VTU's official website and presents it in an organized format.
-                                We are an independent service and are not affiliated with VTU.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. User Responsibilities</h2>
-                            <p className="mb-4">As a user of this Service, you agree to:</p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Provide accurate and valid information (USN and result URL)</li>
-                                <li>Use the Service only for lawful purposes</li>
-                                <li>Not attempt to interfere with the proper functioning of the Service</li>
-                                <li>Not use the Service to violate any applicable laws or regulations</li>
-                                <li>Not attempt to gain unauthorized access to any portion of the Service</li>
-                                <li>Not use automated systems or software to extract data from the Service</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Disclaimer of Warranties</h2>
-                            <div className="bg-yellow-50 p-6 rounded-lg border border-yellow-200 mb-4">
-                                <p className="font-semibold mb-2">IMPORTANT DISCLAIMER:</p>
-                                <p>
-                                    The Service is provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, either express
-                                    or implied. We do not guarantee the accuracy, completeness, or timeliness of the results displayed.
-                                </p>
+                    {[
+                        {
+                            n: '1',
+                            title: 'Acceptance of Terms',
+                            body: 'By accessing or using VTU Results (the "Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service.',
+                        },
+                        {
+                            n: '2',
+                            title: 'Description of Service',
+                            body: 'VTU Results provides students with: (a) fast access to VTU examination results fetched in real time from the official VTU results server; (b) academic calculators for SGPA, CGPA, attendance, and fee estimation; (c) informational articles and guides about VTU academic policies. The Service is provided free of charge and is supported by advertising.',
+                        },
+                        {
+                            n: '3',
+                            title: 'Independent Service',
+                            body: 'VTU Results is an independent platform and is not affiliated with, endorsed by, or officially connected to Visvesvaraya Technological University (VTU), its constituent colleges, or any government body. VTU examination data remains the property of VTU. We provide a convenient interface to access publicly available data.',
+                        },
+                        {
+                            n: '4',
+                            title: 'User Responsibilities',
+                            body: null,
+                            list: [
+                                'Provide accurate information (valid USN) when using the results checker.',
+                                'Use the Service only for lawful, personal, non-commercial purposes.',
+                                'Not attempt to scrape, copy, or systematically extract data from this platform.',
+                                'Not interfere with or disrupt the Service or its underlying infrastructure.',
+                                'Not use automated systems to access the Service in ways that impose unreasonable load.',
+                            ],
+                        },
+                        {
+                            n: '5',
+                            title: 'Disclaimer of Warranties',
+                            body: 'The Service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, express or implied. We do not guarantee: (a) the accuracy, completeness, or timeliness of result data fetched from VTU servers; (b) uninterrupted availability of the Service; (c) that SGPA/CGPA calculations are 100% precise (accuracy depends on credits entered by the user); (d) that fee estimates are current or exact. Always verify results and fees with official VTU sources.',
+                        },
+                        {
+                            n: '6',
+                            title: 'Limitation of Liability',
+                            body: 'To the fullest extent permitted by applicable law, VTU Results and its operators shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from: use of or inability to use the Service; reliance on any information displayed; decisions made based on result data or calculator outputs; or unauthorised access to your data. Users are solely responsible for verifying information with official sources before making academic, employment, or financial decisions.',
+                        },
+                        {
+                            n: '7',
+                            title: 'Advertising',
+                            body: 'The Service is supported by Google AdSense advertisements. By using the Service, you acknowledge that advertisements may appear on pages and that Google may use cookies for ad personalisation. You may opt out of personalised ads through Google Ad Settings.',
+                        },
+                        {
+                            n: '8',
+                            title: 'Intellectual Property',
+                            body: 'The design, layout, article content, and code of this platform are owned by VTU Results. VTU examination result data and related academic information are the property of Visvesvaraya Technological University. You may not reproduce, distribute, or commercially exploit any part of this platform without explicit written permission.',
+                        },
+                        {
+                            n: '9',
+                            title: 'Privacy',
+                            body: null,
+                            link: { text: 'Privacy Policy', href: '/privacy-policy' },
+                        },
+                        {
+                            n: '10',
+                            title: 'Modifications',
+                            body: 'We reserve the right to modify or discontinue the Service at any time without notice. These Terms of Service may be updated periodically. Continued use of the Service after changes constitutes acceptance of the revised terms.',
+                        },
+                        {
+                            n: '11',
+                            title: 'Governing Law',
+                            body: 'These Terms shall be governed by and construed in accordance with the laws of India, without regard to conflict of law principles.',
+                        },
+                        {
+                            n: '12',
+                            title: 'Contact',
+                            body: null,
+                            link: { text: 'contact page', href: '/contact' },
+                            contactText: 'For questions about these Terms, use our',
+                        },
+                    ].map(section => (
+                        <div key={section.n} className="p-6 md:p-8 space-y-3">
+                            <h2 className="font-outfit text-base font-bold text-slate-900">{section.n}. {section.title}</h2>
+                            <div className="text-sm text-slate-700 leading-relaxed space-y-2">
+                                {section.body && <p>{section.body}</p>}
+                                {section.list && (
+                                    <ul className="list-disc pl-5 space-y-1">
+                                        {section.list.map((item, i) => <li key={i}>{item}</li>)}
+                                    </ul>
+                                )}
+                                {section.link && section.n === '9' && (
+                                    <p>Your use of the Service is also governed by our{' '}
+                                        <Link href={section.link.href} className="text-indigo-600 underline">{section.link.text}</Link>.
+                                        Please review it to understand our data handling practices.
+                                    </p>
+                                )}
+                                {section.contactText && section.link && (
+                                    <p>{section.contactText}{' '}
+                                        <Link href={section.link.href} className="text-indigo-600 underline">{section.link.text}</Link>.
+                                        Also see our{' '}
+                                        <Link href="/disclaimer" className="text-indigo-600 underline">Disclaimer</Link> and{' '}
+                                        <Link href="/privacy-policy" className="text-indigo-600 underline">Privacy Policy</Link>.
+                                    </p>
+                                )}
                             </div>
-                            <p className="mb-4">
-                                While we strive to provide accurate information, we cannot guarantee that:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>The results displayed are error-free or accurate</li>
-                                <li>The Service will be available at all times without interruption</li>
-                                <li>Any errors in the Service will be corrected</li>
-                                <li>SGPA calculations are 100% accurate (credits must be manually entered)</li>
-                            </ul>
-                        </section>
+                        </div>
+                    ))}
 
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Limitation of Liability</h2>
-                            <p className="mb-4">
-                                To the fullest extent permitted by law, VTU Results Checker and its operators shall not be liable for:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>Any direct, indirect, incidental, special, or consequential damages</li>
-                                <li>Loss of profits, data, or other intangible losses</li>
-                                <li>Damages resulting from your use or inability to use the Service</li>
-                                <li>Damages resulting from reliance on information obtained through the Service</li>
-                                <li>Damages resulting from unauthorized access to or alteration of your data</li>
-                            </ul>
-                            <p className="mt-4">
-                                Users should always verify their results with official VTU sources. We are not responsible for any
-                                academic or administrative decisions made based on results displayed through our Service.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Intellectual Property</h2>
-                            <p className="mb-4">
-                                The Service and its original content, features, and functionality are owned by VTU Results Checker
-                                and are protected by international copyright, trademark, and other intellectual property laws.
-                            </p>
-                            <p>
-                                VTU examination results and related data are the property of Visvesvaraya Technological University.
-                                We only provide a convenient way to access publicly available information.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Third-Party Services</h2>
-                            <p className="mb-4">
-                                Our Service may contain links to third-party websites or services, including:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2">
-                                <li>VTU's official website</li>
-                                <li>Advertisement networks (Google AdSense)</li>
-                                <li>Analytics services</li>
-                            </ul>
-                            <p className="mt-4">
-                                We are not responsible for the content, privacy policies, or practices of any third-party websites
-                                or services. You acknowledge and agree that we shall not be liable for any damage or loss caused by
-                                use of or reliance on any such content or services.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Advertisements</h2>
-                            <p>
-                                The Service is supported by advertisements provided by Google AdSense. By using the Service, you
-                                acknowledge that:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2 mt-4">
-                                <li>Advertisements may be displayed on various pages</li>
-                                <li>We use cookies and similar technologies for advertising purposes</li>
-                                <li>You can opt out of personalized advertising through your ad settings</li>
-                                <li>We are not responsible for the content of third-party advertisements</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Privacy</h2>
-                            <p>
-                                Your use of the Service is also governed by our{' '}
-                                <a href="/privacy-policy" className="text-blue-600 hover:underline">Privacy Policy</a>.
-                                Please review our Privacy Policy to understand how we collect, use, and protect your information.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Indemnification</h2>
-                            <p>
-                                You agree to indemnify and hold harmless VTU Results Checker and its operators from any claims,
-                                damages, losses, liabilities, and expenses (including legal fees) arising from:
-                            </p>
-                            <ul className="list-disc pl-6 space-y-2 mt-4">
-                                <li>Your use of the Service</li>
-                                <li>Your violation of these Terms of Service</li>
-                                <li>Your violation of any rights of another party</li>
-                            </ul>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Modifications to Service</h2>
-                            <p>
-                                We reserve the right to modify or discontinue the Service (or any part thereof) at any time, with
-                                or without notice. We shall not be liable to you or any third party for any modification, suspension,
-                                or discontinuance of the Service.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Changes to Terms</h2>
-                            <p>
-                                We reserve the right to update or modify these Terms of Service at any time without prior notice.
-                                Your continued use of the Service after any such changes constitutes your acceptance of the new
-                                Terms of Service.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Governing Law</h2>
-                            <p>
-                                These Terms of Service shall be governed by and construed in accordance with the laws of India,
-                                without regard to its conflict of law provisions.
-                            </p>
-                        </section>
-
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Contact Information</h2>
-                            <p>
-                                If you have any questions about these Terms of Service, please contact us through our{' '}
-                                <a href="/contact" className="text-blue-600 hover:underline">contact page</a>.
-                            </p>
-                        </section>
-
-                        <section className="bg-red-50 p-6 rounded-lg border border-red-200">
-                            <h3 className="text-xl font-bold text-red-900 mb-3">Final Reminder</h3>
-                            <p className="text-red-800">
-                                This Service is provided for informational purposes only. Always verify your results with official
-                                VTU sources. We are not affiliated with VTU and are not responsible for any errors or discrepancies
-                                in the displayed information.
-                            </p>
-                        </section>
-                    </CardContent>
-                </Card>
+                    <div className="p-6 md:p-8 bg-amber-50 border-t border-amber-100">
+                        <h3 className="font-semibold text-amber-900 mb-2 text-sm">Final Reminder</h3>
+                        <p className="text-sm text-amber-800 leading-relaxed">
+                            This Service is provided for informational purposes only. Always verify your results and academic records with the{' '}
+                            <a href="https://results.vtu.ac.in" target="_blank" rel="noopener noreferrer" className="underline font-semibold">official VTU portal</a>.
+                            We are not responsible for any errors, discrepancies, or decisions made based on information displayed here.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );
