@@ -145,6 +145,9 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
     } | null>(null);
     const [captchaText, setCaptchaText] = useState('');
 
+    // Raw HTML from API (for original download)
+    const [rawHtml, setRawHtml] = useState<string | null>(null);
+
     // SGPA Stats
     const [sgpa, setSgpa] = useState<number>(0);
     const [totalCredits, setTotalCredits] = useState<number>(0);
@@ -196,6 +199,18 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
         }
     }, [parsedResult]);
 
+    const downloadOriginalHtml = () => {
+        if (!rawHtml) return;
+        const blob = new Blob([rawHtml], { type: 'text/html;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `VTU_Result_${parsedResult?.usn || 'result'}.html`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
@@ -203,6 +218,7 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
         setParsedResult(null);
         setAllResults([]);
         setSecondResult(null);
+        setRawHtml(null);
         setIsComparing(false);
         setFetchingContext('main');
 
@@ -250,9 +266,11 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
             }
 
             const results: ParsedResult[] = [];
+            let firstRawHtml: string | null = null;
             Object.keys(data).forEach(key => {
                 const html = data[key];
                 if (typeof html === 'string' && html.length > 100) {
+                    if (!firstRawHtml) firstRawHtml = html;
                     const parsed = parseHTMLResult(html, usn);
                     if (parsed && parsed.subjects.length > 0) {
                         results.push(parsed);
@@ -264,6 +282,7 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
                 throw new Error('No valid marks found. Please verify your USN or try again later.');
             }
 
+            if (firstRawHtml) setRawHtml(firstRawHtml);
             results.sort((a, b) => a.usn.localeCompare(b.usn));
             setAllResults(results);
 
@@ -381,9 +400,11 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
             setCaptchaText('');
 
             const results: ParsedResult[] = [];
+            let firstRawHtml: string | null = null;
             Object.keys(data).forEach(key => {
                 const html = data[key];
                 if (typeof html === 'string' && html.length > 100) {
+                    if (!firstRawHtml) firstRawHtml = html;
                     const parsed = parseHTMLResult(html, captchaData.usn);
                     if (parsed && parsed.subjects.length > 0) {
                         results.push(parsed);
@@ -396,6 +417,7 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
             }
 
             if (fetchingContext === 'main') {
+                if (firstRawHtml) setRawHtml(firstRawHtml);
                 results.sort((a, b) => a.usn.localeCompare(b.usn));
                 setAllResults(results);
                 if (results.length === 1) {
@@ -623,11 +645,11 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
                                 <p className="text-slate-500 text-xs md:text-sm font-semibold">USN: <span className="font-mono">{parsedResult.usn}</span> | Semester: {parsedResult.semester}</p>
                             </div>
                             <div className="flex gap-3 no-print">
-                                <Button variant="outline" size="sm" className="rounded-xl border-slate-250 font-bold flex items-center gap-1.5" onClick={() => window.print()}>
+                                <Button variant="outline" size="sm" className="rounded-xl border-slate-250 font-bold flex items-center gap-1.5" onClick={downloadOriginalHtml} disabled={!rawHtml}>
                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Download / Print
+                                    Download Original
                                 </Button>
                                 <Button variant="outline" size="sm" className="rounded-xl border-slate-250 font-bold" onClick={() => setIsComparing(true)}>
                                     Compare Scores
