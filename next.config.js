@@ -8,11 +8,6 @@ const nextConfig = {
         return [
             // Dead pages → homepage (301 permanent redirects to preserve link equity)
             {
-                source: '/placement-salary-calculator',
-                destination: '/',
-                permanent: true,
-            },
-            {
                 source: '/pw-coupon-code',
                 destination: '/',
                 permanent: true,
