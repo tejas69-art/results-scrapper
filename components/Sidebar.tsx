@@ -12,7 +12,7 @@ export const Sidebar = () => {
     const quickTools = [
         { name: 'Results Hub', href: '/vtu-results', icon: GraduationCap, color: 'text-indigo-600 bg-indigo-50 border-indigo-100' },
         { name: 'Jobs Board', href: '/jobs', icon: Briefcase, color: 'text-rose-600 bg-rose-50 border-rose-100' },
-        { name: 'VTU Syllabus', href: '/#syllabus', icon: BookOpen, color: 'text-sky-600 bg-sky-50 border-sky-100' },
+        { name: 'CGPA to Percentage', href: '/cgpa-to-percentage', icon: BookOpen, color: 'text-sky-600 bg-sky-50 border-sky-100' },
         { name: 'SGPA/CGPA Calc', href: '/vtu-sgpa-cgpa-calculator', icon: Calculator, color: 'text-violet-600 bg-violet-50 border-violet-100' },
         { name: 'Attendance Tracker', href: '/attendance-calculator', icon: Calendar, color: 'text-emerald-600 bg-emerald-50 border-emerald-100' },
         { name: 'Salary Predictor', href: '/placement-salary-calculator', icon: Sparkles, color: 'text-amber-600 bg-amber-50 border-amber-100' },

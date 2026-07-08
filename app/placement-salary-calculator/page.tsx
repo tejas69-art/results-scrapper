@@ -100,7 +100,7 @@ export default function PlacementSalaryCalculator() {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {/* Result Summary */}
                             <div className="space-y-6 md:col-span-1">
-                                <Card className="bg-gradient-to-br from-emerald-650 to-teal-750 text-white shadow-lg border-none overflow-hidden rounded-2xl">
+                                <Card className="bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-lg border-none overflow-hidden rounded-2xl">
                                     <CardHeader className="text-center pb-2 bg-black/10">
                                         <span className="text-[10px] font-bold text-emerald-100 uppercase tracking-widest">Monthly In-Hand</span>
                                     </CardHeader>
