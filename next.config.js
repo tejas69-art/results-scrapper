@@ -28,6 +28,12 @@ const nextConfig = {
                 destination: '/vtu-results',
                 permanent: true,
             },
+            // vtu-results/index was a bogus entry — redirect to directory
+            {
+                source: '/vtu-results/index',
+                destination: '/vtu-results',
+                permanent: true,
+            },
         ]
     },
 

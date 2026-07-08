@@ -19,20 +19,6 @@ export interface ExamEvent {
 
 export const VTU_RESULTS_DATA: ExamEvent[] = [
     {
-        "id": "index",
-        "title": "VTU Examination Result Portal",
-        "year": "2026",
-        "session": "Dec/Jan",
-        "program": "B.E/B.Tech",
-        "links": [
-            {
-                "type": "Regular",
-                "scheme": "Main",
-                "url": "https://results.vtu.ac.in/index.php"
-            }
-        ]
-    },
-    {
         "id": "dec-2025-jan-2026",
         "title": "Dec 2025 / Jan 2026 Exam",
         "year": "2026",
