@@ -48,17 +48,36 @@ const parseHTMLResult = (html: string, fallbackUsn: string): ParsedResult | null
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Extract student name
-        const nameRegex = /Student Name[\s\S]*?<td[^>]*>[\s\S]*?:\s*[\s\S]*?<\/b>\s*([^<]+)<\/td>/i;
-        const nameMatch = nameRegex.exec(html);
-        const studentName = nameMatch ? nameMatch[1].trim() : 'Unknown';
+        // Use DOM to extract name and USN from divTableCell pairs
+        // VTU pages use <div class="divTableCell"> not <td>
+        let studentName = 'Unknown';
+        let usn = fallbackUsn;
 
-        // Extract USN
-        const usnRegex = /University Seat Number[\s\S]*?<td[^>]*>[\s\S]*?:\s*[\s\S]*?<\/b>\s*([^<]+)<\/td>/i;
-        const usnMatch = usnRegex.exec(html);
-        let usn = usnMatch ? usnMatch[1].trim() : fallbackUsn;
+        const allCells = Array.from(doc.querySelectorAll('.divTableCell'));
+        for (let i = 0; i < allCells.length; i++) {
+            const text = allCells[i].textContent?.trim() || '';
+            const nextText = allCells[i + 1]?.textContent?.trim() || '';
+            if (text === 'Student Name' && nextText) {
+                studentName = nextText.replace(/^:\s*/, '').trim();
+            }
+            if (text === 'University Seat Number' && nextText) {
+                const extracted = nextText.replace(/^:\s*/, '').trim();
+                if (extracted.length >= 5) usn = extracted;
+            }
+        }
 
-        if (!usn || usn.length < 5) usn = fallbackUsn;
+        // Fallback: try regex on raw HTML (older page formats with <td>)
+        if (studentName === 'Unknown') {
+            const nameMatch = /Student Name[\s\S]{0,200}?:\s*<\/b>\s*([^<\n]+)/i.exec(html);
+            if (nameMatch) studentName = nameMatch[1].trim();
+        }
+        if (usn === fallbackUsn) {
+            const usnMatch = /University Seat Number[\s\S]{0,200}?:\s*<\/b>\s*([^<\n]+)/i.exec(html);
+            if (usnMatch) {
+                const extracted = usnMatch[1].trim();
+                if (extracted.length >= 5) usn = extracted;
+            }
+        }
 
         // Extract semester
         const semesterRegex = /Semester\s*:\s*(\d+)/i;
@@ -203,21 +222,17 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
         if (!rawHtml) return;
 
         // Inject <base> so all relative CSS/images resolve from the VTU server,
-        // and an auto-print script so the browser print dialog opens on load.
-        const patchedHtml = rawHtml
-            .replace(
-                /<head([^>]*)>/i,
-                `<head$1>\n  <base href="https://results.vtu.ac.in/">\n  <script>window.onload=function(){window.print();}<\/script>`
-            );
+        // then open in a new tab and trigger print dialog → user saves as PDF.
+        const patchedHtml = rawHtml.replace(
+            /<head([^>]*)>/i,
+            `<head$1>\n  <base href="https://results.vtu.ac.in/">\n  <script>window.onload=function(){window.print();}<\/script>`
+        );
 
         const blob = new Blob([patchedHtml], { type: 'text/html;charset=utf-8' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `VTU_Result_${parsedResult?.usn || 'result'}.html`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(link.href);
+        const blobUrl = URL.createObjectURL(blob);
+        const newTab = window.open(blobUrl, '_blank');
+        // Revoke after a delay to allow the tab to load
+        if (newTab) setTimeout(() => URL.revokeObjectURL(blobUrl), 30000);
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
