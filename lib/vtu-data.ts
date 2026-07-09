@@ -19,6 +19,25 @@ export interface ExamEvent {
 
 export const VTU_RESULTS_DATA: ExamEvent[] = [
     {
+        "id": "may-june-2026",
+        "title": "May / June 2026 Exam",
+        "year": "2026",
+        "session": "May/June",
+        "program": "B.E/B.Tech",
+        "links": [
+            {
+                "type": "Regular",
+                "scheme": "CBCS",
+                "url": "https://results.vtu.ac.in/MJ26cbcs/index.php"
+            },
+            {
+                "type": "Revaluation",
+                "scheme": "CBCS",
+                "url": "https://results.vtu.ac.in/MJ26rvcbcs/index.php"
+            }
+        ]
+    },
+    {
         "id": "dec-2025-jan-2026",
         "title": "Dec 2025 / Jan 2026 Exam",
         "year": "2026",
@@ -29,6 +48,11 @@ export const VTU_RESULTS_DATA: ExamEvent[] = [
                 "type": "Regular",
                 "scheme": "CBCS",
                 "url": "https://results.vtu.ac.in/D25J26Ecbcs/index.php"
+            },
+            {
+                "type": "Revaluation",
+                "scheme": "CBCS",
+                "url": "https://results.vtu.ac.in/D25J26RVcbcs/index.php"
             }
         ]
     },
