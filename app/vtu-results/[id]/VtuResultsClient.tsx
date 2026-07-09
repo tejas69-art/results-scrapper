@@ -201,7 +201,16 @@ export default function VtuResultsClient({ exam }: { exam: ExamEvent }) {
 
     const downloadOriginalHtml = () => {
         if (!rawHtml) return;
-        const blob = new Blob([rawHtml], { type: 'text/html;charset=utf-8' });
+
+        // Inject <base> so all relative CSS/images resolve from the VTU server,
+        // and an auto-print script so the browser print dialog opens on load.
+        const patchedHtml = rawHtml
+            .replace(
+                /<head([^>]*)>/i,
+                `<head$1>\n  <base href="https://results.vtu.ac.in/">\n  <script>window.onload=function(){window.print();}<\/script>`
+            );
+
+        const blob = new Blob([patchedHtml], { type: 'text/html;charset=utf-8' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = `VTU_Result_${parsedResult?.usn || 'result'}.html`;
