@@ -13,6 +13,50 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-myanatomy-new-hiring-drive",
+        "title": "MyAnatomy HiringDrive | Enterprise Sales Trainee Program 2026",
+        "company": "MyAnatomy",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "MyAnatomy New Hiring Drive: MyAnatomy invites applications to the Training Program for Enterprise Sales 2026, which is a 12-month paid internship for ...",
+        "url": "https://match.myanatomy.in/corporate/customCampaign/view?publicLink=e1a1bbc08201a25669c239eb6ad26eca;3d6ce508a62659a91496c52dc95f70c044864dbaa1f047e67dbae281df1c73fcf475811411534e637fcaff6e1407db7dfe6014e25061621189262e4fd02f12ccbac7f0eb90701de8a1342979d153f21aea1adeeeca770d27e65a3c8b7ad909ae9114d6faf344057f0332a662d601f4936d2f9b9a21c8da999c0acf7c18709d052e6980c744b0a038e236bae3051aeac0511576fc4ff948ae445df3a50c06b2cdba7cae2d5753165829ee360f3f2fcd517256c9496e4c0c75758294719bab5c75&source=n#apply",
+        "postedDate": "2026-07-09T15:48:59.000Z"
+    },
+    {
+        "id": "onlinestudy4u-tata-new-big-hiring-drive",
+        "title": "Tata New Big Hiring Drive | Engineer – Technology & Platform Development Role",
+        "company": "Tata",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Tata New Big Hiring Drive: The job focuses on the development of software testing, deployment and debugging. The job entails developing ...",
+        "url": "https://jobs.tatacommunications.com/jobs/8121880692?channel=TGlua2VkSW4=",
+        "postedDate": "2026-07-09T15:59:00.000Z"
+    },
+    {
+        "id": "onlinestudy4u-cisco-new-off-campus-drive",
+        "title": "Cisco New Off Campus Drive | Software Engineer-India Engineering/UHR-FY27",
+        "company": "Cisco",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Cisco New Off Campus Drive: This job offers the chance for graduates in 2027 who wish to work with Cisco&#8217;s ...",
+        "url": "https://careers.cisco.com/global/en/job/CISCISGLOBAL2016168EXTERNALENGLOBAL/Software-Engineer-India-Engineering-UHR-FY27-Code-with-Cisco",
+        "postedDate": "2026-07-09T16:09:54.000Z"
+    },
+    {
+        "id": "onlinestudy4u-salesforce-new-big-off-campus-hiring",
+        "title": "Salesforce New Big Off Campus Hiring | Associate Technical Support Engineer Role",
+        "company": "Salesforce",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Salesforce New Big Off Campus Hiring: Are you looking for a job in one of the top cloud-based technology companies? Salesforce has ...",
+        "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Associate-Technical-Support-Engineer_JR350727",
+        "postedDate": "2026-07-09T16:16:18.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibps-so-recruitment",
         "title": "IBPS SO Recruitment 2026 Notification PDF Out: Check 745 Specialist Posts, Eligibility, Exam Pattern & Salary",
         "company": "IBPS SO",
