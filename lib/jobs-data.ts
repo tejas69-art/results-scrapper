@@ -13,6 +13,105 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibps-so-recruitment",
+        "title": "IBPS SO Recruitment 2026 Notification PDF Out: Check 745 Specialist Posts, Eligibility, Exam Pattern & Salary",
+        "company": "IBPS SO",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBPS SO Recruitment 2026: The Institute of Banking Personnel Selection (IBPS) has released the official IBPS SO 2026 Notification for ...",
+        "url": "https://ibpsreg.ibps.in/crpspxvimy26/",
+        "postedDate": "2026-07-03T03:20:46.000Z"
+    },
+    {
+        "id": "onlinestudy4u-exl-hiring-drive",
+        "title": "EXL Hiring Drive | Associate – Data Analyst Role",
+        "company": "EXL",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "EXL Hiring Drive: An exciting opportunity is available as an Associate Data Analyst to be part of our expanding staff ...",
+        "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/16594",
+        "postedDate": "2026-07-07T10:51:21.000Z"
+    },
+    {
+        "id": "onlinestudy4u-comviva-off-campus-hiring",
+        "title": "Comviva Off Campus Hiring | Tech Support Internship",
+        "company": "Comviva Off Campus",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Comviva Off Campus Hiring: Comviva offers the Tech Support internship in Tech Operations and Production Support for engineering students who are eligible. The ...",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7480156810574725120/",
+        "postedDate": "2026-07-07T10:58:27.000Z"
+    },
+    {
+        "id": "onlinestudy4u-indiamart-new-hiring-drive",
+        "title": "IndiaMART HiringDrive | Associate Engineer/Intern",
+        "company": "IndiaMART",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "IndiaMART New Hiring Drive: IndiaMart is India&#8217;s biggest B2B marketplace and is a top single-source solution for all your business ...",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSc3-K8zCRIt7hN5y8cIlTdIdRkZ7S0mD_XoykfOVaXS1snYtg/viewform?pli=1",
+        "postedDate": "2026-07-07T11:11:56.000Z"
+    },
+    {
+        "id": "onlinestudy4u-qualcomm-off-campus-drive",
+        "title": "Qualcomm Off Campus Drive | Engineer/Associate Engineer – AI Platform Role",
+        "company": "Off Campus",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Qualcomm Off Campus Drive: Qualcomm is looking for skilled AI Platform Engineers and Associate AI Engineers in Hyderabad to lead large-scale AI initiatives. This job ...",
+        "url": "https://careers.qualcomm.com/careers/job/446719463158",
+        "postedDate": "2026-07-07T11:31:53.000Z"
+    },
+    {
+        "id": "onlinestudy4u-capgemini-new-big-hiring",
+        "title": "Capgemini New Big Hiring | Associate Software Engineer Role",
+        "company": "Capgemini",
+        "location": "Pune, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Capgemini New Big Hiring: Capgemini is seeking applications to fill the Assistant Software Engineer job in Pune. It is an entry-level Software Engineering ...",
+        "url": "https://careers.capgemini.com/job/Pune-Associate-Software-Engineer/1411967133/",
+        "postedDate": "2026-07-07T11:56:49.000Z"
+    },
+    {
+        "id": "onlinestudy4u-accenture-new-big-hiring",
+        "title": "Accenture New Big Hiring | Web Developer Associate Role",
+        "company": "Accenture",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Accenture New Big Hiring: A renowned international professional services company is seeking an experienced Web Developer Associate for its Marketing ...",
+        "url": "https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01648534_en&title=Web+Developer+Associate",
+        "postedDate": "2026-07-07T13:56:57.000Z"
+    },
+    {
+        "id": "onlinestudy4u-wipro-new-biggest-hiring-drive",
+        "title": "Wipro New Biggest Hiring Drive | (WILP) WE – B.ET 2025 & 2026 FY’27",
+        "company": "Wipro",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Wipro New Biggest Hiring Drive: Are you seeking a new career after completing your diploma? It is possible to find a ...",
+        "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/f00af2c5-aa20-48b8-b3d9-33f733e31da3",
+        "postedDate": "2026-07-08T14:35:30.000Z"
+    },
+    {
+        "id": "onlinestudy4u-tcs-new-off-campus-drive",
+        "title": "TCS New Off Campus Drive | iON NQT",
+        "company": "TCS",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "TCS New Off Campus Drive: The TCS iON National Qualifier Test (TCS iON NQT) July 2026 registration process is open to those ...",
+        "url": "https://www.tcsion.com/hub/national-qualifier-test/",
+        "postedDate": "2026-07-08T14:43:00.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibm-off-campus-drive",
         "title": "IBM Off Campus Drive – Customer Success Engineer Intern",
         "company": "IBM",
