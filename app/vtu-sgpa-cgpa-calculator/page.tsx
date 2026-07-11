@@ -1,11 +1,4 @@
 'use client';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'VTU SGPA & CGPA Calculator — Calculate Grades Instantly',
-    description: 'Free online VTU SGPA and CGPA calculator. Enter your subject grades and credits to compute your semester GPA and cumulative GPA per VTU CBCS regulations.',
-    keywords: 'VTU SGPA calculator, VTU CGPA calculator, VTU grade calculator, CBCS calculator, semester GPA, VTU marks percentage',
-};
 
 import React, { useState, useEffect } from 'react';
 import { Calculator, Award, Calendar, BookOpen, AlertCircle, Plus, Trash, RotateCcw } from 'lucide-react';

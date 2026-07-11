@@ -1,7 +1,12 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import { Sidebar } from '@/components/Sidebar';
+
+export const metadata: Metadata = {
+    title: 'VTU Campus Jobs & Internships 2025 — Fresher Opportunities',
+    description: 'Browse fresher jobs and internship opportunities for VTU B.E/B.Tech graduates. Filter by company, role, and eligibility criteria.',
+    keywords: 'VTU jobs, VTU placement, fresher jobs 2025, VTU internships, campus recruitment, B.E jobs',
+};
 
 export default function JobsLayout({
     children,
