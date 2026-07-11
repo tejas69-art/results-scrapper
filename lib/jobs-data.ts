@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-moglix-off-campus-hiring",
+        "title": "Moglix Off Campus Hiring | Fresher Software Engineer Role",
+        "company": "Moglix Off Campus",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Moglix Off Campus Hiring: This position provides a fantastic chance for students of software engineering in the 2025-2026 batches to ...",
+        "url": "https://www.linkedin.com/posts/kanika-k-8098a1a1_were-hiring-software-engineer-freshers-for-share-7481292690677071872-N09U/",
+        "postedDate": "2026-07-11T13:52:46.000Z"
+    },
+    {
         "id": "onlinestudy4u-myanatomy-new-hiring-drive",
         "title": "MyAnatomy HiringDrive | Enterprise Sales Trainee Program 2026",
         "company": "MyAnatomy",
