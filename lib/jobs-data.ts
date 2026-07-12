@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-deloitte-new-big-off-campus-hiring",
+        "title": "Deloitte New Big Off-Campus Hiring | Associate Analyst Role",
+        "company": "Deloitte",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Deloitte New Big Off-Campus Hiring: The Associate Analyst position for Cloud Infrastructure offers a strong possibility for those who want ...",
+        "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Associate-Analyst-Cloud-Infrastructure-Bengaluru-Engineering-Hybrid-Cloud-Engineering/56966344/",
+        "postedDate": "2026-07-12T13:20:35.000Z"
+    },
+    {
         "id": "onlinestudy4u-moglix-off-campus-hiring",
         "title": "Moglix Off Campus Hiring | Fresher Software Engineer Role",
         "company": "Moglix Off Campus",
