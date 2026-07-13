@@ -69,7 +69,8 @@ export default function RootLayout({
             <head>
                 <AutoAds />
                 <Analytics />
-                <meta name="google-site-verification" content="AsaD0fwpq5RcANj2FkiBquGleiQDu5hcXa6CD1x1lTE" />
+                {/* <meta name="google-site-verification" content="AsaD0fwpq5RcANj2FkiBquGleiQDu5hcXa6CD1x1lTE" /> */}
+                <meta name="google-site-verification" content="Nh9eDWf49XDW28Ritjf1e2PPQ3ZJOmA2g4MKOgBow2k" />
             </head>
             <body className="font-sans antialiased text-slate-700 bg-white min-h-screen flex flex-col">
                 <Header />
