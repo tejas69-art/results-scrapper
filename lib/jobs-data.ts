@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-microsoft-new-hiring",
+        "title": "Microsoft Hiring| Software Engineering INTERN Role",
+        "company": "Microsoft",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Microsoft New Hiring: It is a Software Engineering Internship that offers hands-on experience in developing practical solutions to complex technical ...",
+        "url": "https://apply.careers.microsoft.com/careers/job/1970393556911730",
+        "postedDate": "2026-07-15T13:28:33.000Z"
+    },
+    {
         "id": "onlinestudy4u-deloitte-new-big-off-campus-hiring",
         "title": "Deloitte New Big Off-Campus Hiring | Associate Analyst Role",
         "company": "Deloitte",
