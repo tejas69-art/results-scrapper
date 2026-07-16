@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-recruit-crm-new-hiring-drive",
+        "title": "Recruit CRM HiringDrive | Trainee Software Engineer Role",
+        "company": "Recruit CRM",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Recruit CRM New Hiring Drive: The Recruit CRM platform is a prominent bootstrapped SaaS platform for the industry of technology ...",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7483426277144715265/",
+        "postedDate": "2026-07-16T15:46:40.000Z"
+    },
+    {
+        "id": "onlinestudy4u-binmile-off-campus-hiring",
+        "title": "Binmile Off-Campus Hiring | Software Developer Trainee (Freshers) Role",
+        "company": "Binmile Off",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Do you possess a 2025, twenty-26 B.Tech, MCA, or BCA graduate who is looking to start your career in the ...",
+        "url": "https://www.linkedin.com/posts/rashika-gupta-aa7a83153_hiring-freshers-softwaredeveloper-share-7483088693772177409-aQAd/",
+        "postedDate": "2026-07-16T15:54:17.000Z"
+    },
+    {
         "id": "onlinestudy4u-microsoft-new-hiring",
         "title": "Microsoft Hiring| Software Engineering INTERN Role",
         "company": "Microsoft",
