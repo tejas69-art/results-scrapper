@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibm-new-off-campus-hiring",
+        "title": "IBM Hiring| Software Engineer – Confluent Role",
+        "company": "IBM",
+        "location": "Bengaluru, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBM New Off Campus Hiring: This Software Engineer job in Bangalore provides a fantastic opportunity for young professionals and recent ...",
+        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=124850",
+        "postedDate": "2026-07-17T08:20:25.000Z"
+    },
+    {
+        "id": "onlinestudy4u-accenture-new-off-campus-drive",
+        "title": "Accenture New Off-Campus Drive |  System and Application Services Associate Role",
+        "company": "Accenture",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Accenture New Off-Campus Drive: This job is a great opportunity for young professionals and fresh graduates looking for new IT jobs ...",
+        "url": "https://indiacampus.accenture.com/myzone/accenture/1/jobs/129361/job-details",
+        "postedDate": "2026-07-17T08:29:32.000Z"
+    },
+    {
         "id": "onlinestudy4u-recruit-crm-new-hiring-drive",
         "title": "Recruit CRM HiringDrive | Trainee Software Engineer Role",
         "company": "Recruit CRM",
