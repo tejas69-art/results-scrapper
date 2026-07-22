@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-google-new-hiring-drive",
+        "title": "Google HiringDrive | Multiple Job Opportunities",
+        "company": "Google",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Google New Hiring Drive: Are you an enthusiastic person who is looking for hands-on experience in the field of technology? Applications ...",
+        "url": "https://www.linkedin.com/posts/mohammed-sawood-7285a4251_google-googleapprenticeship-googlecareers-share-7485096350255267840-WuSV/",
+        "postedDate": "2026-07-22T06:41:49.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibm-new-off-campus-hiring",
         "title": "IBM Hiring| Software Engineer – Confluent Role",
         "company": "IBM",
