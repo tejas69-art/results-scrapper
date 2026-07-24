@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-hcltech-new-biggest-hiring",
+        "title": "HCLTech New Biggest Hiring | 𝐆𝐫𝐚𝐝𝐮𝐚𝐭𝐞 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫 𝐓𝐫𝐚𝐢𝐧𝐞𝐞𝐬 For Multiple Roles",
+        "company": "HCLTech",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "HCLTech New Biggest Hiring: HCLTech invites applications for Graduate Engineering Trainee posts that are specifically targeted for the 2026 B.Tech batch. This is ...",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7486091877700562944/",
+        "postedDate": "2026-07-24T04:30:52.000Z"
+    },
+    {
+        "id": "onlinestudy4u-wipro-biggest-hiring-drive",
+        "title": "Wipro Biggest Hiring Drive | Trainee (Backend) Role",
+        "company": "Wipro",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Wipro Biggest Hiring Drive: Wipro announces job openings for freshers in 2025 and 2026 graduate batches. This recruitment drive offers Wipro trainees jobs in ...",
+        "url": "https://www.linkedin.com/posts/mohil-706663319_please-fill-out-this-form-share-7484919436735315968-QUST/",
+        "postedDate": "2026-07-24T05:33:19.000Z"
+    },
+    {
         "id": "onlinestudy4u-google-new-hiring-drive",
         "title": "Google HiringDrive | Multiple Job Opportunities",
         "company": "Google",
