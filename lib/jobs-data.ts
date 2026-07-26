@@ -13,6 +13,39 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tech-mahindra-new-big-hiring",
+        "title": "Tech Mahindra New Big Hiring | Junior Software Engineer – Role",
+        "company": "Tech Mahindra",
+        "location": "Pune, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Tech Mahindra New Big Hiring: Jobs for junior software engineers in Pune remain a popular starting point for students looking ...",
+        "url": "https://www.naukri.com/job-listings-junior-software-engineer-pune-tech-mahindra-ltd-pune-0-to-0-years-030726024717",
+        "postedDate": "2026-07-26T13:26:29.000Z"
+    },
+    {
+        "id": "onlinestudy4u-salesforce-new-hiring-drive",
+        "title": "Salesforce HiringDrive | Summer 2027 Intern – Software Engineer",
+        "company": "Salesforce",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Salesforce New Hiring Drive: Salesforce New Hiring Drive: Jobs for software engineer interns in India remain a magnet for students ...",
+        "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Summer-2027-Intern---Software-Engineer_JR337715",
+        "postedDate": "2026-07-26T13:43:44.000Z"
+    },
+    {
+        "id": "onlinestudy4u-pwc-new-off-campus-hiring",
+        "title": "PwC New Off-Campus Hiring | AWS Data and Analytics Advisory Role",
+        "company": "PwC New Off",
+        "location": "Gurgaon, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "PwC New Off-Campus Hiring: AWS jobs in Gurgaon keep attracting professionals who are focused on cloud-based infrastructure as well as ...",
+        "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Gurugram-10-C/IN-Specialist--AWS--Data-and-Analytics-Advisory-Gurgaon_747314WD-2",
+        "postedDate": "2026-07-26T14:03:19.000Z"
+    },
+    {
         "id": "onlinestudy4u-dhl-off-campus-drive",
         "title": "DHL Off Campus Drive | Software Engineer Role",
         "company": "Off Campus",
