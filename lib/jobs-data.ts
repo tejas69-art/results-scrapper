@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-dhl-off-campus-drive",
+        "title": "DHL Off Campus Drive | Software Engineer Role",
+        "company": "Off Campus",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "DHL Off Campus Drive: Job opportunities for Software Engineers in Indore remain a magnet for people looking for secure careers ...",
+        "url": "https://careers.dhl.com/global/en/job/DPDHGLOBALAV336444ENGLOBALEXTERNAL/Software-Engineer",
+        "postedDate": "2026-07-26T12:49:40.000Z"
+    },
+    {
         "id": "onlinestudy4u-hcltech-new-biggest-hiring",
         "title": "HCLTech New Biggest Hiring | 𝐆𝐫𝐚𝐝𝐮𝐚𝐭𝐞 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫 𝐓𝐫𝐚𝐢𝐧𝐞𝐞𝐬 For Multiple Roles",
         "company": "HCLTech",
