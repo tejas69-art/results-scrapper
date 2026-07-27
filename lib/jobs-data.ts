@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tech-mahindra-big-hiring",
+        "title": "Tech Mahindra Big Hiring | Associate Role",
+        "company": "Tech Mahindra",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Tech Mahindra Big Hiring: Tech Mahindra has launched an exciting opportunity for recruitment for those with experience who want to ...",
+        "url": "https://www.linkedin.com/jobs/view/4441895390/",
+        "postedDate": "2026-07-27T13:30:53.000Z"
+    },
+    {
         "id": "onlinestudy4u-tech-mahindra-new-big-hiring",
         "title": "Tech Mahindra New Big Hiring | Junior Software Engineer – Role",
         "company": "Tech Mahindra",
