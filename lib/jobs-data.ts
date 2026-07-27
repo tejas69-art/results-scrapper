@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-infosys-new-off-campus-hiring",
+        "title": "Infosys Hiring| Freshers BE-Computer Science for Data-Non-Voice Role",
+        "company": "Infosys",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Infosys New Off Campus Hiring: Are you looking for the most recent Infosys BPM opportunities for new graduates? A new job opening ...",
+        "url": "https://www.naukri.com/job-listings-hiring-for-freshers-be-computer-science-for-data-non-voice-bnglr-infosys-bpm-bengaluru-0-to-0-years-150626023323",
+        "postedDate": "2026-07-27T13:46:37.000Z"
+    },
+    {
         "id": "onlinestudy4u-tech-mahindra-big-hiring",
         "title": "Tech Mahindra Big Hiring | Associate Role",
         "company": "Tech Mahindra",
