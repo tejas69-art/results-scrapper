@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-birlasoft-new-hiring-drive",
+        "title": "Birlasoft HiringDrive | Apprentice (Intern) – Non – Engineering Graduates | 2026 Passout Batch",
+        "company": "Birlasoft",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Birlasoft New Hiring Drive: Birlasoft has announced a great apprenticeship (Intern) Employment 2026 chance for students who are fresh out of the 2026 class ...",
+        "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/9e3bca6d-aea8-4948-ae78-a047b1e4cfc1",
+        "postedDate": "2026-07-28T05:26:28.000Z"
+    },
+    {
+        "id": "onlinestudy4u-cognizant-biggest-drive",
+        "title": "Cognizant Biggest Drive | Customer Service Role",
+        "company": "Cognizant",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Cognizant Biggest Drive: Are you seeking a private job in India working for a top global IT service company? A brand new Cognizant Walk-in ...",
+        "url": "https://www.linkedin.com/posts/shameek-r-bb4350361_cognizant-walkindrive-hiring-share-7487395613681250304-xY3R/",
+        "postedDate": "2026-07-28T05:36:24.000Z"
+    },
+    {
         "id": "onlinestudy4u-infosys-new-off-campus-hiring",
         "title": "Infosys Hiring| Freshers BE-Computer Science for Data-Non-Voice Role",
         "company": "Infosys",
