@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tcs-new-biggest-hiring-drive",
+        "title": "TCS New Biggest Hiring Drive | Customer Support – Voice / Non-Voice Role",
+        "company": "TCS",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "TCS New Biggest Hiring Drive: Are you looking at job opportunities at Tata Consultancy Services for new graduates for 2026? Tata Consultancy ...",
+        "url": "https://www.linkedin.com/feed/update/urn:li:share:7487921273440837632/",
+        "postedDate": "2026-07-31T13:21:57.000Z"
+    },
+    {
         "id": "onlinestudy4u-birlasoft-new-hiring-drive",
         "title": "Birlasoft HiringDrive | Apprentice (Intern) – Non – Engineering Graduates | 2026 Passout Batch",
         "company": "Birlasoft",
