@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-accenture-new-biggest-hiring",
+        "title": "Accenture New Biggest Hiring | AI/ML Computational Science Associate Role",
+        "company": "Accenture",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Accenture New Biggest Hiring: Are you searching for an Accenture AI/ML Computational Sciences Associate Recruitment 2026 chance? This is a fantastic job option ...",
+        "url": "https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01655439_en",
+        "postedDate": "2026-07-31T17:20:36.000Z"
+    },
+    {
         "id": "onlinestudy4u-tcs-new-biggest-hiring-drive",
         "title": "TCS New Biggest Hiring Drive | Customer Support – Voice / Non-Voice Role",
         "company": "TCS",
