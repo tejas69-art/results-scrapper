@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-amazon-biggest-hiring-drive",
+        "title": "Amazon Biggest Hiring Drive | Amazon Work From Home Customer Service & Technical Support Jobs 2026 | Remote Jobs in India | Apply Online",
+        "company": "Amazon",
+        "location": "Remote (India)",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Amazon Biggest Hiring Drive: Are you in search of a work-from-home job in India with an internationally known company? Amazon offers exciting customer ...",
+        "url": "https://jobs.amazon.in/virtual-customer-service-associate",
+        "postedDate": "2026-08-02T06:30:03.000Z"
+    },
+    {
         "id": "onlinestudy4u-accenture-new-biggest-hiring",
         "title": "Accenture New Biggest Hiring | AI/ML Computational Science Associate Role",
         "company": "Accenture",
