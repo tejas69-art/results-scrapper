@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibps-biggest-hiring-drive",
+        "title": "IBPS Biggest Hiring Drive | IBPS Clerk (CSA) 16th Recruitment 2026: Apply Online for 11,403 Customer Service Associate Posts",
+        "company": "IBPS Biggest",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBPS Biggest Hiring Drive: The Institute of Banking Personnel Selection (IBPS) has published an IBPS Clerk (CSA) 16th Recruitment 2026 Notice in relation to 11403 ...",
+        "url": "https://www.ibps.in/index.php/clerical-cadre-xvi/",
+        "postedDate": "2026-08-03T12:55:30.000Z"
+    },
+    {
         "id": "onlinestudy4u-amazon-biggest-hiring-drive",
         "title": "Amazon Biggest Hiring Drive | Amazon Work From Home Customer Service & Technical Support Jobs 2026 | Remote Jobs in India | Apply Online",
         "company": "Amazon",
