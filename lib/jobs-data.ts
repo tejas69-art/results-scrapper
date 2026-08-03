@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-zensar-off-campus-hiring",
+        "title": "Zensar Off-Campus Hiring | Fresher’s Opportunity for DevOps Engineer Trainee 2026",
+        "company": "Zensar Off",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Zensar Off-Campus Hiring: Looking for a DevOps Engineer Trainee Job in India? Zensar has announced a fantastic job opportunity for students who ...",
+        "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAYjM7UpUM1cxNkFONVFBQ0dHR0MzUDMwV1c5Sko0WS4u",
+        "postedDate": "2026-08-03T16:40:17.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibps-biggest-hiring-drive",
         "title": "IBPS Biggest Hiring Drive | IBPS Clerk (CSA) 16th Recruitment 2026: Apply Online for 11,403 Customer Service Associate Posts",
         "company": "IBPS Biggest",
