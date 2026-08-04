@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-iamneo-biggest-off-campus-hiring",
+        "title": "iamneo Biggest Off Campus Hiring | Junior Technical Trainer Recruitment 2026 | Freshers Hiring Across India",
+        "company": "Off Campus",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "iamneo Biggest Off Campus Hiring: Are you looking for the most recent junior technical trainer Jobs 2026? An exciting opportunity is open ...",
+        "url": "https://www.linkedin.com/posts/hiringnow-iamneo-wilp-share-7490249775771082752-gJsl/",
+        "postedDate": "2026-08-04T14:20:17.000Z"
+    },
+    {
         "id": "onlinestudy4u-tcs-new-big-hiring",
         "title": "TCS New Big Hiring | TCS BPS Hiring for 2027",
         "company": "TCS",
