@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tcs-new-big-hiring",
+        "title": "TCS New Big Hiring | TCS BPS Hiring for 2027",
+        "company": "TCS",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "TCS New Big Hiring: TCS BPS Recruitment 2027 Registration is now open to eligible graduates of the Science, Commerce or Arts ...",
+        "url": "https://www.tcs.com/careers/india/tcs-bps-fresher-hiring",
+        "postedDate": "2026-08-04T08:55:51.000Z"
+    },
+    {
         "id": "onlinestudy4u-zensar-off-campus-hiring",
         "title": "Zensar Off-Campus Hiring | Fresher’s Opportunity for DevOps Engineer Trainee 2026",
         "company": "Zensar Off",
