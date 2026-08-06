@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-infosys-new-big-hiring-drive",
+        "title": "Infosys New Big Hiring Drive | Technical Process Executive Role",
+        "company": "Infosys",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Infosys New Big Hiring Drive: Are you looking for an IT support job for newcomers in a well-known company? It is the Tech Process ...",
+        "url": "https://career.infosys.com/jobdesc?jobReferenceCode=PROGEN-EXTERNAL-250230&sourceId=41",
+        "postedDate": "2026-08-06T08:57:37.000Z"
+    },
+    {
         "id": "onlinestudy4u-iamneo-biggest-off-campus-hiring",
         "title": "iamneo Biggest Off Campus Hiring | Junior Technical Trainer Recruitment 2026 | Freshers Hiring Across India",
         "company": "Off Campus",
