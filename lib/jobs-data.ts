@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-mindfire-solutions-hiring",
+        "title": "Mindfire Solutions Hiring Freshers 2026 | Associate Software Engineer | Work From Home",
+        "company": "Mindfire Solutions",
+        "location": "Remote (India)",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Mindfire Solutions Hiring: Mindfire Solutions is hiring freshers for the Associate Software Engineer job. This job is ideal for those who are looking ...",
+        "url": "https://www.linkedin.com/posts/supriya-gupta-aa4a99386_hiring-freshersjobs-fresherhiring-share-7491334515890782208-He2J/",
+        "postedDate": "2026-08-07T12:50:37.000Z"
+    },
+    {
         "id": "onlinestudy4u-infosys-new-big-hiring-drive",
         "title": "Infosys New Big Hiring Drive | Technical Process Executive Role",
         "company": "Infosys",
