@@ -13,6 +13,39 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-swiggy-new-hiring-drive",
+        "title": "Swiggy HiringDrive | Application for Video Editor Role",
+        "company": "Swiggy",
+        "location": "Mumbai, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Swiggy New Hiring Drive: Swiggy is looking for Video Editors for its Servd Business, previously called Mumbai Foodie. The job is located ...",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSelY-aBHJ-ZRLSIcpDwzDRUMgPyv8SxhTmsKs6MG1UzsXAqhw/viewform",
+        "postedDate": "2026-08-11T15:18:12.000Z"
+    },
+    {
+        "id": "onlinestudy4u-american-express-new-hiring",
+        "title": "American Express Hiring| Apprentice Role",
+        "company": "American Express",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "American Express New Hiring: American Express is hiring Apprentices for Credit &#38; Fraud Risk (CFR) in Gurugram, Haryana. This is a 12-month ...",
+        "url": "https://careers.americanexpress.com/en/sites/CX_1/job/26012309?keyword=26012309&mode=location",
+        "postedDate": "2026-08-11T15:27:43.000Z"
+    },
+    {
+        "id": "onlinestudy4u-google-new-drive",
+        "title": "Google New Drive | Google AI Essentials Specialisation 2026 | Free AI Skills Course by Google Experts",
+        "company": "Google",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Google AI Essentials Specialization is a simple AI course designed for professionals, students and everyone who wishes to master the ...",
+        "url": "https://www.coursera.org/specializations/ai-essentials-google",
+        "postedDate": "2026-08-11T15:34:58.000Z"
+    },
+    {
         "id": "onlinestudy4u-mindfire-solutions-hiring",
         "title": "Mindfire Solutions Hiring Freshers 2026 | Associate Software Engineer | Work From Home",
         "company": "Mindfire Solutions",
@@ -528,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Wipro New Off Campus Hiring: Wipro Limited seeks a talented Graduate Engineer Trainee to join its test team located in ...",
         "url": "https://careers.wipro.com/job/Graduate-Engineer-Trainee/172373-en_US",
         "postedDate": "2026-05-27T05:09:59.000Z"
-    },
-    {
-        "id": "onlinestudy4u-tech-mahindra-new-hiring",
-        "title": "Tech Mahindra Hiring International Customer Support – Voice Process Role",
-        "company": "Tech Mahindra",
-        "location": "Noida, India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Tech Mahindra New Hiring: Tech Mahindra is hiring for International Customer Support Voice Process jobs in Noida. This is a permanent work-from-office job ...",
-        "url": "https://www.linkedin.com/posts/priya-chaudhary-a92a85169_tech-mahindra-is-hiring-international-share-7464952397866594304-9Ozb/",
-        "postedDate": "2026-05-28T16:04:22.000Z"
-    },
-    {
-        "id": "onlinestudy4u-bsnl-new-recruitment",
-        "title": "BSNL JTO Recruitment 2026: Apply Online for 100 Posts, Check Eligibility, Salary & Important Dates",
-        "company": "BSNL",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "BSNL JTO Recruitment 2026: Bharat Sanchar Nigam Limited Junior Telecom Officer Recruitment 2026 announcement has been made for 100 vacancies. practical tips you ...",
-        "url": "https://externalexam.bsnl.co.in/",
-        "postedDate": "2026-05-28T16:26:06.000Z"
     }
 ];
