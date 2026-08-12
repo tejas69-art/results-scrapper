@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-deleitte-off-campus-big-hiring",
+        "title": "Deleitte Off Campus Big Hiring | Services Support Associate I – Hyderabad",
+        "company": "Deleitte Off Campus Big",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Deleitte Off Campus Big Hiring: Deleitte are hiring to fill the Service Support Associate &#8211; Talent Processes and Support &#8211; Learning Administration job ...",
+        "url": "https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-MFUK-HRS-Learning-Admin-Services-Support-Associate-I-Talent-Processes-and-Business-Support/357426",
+        "postedDate": "2026-08-12T18:01:15.000Z"
+    },
+    {
         "id": "onlinestudy4u-isro-new-recruitment",
         "title": "ISRO New Recruitment 2026 | Assistant & Junior Personal Assistant Role | Apply Online for 242 Posts (Last Date Extended)",
         "company": "ISRO",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "SSC CGL Recruitment: The Staff Selection Commission (SSC) has released its official notification for the SSC combined Graduate Level (CGL) Examination ...",
         "url": "https://ssc.gov.in/candidate-portal/one-time-registration/home-page",
         "postedDate": "2026-05-25T16:11:53.000Z"
-    },
-    {
-        "id": "onlinestudy4u-deloitte-new-off-campus-hiring-drive",
-        "title": "Deloitte HiringDrive – Associate Analyst – Executive Assistant Support – USI Leadership Support Centre",
-        "company": "Deloitte",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Deloitte New Off Campus Hiring Drive: Deloitte Support Services India Private Limited offers an excellent opportunity for talented individuals to ...",
-        "url": "https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470",
-        "postedDate": "2026-05-27T04:50:32.000Z"
     }
 ];
