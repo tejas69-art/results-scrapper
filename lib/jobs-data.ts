@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-isro-new-recruitment",
+        "title": "ISRO New Recruitment 2026 | Assistant & Junior Personal Assistant Role | Apply Online for 242 Posts (Last Date Extended)",
+        "company": "ISRO",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "ISRO New Recruitment 2026: Are you looking for a government job after you graduate? This is because the Indian Space Research Organisation (ISRO) has ...",
+        "url": "https://cdn.digialm.com//EForms/configuredHtml/1258/101396//Index.html",
+        "postedDate": "2026-08-12T06:38:40.000Z"
+    },
+    {
         "id": "onlinestudy4u-swiggy-new-hiring-drive",
         "title": "Swiggy HiringDrive | Application for Video Editor Role",
         "company": "Swiggy",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Deloitte New Off Campus Hiring Drive: Deloitte Support Services India Private Limited offers an excellent opportunity for talented individuals to ...",
         "url": "https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH26-Enabling-Areas-UK-Executive-Assistant-Support-Associate-Analyst/326470",
         "postedDate": "2026-05-27T04:50:32.000Z"
-    },
-    {
-        "id": "onlinestudy4u-wipro-new-off-campus-hiring",
-        "title": "Wipro Hiring Graduate Engineer Trainee Role",
-        "company": "Wipro",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Wipro New Off Campus Hiring: Wipro Limited seeks a talented Graduate Engineer Trainee to join its test team located in ...",
-        "url": "https://careers.wipro.com/job/Graduate-Engineer-Trainee/172373-en_US",
-        "postedDate": "2026-05-27T05:09:59.000Z"
     }
 ];
