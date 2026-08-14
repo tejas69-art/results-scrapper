@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-lt-new-hiring-drive",
+        "title": "L&T HiringDrive | GenAI Trainee Recruitment 2026 – B.Tech/M.Tech | Powai",
+        "company": "L&T",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "L&#38;T New Hiring Drive: L&#38;T Precision Engineering &#38; Systems is seeking applicants to fill an GenAI Trainee job at the L&#38;T Innovation Campus, Powai. This ...",
+        "url": "https://larsentoubrocareers.peoplestrong.com/job/detail/LNT_GT_1820286",
+        "postedDate": "2026-08-14T05:35:33.000Z"
+    },
+    {
         "id": "onlinestudy4u-deleitte-off-campus-big-hiring",
         "title": "Deleitte Off Campus Big Hiring | Services Support Associate I – Hyderabad",
         "company": "Deleitte Off Campus Big",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Sopra Steria Off Campus Hiring: Sopra Steria is seeking enthusiastic engineering graduates to fill an engineer trainee post in Noida. This is a ...",
         "url": "https://www.linkedin.com/posts/rahulmca2310_hiring-referral-soprasteria-share-7464614911034216448-WzDq/",
         "postedDate": "2026-05-25T15:40:15.000Z"
-    },
-    {
-        "id": "onlinestudy4u-ssc-cgl-recruitment",
-        "title": "SSC CGL Recruitment Apply Online for 12,256 Vacancies",
-        "company": "SSC",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "SSC CGL Recruitment: The Staff Selection Commission (SSC) has released its official notification for the SSC combined Graduate Level (CGL) Examination ...",
-        "url": "https://ssc.gov.in/candidate-portal/one-time-registration/home-page",
-        "postedDate": "2026-05-25T16:11:53.000Z"
     }
 ];
