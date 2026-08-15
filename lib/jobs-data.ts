@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-rrb-new-recruitment",
+        "title": "RRB New Recruitment 2026 | Junior Engineer JE – Apply Online for 3993 Vacancies",
+        "company": "RRB",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "RRB New Recruitment 2026: Railway Recruitment Board (RRB), Ministry of Railways, has announced RRB J. Engineer JET Recruitment 2026 for candidates who ...",
+        "url": "https://www.rrbapply.gov.in/#/auth/landing",
+        "postedDate": "2026-08-15T14:10:43.000Z"
+    },
+    {
         "id": "onlinestudy4u-lt-new-hiring-drive",
         "title": "L&T HiringDrive | GenAI Trainee Recruitment 2026 – B.Tech/M.Tech | Powai",
         "company": "L&T",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "TII Off Campus Hiring: TII is accepting applications for Apprenticeship positions for the 2026 batch of graduates. This is a great ...",
         "url": "https://www.linkedin.com/posts/mallangi-vamsidhar-reddy-3a80b7285_referralalert-hiring-apprenticeship-share-7462892460860440576-RKC8/",
         "postedDate": "2026-05-24T14:24:36.000Z"
-    },
-    {
-        "id": "onlinestudy4u-sopra-steria-off-campus-hiring",
-        "title": "Sopra Steria Off Campus Hiring – Engineer Trainee Role",
-        "company": "Sopra Steria Off Campus",
-        "location": "Noida, India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Sopra Steria Off Campus Hiring: Sopra Steria is seeking enthusiastic engineering graduates to fill an engineer trainee post in Noida. This is a ...",
-        "url": "https://www.linkedin.com/posts/rahulmca2310_hiring-referral-soprasteria-share-7464614911034216448-WzDq/",
-        "postedDate": "2026-05-25T15:40:15.000Z"
     }
 ];
