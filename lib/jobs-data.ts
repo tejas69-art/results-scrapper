@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-iocl-recruitment",
+        "title": "IOCL Recruitment 2026: Executive Posts Through CBT, Eligibility, Salary, Exam Date & Apply Online",
+        "company": "IOCL Recruitment 2026",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IOCL Recruitment 2026: Indian Oil Corporation Limited (IOCL) has announced an IOCL Employment 2026 notice to recruit Executives through a Computer-Based Test ...",
+        "url": "https://ibpsreg.ibps.in/iocljun26/",
+        "postedDate": "2026-08-16T08:48:58.000Z"
+    },
+    {
         "id": "onlinestudy4u-rrb-new-recruitment",
         "title": "RRB New Recruitment 2026 | Junior Engineer JE – Apply Online for 3993 Vacancies",
         "company": "RRB",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "DRDO Recruitment Drive: Advanced Centre for Energetic Materials (ACEM), a top facility of the Defence Research and Development Organisation (DRDO), ...",
         "url": "https://www.naukri.com/campus/contests/career-fair-2026",
         "postedDate": "2026-05-24T12:53:12.000Z"
-    },
-    {
-        "id": "onlinestudy4u-tii-off-campus-hiring",
-        "title": "TII Off Campus Hiring – Tech and Retail Operations Apprenticeship",
-        "company": "TII Off Campus Hiring",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "TII Off Campus Hiring: TII is accepting applications for Apprenticeship positions for the 2026 batch of graduates. This is a great ...",
-        "url": "https://www.linkedin.com/posts/mallangi-vamsidhar-reddy-3a80b7285_referralalert-hiring-apprenticeship-share-7462892460860440576-RKC8/",
-        "postedDate": "2026-05-24T14:24:36.000Z"
     }
 ];
