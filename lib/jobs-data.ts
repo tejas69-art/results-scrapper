@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-wipro-new-big-drive",
+        "title": "Wipro New Big Drive | Associate Role",
+        "company": "Wipro",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Wipro New Big Drive: Are you looking for a job with a global leader? Wipro is announcing a new hiring process ...",
+        "url": "https://careers.wipro.com/job/Mumbai-Associate-IND-400708/194653-en_US/",
+        "postedDate": "2026-08-21T13:56:00.000Z"
+    },
+    {
         "id": "onlinestudy4u-iocl-recruitment",
         "title": "IOCL Recruitment 2026: Executive Posts Through CBT, Eligibility, Salary, Exam Date & Apply Online",
         "company": "IOCL Recruitment 2026",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "IBM Off Campus Drive: IBM seeks talented engineering students to fill an Internship with Customer Success Engineering. The internship provides hands-on ...",
         "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=116910",
         "postedDate": "2026-05-24T09:57:25.000Z"
-    },
-    {
-        "id": "onlinestudy4u-drdo-recruitment-drive",
-        "title": "DRDO Recruitment Drive – Paid Internship at ACEM Nasik DRDO 2026 | Engineering Students",
-        "company": "DRDO Recruitment Drive",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "DRDO Recruitment Drive: Advanced Centre for Energetic Materials (ACEM), a top facility of the Defence Research and Development Organisation (DRDO), ...",
-        "url": "https://www.naukri.com/campus/contests/career-fair-2026",
-        "postedDate": "2026-05-24T12:53:12.000Z"
     }
 ];
