@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-zs-new-hiring-drive",
+        "title": "ZS HiringDrive | Business Technology Solutions",
+        "company": "ZS New",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "ZS New Hiring Drive: ZS is seeking new talent and young career technology specialists to join its Business Technology Solutions (BTS) team. The job ...",
+        "url": "https://www.linkedin.com/posts/ericsson7866_zs-hiring-techjobs-share-7497917044831703040-0PBe/",
+        "postedDate": "2026-08-26T15:53:04.000Z"
+    },
+    {
         "id": "onlinestudy4u-hrone-off-campus-hiring",
         "title": "HROne Off-Campus Hiring | Software Engineer Trainee – Fresher",
         "company": "HROne Off",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Accenture New Big Hiring: A renowned international professional services company is seeking an experienced Web Developer Associate for its Marketing ...",
         "url": "https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01648534_en&title=Web+Developer+Associate",
         "postedDate": "2026-07-07T13:56:57.000Z"
-    },
-    {
-        "id": "onlinestudy4u-wipro-new-biggest-hiring-drive",
-        "title": "Wipro New Biggest Hiring Drive | (WILP) WE – B.ET 2025 & 2026 FY’27",
-        "company": "Wipro",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Wipro New Biggest Hiring Drive: Are you seeking a new career after completing your diploma? It is possible to find a ...",
-        "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/f00af2c5-aa20-48b8-b3d9-33f733e31da3",
-        "postedDate": "2026-07-08T14:35:30.000Z"
     }
 ];
