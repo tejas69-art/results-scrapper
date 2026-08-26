@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-hrone-off-campus-hiring",
+        "title": "HROne Off-Campus Hiring | Software Engineer Trainee – Fresher",
+        "company": "HROne Off",
+        "location": "Noida, India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "HROne Off-Campus Hiring: HROne is looking for Training Engineers in Software Engineering for the company&#8217;s Platform Engineering team in Noida. This is an opportunity ...",
+        "url": "https://docs.google.com/document/u/0/d/11MxOW7iKhK8KQUDf3ADsdP9_8zi-TMTEkeJRtFxDliI/mobilebasic?pli=1",
+        "postedDate": "2026-08-26T13:50:46.000Z"
+    },
+    {
+        "id": "onlinestudy4u-comviva-new-hiring",
+        "title": "Comviva Hiring| Tech Support Engineer Role",
+        "company": "Comviva",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Comviva New Hiring: Comviva invites employee recommendations to fill the ComRangers (Tech Support Engineer) role. ComRangers (Tech Support Engineer) role for 2026 engineering ...",
+        "url": "https://www.linkedin.com/posts/basavaraj-c-9768423a4_comviva-hiring-referral-share-7497893190071513088-2pIT/",
+        "postedDate": "2026-08-26T14:12:05.000Z"
+    },
+    {
         "id": "onlinestudy4u-wipro-new-big-drive",
         "title": "Wipro New Big Drive | Associate Role",
         "company": "Wipro",
@@ -539,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Wipro New Biggest Hiring Drive: Are you seeking a new career after completing your diploma? It is possible to find a ...",
         "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/f00af2c5-aa20-48b8-b3d9-33f733e31da3",
         "postedDate": "2026-07-08T14:35:30.000Z"
-    },
-    {
-        "id": "onlinestudy4u-tcs-new-off-campus-drive",
-        "title": "TCS New Off Campus Drive | iON NQT",
-        "company": "TCS",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "TCS New Off Campus Drive: The TCS iON National Qualifier Test (TCS iON NQT) July 2026 registration process is open to those ...",
-        "url": "https://www.tcsion.com/hub/national-qualifier-test/",
-        "postedDate": "2026-07-08T14:43:00.000Z"
-    },
-    {
-        "id": "onlinestudy4u-ibm-off-campus-drive",
-        "title": "IBM Off Campus Drive – Customer Success Engineer Intern",
-        "company": "IBM",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "IBM Off Campus Drive: IBM seeks talented engineering students to fill an Internship with Customer Success Engineering. The internship provides hands-on ...",
-        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=116910",
-        "postedDate": "2026-05-24T09:57:25.000Z"
     }
 ];
