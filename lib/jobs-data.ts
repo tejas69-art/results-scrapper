@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tata-new-biggest-hiring",
+        "title": "Tata New Biggest Hiring | Tata Imagination Challenge 2026",
+        "company": "Tata",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Tata New Biggest Hiring: Tata Imagination Challenge 2026 returns with the chance for undergraduate and postgraduate students from across India to ...",
+        "url": "https://unstop.com/competitions/crp-tata-imagination-challenge-2026-tata-group-1740413?lb=0mD5NlH4&utm_medium=Share&utm_source=competitions&utm_campaign=Ytyad42795",
+        "postedDate": "2026-08-31T13:31:35.000Z"
+    },
+    {
         "id": "onlinestudy4u-zs-new-hiring-drive",
         "title": "ZS HiringDrive | Business Technology Solutions",
         "company": "ZS New",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Capgemini New Big Hiring: Capgemini is seeking applications to fill the Assistant Software Engineer job in Pune. It is an entry-level Software Engineering ...",
         "url": "https://careers.capgemini.com/job/Pune-Associate-Software-Engineer/1411967133/",
         "postedDate": "2026-07-07T11:56:49.000Z"
-    },
-    {
-        "id": "onlinestudy4u-accenture-new-big-hiring",
-        "title": "Accenture New Big Hiring | Web Developer Associate Role",
-        "company": "Accenture",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Accenture New Big Hiring: A renowned international professional services company is seeking an experienced Web Developer Associate for its Marketing ...",
-        "url": "https://www.accenture.com/in-en/careers/jobdetails?id=AIOC-S01648534_en&title=Web+Developer+Associate",
-        "postedDate": "2026-07-07T13:56:57.000Z"
     }
 ];
