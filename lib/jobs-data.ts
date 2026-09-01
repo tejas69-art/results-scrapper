@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibps-new-biggest-recruitment",
+        "title": "IBPS New Biggest Recruitment 2026 | RRB 15th Recruitment – Online Form, Eligibility, Exam Date & Selection Process",
+        "company": "IBPS",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBPS New Biggest Recruitment 2026: The Institute of Banking Personnel Selection (IBPS) has issued its CRP RRBsXV recruitment notice for the recruitment of Group &#8220;A&#8221; ...",
+        "url": "https://www.ibps.in/index.php/rural-bank-xv/",
+        "postedDate": "2026-09-01T05:03:02.000Z"
+    },
+    {
         "id": "onlinestudy4u-tata-new-biggest-hiring",
         "title": "Tata New Biggest Hiring | Tata Imagination Challenge 2026",
         "company": "Tata",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Qualcomm Off Campus Drive: Qualcomm is looking for skilled AI Platform Engineers and Associate AI Engineers in Hyderabad to lead large-scale AI initiatives. This job ...",
         "url": "https://careers.qualcomm.com/careers/job/446719463158",
         "postedDate": "2026-07-07T11:31:53.000Z"
-    },
-    {
-        "id": "onlinestudy4u-capgemini-new-big-hiring",
-        "title": "Capgemini New Big Hiring | Associate Software Engineer Role",
-        "company": "Capgemini",
-        "location": "Pune, India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Capgemini New Big Hiring: Capgemini is seeking applications to fill the Assistant Software Engineer job in Pune. It is an entry-level Software Engineering ...",
-        "url": "https://careers.capgemini.com/job/Pune-Associate-Software-Engineer/1411967133/",
-        "postedDate": "2026-07-07T11:56:49.000Z"
     }
 ];
