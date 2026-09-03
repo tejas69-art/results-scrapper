@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-dentsu-new-hiring",
+        "title": "Dentsu Hiring| Developer Role",
+        "company": "Dentsu",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Dentsu New Hiring: Dentsu Sokrati is seeking applicants for an entry-level Full Stack Developer job in Gurugram. This job is ideal for fresh graduates and ...",
+        "url": "https://dentsuaegis.wd3.myworkdayjobs.com/DAN_GLOBAL/job/Gurugram/Developer_R1128610",
+        "postedDate": "2026-09-03T14:36:01.000Z"
+    },
+    {
         "id": "onlinestudy4u-kpit-new-hiring-drive",
         "title": "KPIT HiringDrive | Associate Engineer 2026 – Pool Drive | ₹4.5 LPA",
         "company": "KPIT",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "EXL Hiring Drive: An exciting opportunity is available as an Associate Data Analyst to be part of our expanding staff ...",
         "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/16594",
         "postedDate": "2026-07-07T10:51:21.000Z"
-    },
-    {
-        "id": "onlinestudy4u-comviva-off-campus-hiring",
-        "title": "Comviva Off Campus Hiring | Tech Support Internship",
-        "company": "Comviva Off Campus",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Comviva Off Campus Hiring: Comviva offers the Tech Support internship in Tech Operations and Production Support for engineering students who are eligible. The ...",
-        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7480156810574725120/",
-        "postedDate": "2026-07-07T10:58:27.000Z"
     }
 ];
