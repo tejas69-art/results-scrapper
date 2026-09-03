@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-kpit-new-hiring-drive",
+        "title": "KPIT HiringDrive | Associate Engineer 2026 – Pool Drive | ₹4.5 LPA",
+        "company": "KPIT",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "KPIT New Hiring Drive: KPIT Technologies is running an Associate Engineer 2026 pool Drive for qualified candidates. The job is open to applicants from ...",
+        "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/b2aaf7a0-2abc-40ce-ad9e-e2ed76d54d1f",
+        "postedDate": "2026-09-03T06:06:32.000Z"
+    },
+    {
+        "id": "onlinestudy4u-fujitsu-new-big-hiring",
+        "title": "Fujitsu New Big Hiring | Software Engineer Apprentice 2026 – Bangalore",
+        "company": "Fujitsu",
+        "location": "Bengaluru, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Fujitsu New Big Hiring: Fujitsu 1Finity is seeking applicants for the Software Engineer Apprentice role in Bangalore. This position is for applicants ...",
+        "url": "https://www.jobs.global.fujitsu.com/job/Software-Engineer-Apprentice/11840-en_US",
+        "postedDate": "2026-09-03T06:43:31.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibps-new-biggest-recruitment",
         "title": "IBPS New Biggest Recruitment 2026 | RRB 15th Recruitment – Online Form, Eligibility, Exam Date & Selection Process",
         "company": "IBPS",
@@ -539,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Comviva Off Campus Hiring: Comviva offers the Tech Support internship in Tech Operations and Production Support for engineering students who are eligible. The ...",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7480156810574725120/",
         "postedDate": "2026-07-07T10:58:27.000Z"
-    },
-    {
-        "id": "onlinestudy4u-indiamart-new-hiring-drive",
-        "title": "IndiaMART HiringDrive | Associate Engineer/Intern",
-        "company": "IndiaMART",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "IndiaMART New Hiring Drive: IndiaMart is India&#8217;s biggest B2B marketplace and is a top single-source solution for all your business ...",
-        "url": "https://docs.google.com/forms/d/e/1FAIpQLSc3-K8zCRIt7hN5y8cIlTdIdRkZ7S0mD_XoykfOVaXS1snYtg/viewform?pli=1",
-        "postedDate": "2026-07-07T11:11:56.000Z"
-    },
-    {
-        "id": "onlinestudy4u-qualcomm-off-campus-drive",
-        "title": "Qualcomm Off Campus Drive | Engineer/Associate Engineer – AI Platform Role",
-        "company": "Off Campus",
-        "location": "Hyderabad, India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Qualcomm Off Campus Drive: Qualcomm is looking for skilled AI Platform Engineers and Associate AI Engineers in Hyderabad to lead large-scale AI initiatives. This job ...",
-        "url": "https://careers.qualcomm.com/careers/job/446719463158",
-        "postedDate": "2026-07-07T11:31:53.000Z"
     }
 ];
