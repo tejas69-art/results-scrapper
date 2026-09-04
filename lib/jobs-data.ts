@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-naukri-new-drive",
+        "title": "Naukri New Drive | India’s Biggest Skill Contest 2026 – ₹20 Lakh Prizes, Eligibility, Important Dates & Selection Process",
+        "company": "Naukri",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Naukri New Drive: India&#8217;s Most Popular Skill Contest is inviting students to compete in a competition based on skill that ...",
+        "url": "https://www.naukri.com/campus/contests/young-turks-skills-assessment-test?action=enrol&referral=e2000105-rUQ63IU-pseu&uapp=801&utm_source=share_desktop&utm_medium=referral",
+        "postedDate": "2026-09-04T15:42:26.000Z"
+    },
+    {
         "id": "onlinestudy4u-dentsu-new-hiring",
         "title": "Dentsu Hiring| Developer Role",
         "company": "Dentsu",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "IBPS SO Recruitment 2026: The Institute of Banking Personnel Selection (IBPS) has released the official IBPS SO 2026 Notification for ...",
         "url": "https://ibpsreg.ibps.in/crpspxvimy26/",
         "postedDate": "2026-07-03T03:20:46.000Z"
-    },
-    {
-        "id": "onlinestudy4u-exl-hiring-drive",
-        "title": "EXL Hiring Drive | Associate – Data Analyst Role",
-        "company": "EXL",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "EXL Hiring Drive: An exciting opportunity is available as an Associate Data Analyst to be part of our expanding staff ...",
-        "url": "https://fa-ewjt-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2/job/16594",
-        "postedDate": "2026-07-07T10:51:21.000Z"
     }
 ];
