@@ -13,6 +13,39 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-tech-mahindra-new-drive",
+        "title": "Tech Mahindra New Drive | Customer Support Associate | Kolkata",
+        "company": "Tech Mahindra",
+        "location": "Kolkata, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Tech Mahindra New Drive: Tech Mahindra is holding a Mega Walk-In Drive in Kolkata to fill the Customer Support Assistant (CSA) position for ...",
+        "url": "https://www.linkedin.com/posts/diptajit-dey-627191143_for-for-7th-share-7501897080899166208-hSrC/",
+        "postedDate": "2026-09-06T08:12:02.000Z"
+    },
+    {
+        "id": "onlinestudy4u-qualcomm-new-hiring",
+        "title": "Qualcomm Hiring| Associate Engineer – Compiler Development Role",
+        "company": "Qualcomm",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Qualcomm New Hiring: Qualcomm India Private Limited is seeking applicants for the post of Associate Engineer in Compiler Development in Hyderabad, Telangana. This position is ...",
+        "url": "https://careers.qualcomm.com/careers/job/446718499387",
+        "postedDate": "2026-09-06T08:30:15.000Z"
+    },
+    {
+        "id": "onlinestudy4u-virtusa-new-hiring-drive",
+        "title": "Virtusa HiringDrive | Analytical Associate Role",
+        "company": "Virtusa",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Virtusa New Hiring Drive: An Analytical Associate job is currently available in Hyderabad, Telangana and falls under the Data &#38; Analytics category. The position concentrates on analysis ...",
+        "url": "https://www.virtusa.com/careers/job-search/global/en/job/VIRVIRGLOBAL134851EXTERNALENGLOBAL/Analytical-Associate",
+        "postedDate": "2026-09-06T08:34:18.000Z"
+    },
+    {
         "id": "onlinestudy4u-naukri-new-drive",
         "title": "Naukri New Drive | India’s Biggest Skill Contest 2026 – ₹20 Lakh Prizes, Eligibility, Important Dates & Selection Process",
         "company": "Naukri",
@@ -528,38 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Tata New Big Hiring Drive: The job focuses on the development of software testing, deployment and debugging. The job entails developing ...",
         "url": "https://jobs.tatacommunications.com/jobs/8121880692?channel=TGlua2VkSW4=",
         "postedDate": "2026-07-09T15:59:00.000Z"
-    },
-    {
-        "id": "onlinestudy4u-cisco-new-off-campus-drive",
-        "title": "Cisco New Off Campus Drive | Software Engineer-India Engineering/UHR-FY27",
-        "company": "Cisco",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Cisco New Off Campus Drive: This job offers the chance for graduates in 2027 who wish to work with Cisco&#8217;s ...",
-        "url": "https://careers.cisco.com/global/en/job/CISCISGLOBAL2016168EXTERNALENGLOBAL/Software-Engineer-India-Engineering-UHR-FY27-Code-with-Cisco",
-        "postedDate": "2026-07-09T16:09:54.000Z"
-    },
-    {
-        "id": "onlinestudy4u-salesforce-new-big-off-campus-hiring",
-        "title": "Salesforce New Big Off Campus Hiring | Associate Technical Support Engineer Role",
-        "company": "Salesforce",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Salesforce New Big Off Campus Hiring: Are you looking for a job in one of the top cloud-based technology companies? Salesforce has ...",
-        "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Associate-Technical-Support-Engineer_JR350727",
-        "postedDate": "2026-07-09T16:16:18.000Z"
-    },
-    {
-        "id": "onlinestudy4u-ibps-so-recruitment",
-        "title": "IBPS SO Recruitment 2026 Notification PDF Out: Check 745 Specialist Posts, Eligibility, Exam Pattern & Salary",
-        "company": "IBPS SO",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "IBPS SO Recruitment 2026: The Institute of Banking Personnel Selection (IBPS) has released the official IBPS SO 2026 Notification for ...",
-        "url": "https://ibpsreg.ibps.in/crpspxvimy26/",
-        "postedDate": "2026-07-03T03:20:46.000Z"
     }
 ];
