@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-accenture-mass-hiring",
+        "title": "Accenture Mass Hiring | Application Support Engineer Role",
+        "company": "Accenture",
+        "location": "Mumbai, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Accenture Mass Hiring: Accenture is hiring for the Application Support Engineer role in Mumbai. This opportunity is suitable for candidates ...",
+        "url": "https://www.accenture.com/in-en/careers/jobdetails?id=ATCI-5715393-S2063558_en",
+        "postedDate": "2026-09-08T20:42:15.000Z"
+    },
+    {
+        "id": "onlinestudy4u-hcltech-new-hiring",
+        "title": "HCLTech Hiring| Campus – Trainee Role",
+        "company": "HCLTech",
+        "location": "Chennai, India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "HCLTech New Hiring: A Campus Trainee opportunity is available in Chennai, Tamil Nadu, for candidates interested in Computer Vision, AI ...",
+        "url": "https://careers.hcltech.com/job/Campus-Trainee/146888-en_US",
+        "postedDate": "2026-09-08T20:52:43.000Z"
+    },
+    {
         "id": "onlinestudy4u-ssc-je-recruitment",
         "title": "SSC JE Recruitment 2026 – 1,748 Vacancies, Eligibility, Exam Date & Application Details",
         "company": "SSC",
@@ -539,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Deloitte New Big Off-Campus Hiring: The Associate Analyst position for Cloud Infrastructure offers a strong possibility for those who want ...",
         "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Associate-Analyst-Cloud-Infrastructure-Bengaluru-Engineering-Hybrid-Cloud-Engineering/56966344/",
         "postedDate": "2026-07-12T13:20:35.000Z"
-    },
-    {
-        "id": "onlinestudy4u-moglix-off-campus-hiring",
-        "title": "Moglix Off Campus Hiring | Fresher Software Engineer Role",
-        "company": "Moglix Off Campus",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Moglix Off Campus Hiring: This position provides a fantastic chance for students of software engineering in the 2025-2026 batches to ...",
-        "url": "https://www.linkedin.com/posts/kanika-k-8098a1a1_were-hiring-software-engineer-freshers-for-share-7481292690677071872-N09U/",
-        "postedDate": "2026-07-11T13:52:46.000Z"
-    },
-    {
-        "id": "onlinestudy4u-myanatomy-new-hiring-drive",
-        "title": "MyAnatomy HiringDrive | Enterprise Sales Trainee Program 2026",
-        "company": "MyAnatomy",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "MyAnatomy New Hiring Drive: MyAnatomy invites applications to the Training Program for Enterprise Sales 2026, which is a 12-month paid internship for ...",
-        "url": "https://match.myanatomy.in/corporate/customCampaign/view?publicLink=e1a1bbc08201a25669c239eb6ad26eca;3d6ce508a62659a91496c52dc95f70c044864dbaa1f047e67dbae281df1c73fcf475811411534e637fcaff6e1407db7dfe6014e25061621189262e4fd02f12ccbac7f0eb90701de8a1342979d153f21aea1adeeeca770d27e65a3c8b7ad909ae9114d6faf344057f0332a662d601f4936d2f9b9a21c8da999c0acf7c18709d052e6980c744b0a038e236bae3051aeac0511576fc4ff948ae445df3a50c06b2cdba7cae2d5753165829ee360f3f2fcd517256c9496e4c0c75758294719bab5c75&source=n#apply",
-        "postedDate": "2026-07-09T15:48:59.000Z"
     }
 ];
