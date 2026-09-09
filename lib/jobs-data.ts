@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-deloitte-big-drive",
+        "title": "Deloitte Big Drive | Data Management Associate Role",
+        "company": "Deloitte",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Deloitte Big Drive: A Data Management Associate position is available in Hyderabad for candidates with 0–2 years of revel in. ...",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7503038171358801920/",
+        "postedDate": "2026-09-09T14:13:41.000Z"
+    },
+    {
         "id": "onlinestudy4u-accenture-mass-hiring",
         "title": "Accenture Mass Hiring | Application Support Engineer Role",
         "company": "Accenture",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Microsoft New Hiring: It is a Software Engineering Internship that offers hands-on experience in developing practical solutions to complex technical ...",
         "url": "https://apply.careers.microsoft.com/careers/job/1970393556911730",
         "postedDate": "2026-07-15T13:28:33.000Z"
-    },
-    {
-        "id": "onlinestudy4u-deloitte-new-big-off-campus-hiring",
-        "title": "Deloitte New Big Off-Campus Hiring | Associate Analyst Role",
-        "company": "Deloitte",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Deloitte New Big Off-Campus Hiring: The Associate Analyst position for Cloud Infrastructure offers a strong possibility for those who want ...",
-        "url": "https://southasiacareers.deloitte.com/job/Bengaluru-Associate-Analyst-Cloud-Infrastructure-Bengaluru-Engineering-Hybrid-Cloud-Engineering/56966344/",
-        "postedDate": "2026-07-12T13:20:35.000Z"
     }
 ];
