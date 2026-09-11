@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ssc-chsl-recruitment",
+        "title": "SSC CHSL Recruitment | SSC CHSL 10+2 Recruitment 2026 – Apply Online for 2536 Posts",
+        "company": "SSC",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "SSC CHSL Recruitment 2026: Staff Selection Commission (SSC) has announced the SSC CHSL 10+2 Examination 2026 for candidates looking for ...",
+        "url": "https://ssc.gov.in/candidate-portal/one-time-registration/home-page",
+        "postedDate": "2026-09-11T08:38:21.000Z"
+    },
+    {
+        "id": "onlinestudy4u-bhel-recruitment",
+        "title": "BHEL Recruitment 2026-27 | Trichy Apprentice Recruitment",
+        "company": "BHEL Recruitment 2026",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "BHEL Recruitment 2026-27: Bharat Heavy Electricals Limited (BHEL), Tiruchirappalli, has announced apprenticeship opportunities for the 2026–27 training year. The recruitment ...",
+        "url": "https://trichy.bhel.com/tms/app_pro/index.jsp",
+        "postedDate": "2026-09-11T09:12:57.000Z"
+    },
+    {
         "id": "onlinestudy4u-deloitte-big-drive",
         "title": "Deloitte Big Drive | Data Management Associate Role",
         "company": "Deloitte",
@@ -539,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Recruit CRM New Hiring Drive: The Recruit CRM platform is a prominent bootstrapped SaaS platform for the industry of technology ...",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7483426277144715265/",
         "postedDate": "2026-07-16T15:46:40.000Z"
-    },
-    {
-        "id": "onlinestudy4u-binmile-off-campus-hiring",
-        "title": "Binmile Off-Campus Hiring | Software Developer Trainee (Freshers) Role",
-        "company": "Binmile Off",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Do you possess a 2025, twenty-26 B.Tech, MCA, or BCA graduate who is looking to start your career in the ...",
-        "url": "https://www.linkedin.com/posts/rashika-gupta-aa7a83153_hiring-freshers-softwaredeveloper-share-7483088693772177409-aQAd/",
-        "postedDate": "2026-07-16T15:54:17.000Z"
-    },
-    {
-        "id": "onlinestudy4u-microsoft-new-hiring",
-        "title": "Microsoft Hiring| Software Engineering INTERN Role",
-        "company": "Microsoft",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Microsoft New Hiring: It is a Software Engineering Internship that offers hands-on experience in developing practical solutions to complex technical ...",
-        "url": "https://apply.careers.microsoft.com/careers/job/1970393556911730",
-        "postedDate": "2026-07-15T13:28:33.000Z"
     }
 ];
