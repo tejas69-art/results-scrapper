@@ -73,6 +73,9 @@ export default function RootLayout({
                 <meta name="google-site-verification" content="Nh9eDWf49XDW28Ritjf1e2PPQ3ZJOmA2g4MKOgBow2k" />
             </head>
             <body className="font-sans antialiased text-slate-700 bg-white min-h-screen flex flex-col">
+                <div className="bg-amber-100 text-amber-900 border-b border-amber-200 px-4 py-2.5 text-center text-sm font-medium">
+                    Notice: I have stopped updating this site. If you are interested in this project, feel free to <a href="https://www.linkedin.com/in/tejas-b-p-1648a6319/" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-amber-700">ping me on LinkedIn</a>.
+                </div>
                 <Header />
                 <main className="flex-grow">
                     {children}
