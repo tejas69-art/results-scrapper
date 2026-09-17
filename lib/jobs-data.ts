@@ -13,6 +13,39 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibm-new-hiring-drive",
+        "title": "IBM HiringDrive | Associate Software Engineer Role",
+        "company": "IBM",
+        "location": "Bengaluru, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBM New Hiring Drive: IBM is seeking an associate software engineer at the company&#8217;s Bangalore location. This entry-level position is ...",
+        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=132670&source=SN_LinkedIn",
+        "postedDate": "2026-09-17T13:31:23.000Z"
+    },
+    {
+        "id": "onlinestudy4u-cognizant-new-big-drive",
+        "title": "Cognizant New Big Drive | Sr. Software Engineer Role",
+        "company": "Cognizant",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Cognizant New Big Drive: Cognizant has announced a Sr. Software Engineer opportunity in Hyderabad, India. This hybrid role focuses on ...",
+        "url": "https://careers.cognizant.com/global-en/jobs/00068949144/jr-software-engineer/",
+        "postedDate": "2026-09-17T13:46:18.000Z"
+    },
+    {
+        "id": "onlinestudy4u-deloitte-big-new-hiring",
+        "title": "Deloitte Big Hiring| AI Specialist Recruitment 2026 – Assistant, Valuation and Analytics Advisory",
+        "company": "Deloitte",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Deloitte Big New Hiring: Deloitte is hiring for the position of FTH – Assistant (AI Specialist) in the Valuation and ...",
+        "url": "https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/FY27-USI-Audit-Services-FTH-Assistant-AI-Specialist-Valuation-and-Analytics-Advisory/364049",
+        "postedDate": "2026-09-17T14:18:36.000Z"
+    },
+    {
         "id": "onlinestudy4u-ssc-chsl-recruitment",
         "title": "SSC CHSL Recruitment | SSC CHSL 10+2 Recruitment 2026 – Apply Online for 2536 Posts",
         "company": "SSC",
@@ -528,38 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Google New Hiring Drive: Are you an enthusiastic person who is looking for hands-on experience in the field of technology? Applications ...",
         "url": "https://www.linkedin.com/posts/mohammed-sawood-7285a4251_google-googleapprenticeship-googlecareers-share-7485096350255267840-WuSV/",
         "postedDate": "2026-07-22T06:41:49.000Z"
-    },
-    {
-        "id": "onlinestudy4u-ibm-new-off-campus-hiring",
-        "title": "IBM Hiring| Software Engineer – Confluent Role",
-        "company": "IBM",
-        "location": "Bengaluru, India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "IBM New Off Campus Hiring: This Software Engineer job in Bangalore provides a fantastic opportunity for young professionals and recent ...",
-        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=124850",
-        "postedDate": "2026-07-17T08:20:25.000Z"
-    },
-    {
-        "id": "onlinestudy4u-accenture-new-off-campus-drive",
-        "title": "Accenture New Off-Campus Drive |  System and Application Services Associate Role",
-        "company": "Accenture",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Accenture New Off-Campus Drive: This job is a great opportunity for young professionals and fresh graduates looking for new IT jobs ...",
-        "url": "https://indiacampus.accenture.com/myzone/accenture/1/jobs/129361/job-details",
-        "postedDate": "2026-07-17T08:29:32.000Z"
-    },
-    {
-        "id": "onlinestudy4u-recruit-crm-new-hiring-drive",
-        "title": "Recruit CRM HiringDrive | Trainee Software Engineer Role",
-        "company": "Recruit CRM",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Recruit CRM New Hiring Drive: The Recruit CRM platform is a prominent bootstrapped SaaS platform for the industry of technology ...",
-        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7483426277144715265/",
-        "postedDate": "2026-07-16T15:46:40.000Z"
     }
 ];
