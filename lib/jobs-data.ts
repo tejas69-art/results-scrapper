@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-deloitte-recruitment",
+        "title": "Deloitte Recruitment 2026 – Service Support Associate Hyderabad",
+        "company": "Deloitte",
+        "location": "Hyderabad, India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Deloitte Recruitment: Deloitte is seeking candidates for the job of Service Support Associate in the Contact Centre in Hyderabad. This ...",
+        "url": "https://usijobs.deloitte.com/en_US/careersUSI/JobDetail/USI-EH27-CoRe-Global-Contact-Center-ITSD-Tech-Analyst-CTH-Hyderabad/367201",
+        "postedDate": "2026-09-19T19:52:34.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibm-new-hiring-drive",
         "title": "IBM HiringDrive | Associate Software Engineer Role",
         "company": "IBM",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Wipro Biggest Hiring Drive: Wipro announces job openings for freshers in 2025 and 2026 graduate batches. This recruitment drive offers Wipro trainees jobs in ...",
         "url": "https://www.linkedin.com/posts/mohil-706663319_please-fill-out-this-form-share-7484919436735315968-QUST/",
         "postedDate": "2026-07-24T05:33:19.000Z"
-    },
-    {
-        "id": "onlinestudy4u-google-new-hiring-drive",
-        "title": "Google HiringDrive | Multiple Job Opportunities",
-        "company": "Google",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Google New Hiring Drive: Are you an enthusiastic person who is looking for hands-on experience in the field of technology? Applications ...",
-        "url": "https://www.linkedin.com/posts/mohammed-sawood-7285a4251_google-googleapprenticeship-googlecareers-share-7485096350255267840-WuSV/",
-        "postedDate": "2026-07-22T06:41:49.000Z"
     }
 ];
