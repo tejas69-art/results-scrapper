@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-cognizant-new-job-opportunity",
+        "title": "Cognizant New Job Opportunity 2026–2027 | Freshers & Experienced Candidates",
+        "company": "Cognizant",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "Cognizant New Job Opportunity 2026–2027: Are you looking for an employment opportunity with Cognizant? Cognizant invites new professionals, experienced professionals, ...",
+        "url": "https://www.linkedin.com/posts/rajni-kumari-13901b359_hiring-2027batch-freshers-share-7506775435549024256-HpLi/",
+        "postedDate": "2026-09-19T20:00:16.000Z"
+    },
+    {
         "id": "onlinestudy4u-deloitte-recruitment",
         "title": "Deloitte Recruitment 2026 – Service Support Associate Hyderabad",
         "company": "Deloitte",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "HCLTech New Biggest Hiring: HCLTech invites applications for Graduate Engineering Trainee posts that are specifically targeted for the 2026 B.Tech batch. This is ...",
         "url": "https://www.linkedin.com/feed/update/urn:li:activity:7486091877700562944/",
         "postedDate": "2026-07-24T04:30:52.000Z"
-    },
-    {
-        "id": "onlinestudy4u-wipro-biggest-hiring-drive",
-        "title": "Wipro Biggest Hiring Drive | Trainee (Backend) Role",
-        "company": "Wipro",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Wipro Biggest Hiring Drive: Wipro announces job openings for freshers in 2025 and 2026 graduate batches. This recruitment drive offers Wipro trainees jobs in ...",
-        "url": "https://www.linkedin.com/posts/mohil-706663319_please-fill-out-this-form-share-7484919436735315968-QUST/",
-        "postedDate": "2026-07-24T05:33:19.000Z"
     }
 ];
