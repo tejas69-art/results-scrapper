@@ -13,6 +13,28 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-lt-new-big-hiring-drive",
+        "title": "L&T New Big Hiring Drive | Post-Graduation Registration for Internship",
+        "company": "L&T",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "L&#38;T New Big Hiring Drive: L&#38;T Technology Services (LTTS) is inviting applications for a postgraduate internship for the 2027 batch. ...",
+        "url": "https://app.joinsuperset.com/join/#/signup/student/jobprofiles/d3cb8809-e5f6-45bf-8404-ac834f2cea2c",
+        "postedDate": "2026-09-21T14:01:45.000Z"
+    },
+    {
+        "id": "onlinestudy4u-tcs-new-mass-hiring-drive",
+        "title": "TCS New Mass Hiring Drive | TCS CodeVita Season 14: Eligibility, Prize Money, Rounds and Registration Details",
+        "company": "TCS",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "TCS New Mass Hiring Drive: TCS CodeVita Season 14 is an international programming competition designed to pick out proficient coders ...",
+        "url": "https://codevita.tcsapps.com/",
+        "postedDate": "2026-09-21T15:47:38.000Z"
+    },
+    {
         "id": "onlinestudy4u-cognizant-new-job-opportunity",
         "title": "Cognizant New Job Opportunity 2026–2027 | Freshers & Experienced Candidates",
         "company": "Cognizant",
@@ -539,27 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "PwC New Off-Campus Hiring: AWS jobs in Gurgaon keep attracting professionals who are focused on cloud-based infrastructure as well as ...",
         "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Gurugram-10-C/IN-Specialist--AWS--Data-and-Analytics-Advisory-Gurgaon_747314WD-2",
         "postedDate": "2026-07-26T14:03:19.000Z"
-    },
-    {
-        "id": "onlinestudy4u-dhl-off-campus-drive",
-        "title": "DHL Off Campus Drive | Software Engineer Role",
-        "company": "Off Campus",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "DHL Off Campus Drive: Job opportunities for Software Engineers in Indore remain a magnet for people looking for secure careers ...",
-        "url": "https://careers.dhl.com/global/en/job/DPDHGLOBALAV336444ENGLOBALEXTERNAL/Software-Engineer",
-        "postedDate": "2026-07-26T12:49:40.000Z"
-    },
-    {
-        "id": "onlinestudy4u-hcltech-new-biggest-hiring",
-        "title": "HCLTech New Biggest Hiring | 𝐆𝐫𝐚𝐝𝐮𝐚𝐭𝐞 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫 𝐓𝐫𝐚𝐢𝐧𝐞𝐞𝐬 For Multiple Roles",
-        "company": "HCLTech",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "HCLTech New Biggest Hiring: HCLTech invites applications for Graduate Engineering Trainee posts that are specifically targeted for the 2026 B.Tech batch. This is ...",
-        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7486091877700562944/",
-        "postedDate": "2026-07-24T04:30:52.000Z"
     }
 ];
