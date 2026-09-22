@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-wipro-hiring",
+        "title": "Wipro Hiring 2026 – Trainee Manual Testing | Gurugram",
+        "company": "Wipro",
+        "location": "India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "Wipro Hiring 2026: Wipro is hiring a Trainee – Manual Testing for its Defined Benefits Technical (DB Tech) Team in ...",
+        "url": "https://www.linkedin.com/posts/pranjal-shaw-b49714268_wipro-hiring-traineehiring-share-7507750535827984384-EiCE/",
+        "postedDate": "2026-09-22T16:53:02.000Z"
+    },
+    {
         "id": "onlinestudy4u-lt-new-big-hiring-drive",
         "title": "L&T New Big Hiring Drive | Post-Graduation Registration for Internship",
         "company": "L&T",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Salesforce New Hiring Drive: Salesforce New Hiring Drive: Jobs for software engineer interns in India remain a magnet for students ...",
         "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Summer-2027-Intern---Software-Engineer_JR337715",
         "postedDate": "2026-07-26T13:43:44.000Z"
-    },
-    {
-        "id": "onlinestudy4u-pwc-new-off-campus-hiring",
-        "title": "PwC New Off-Campus Hiring | AWS Data and Analytics Advisory Role",
-        "company": "PwC New Off",
-        "location": "Gurgaon, India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "PwC New Off-Campus Hiring: AWS jobs in Gurgaon keep attracting professionals who are focused on cloud-based infrastructure as well as ...",
-        "url": "https://pwc.wd3.myworkdayjobs.com/Global_Experienced_Careers/job/Gurugram-10-C/IN-Specialist--AWS--Data-and-Analytics-Advisory-Gurgaon_747314WD-2",
-        "postedDate": "2026-07-26T14:03:19.000Z"
     }
 ];
