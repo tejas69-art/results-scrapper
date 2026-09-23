@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-hcltech-new-drive",
+        "title": "HCLTech New Drive | Trainee – Voice Operations (DPO) Role",
+        "company": "HCLTech",
+        "location": "Bengaluru, India",
+        "type": "Internship",
+        "category": "Software Development",
+        "description": "HCLTech New Drive: HCLTech is hiring for the Trainee – Voice Operations (DPO) function in Bangalore, Karnataka. This entry-level opportunity ...",
+        "url": "https://careers.hcltech.com/job/Trainee-Voice-Operations-%28DPO%29/151456-en_US",
+        "postedDate": "2026-09-23T15:23:37.000Z"
+    },
+    {
         "id": "onlinestudy4u-wipro-hiring",
         "title": "Wipro Hiring 2026 – Trainee Manual Testing | Gurugram",
         "company": "Wipro",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Tech Mahindra New Big Hiring: Jobs for junior software engineers in Pune remain a popular starting point for students looking ...",
         "url": "https://www.naukri.com/job-listings-junior-software-engineer-pune-tech-mahindra-ltd-pune-0-to-0-years-030726024717",
         "postedDate": "2026-07-26T13:26:29.000Z"
-    },
-    {
-        "id": "onlinestudy4u-salesforce-new-hiring-drive",
-        "title": "Salesforce HiringDrive | Summer 2027 Intern – Software Engineer",
-        "company": "Salesforce",
-        "location": "India",
-        "type": "Internship",
-        "category": "Software Development",
-        "description": "Salesforce New Hiring Drive: Salesforce New Hiring Drive: Jobs for software engineer interns in India remain a magnet for students ...",
-        "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Summer-2027-Intern---Software-Engineer_JR337715",
-        "postedDate": "2026-07-26T13:43:44.000Z"
     }
 ];
