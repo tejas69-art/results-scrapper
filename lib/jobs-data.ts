@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-ibm-new-drive",
+        "title": "IBM New Drive | Software Engineer Role",
+        "company": "IBM",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "IBM New Drive: IBM is hiring Software Engineers for its India Systems Development Lab (ISDL) in India. This is an ...",
+        "url": "https://careers.ibm.com/en_US/careers/JobDetail?jobId=132895&source=SN_LinkedIn",
+        "postedDate": "2026-09-24T17:09:44.000Z"
+    },
+    {
         "id": "onlinestudy4u-hcltech-new-drive",
         "title": "HCLTech New Drive | Trainee – Voice Operations (DPO) Role",
         "company": "HCLTech",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Tech Mahindra Big Hiring: Tech Mahindra has launched an exciting opportunity for recruitment for those with experience who want to ...",
         "url": "https://www.linkedin.com/jobs/view/4441895390/",
         "postedDate": "2026-07-27T13:30:53.000Z"
-    },
-    {
-        "id": "onlinestudy4u-tech-mahindra-new-big-hiring",
-        "title": "Tech Mahindra New Big Hiring | Junior Software Engineer – Role",
-        "company": "Tech Mahindra",
-        "location": "Pune, India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Tech Mahindra New Big Hiring: Jobs for junior software engineers in Pune remain a popular starting point for students looking ...",
-        "url": "https://www.naukri.com/job-listings-junior-software-engineer-pune-tech-mahindra-ltd-pune-0-to-0-years-030726024717",
-        "postedDate": "2026-07-26T13:26:29.000Z"
     }
 ];
