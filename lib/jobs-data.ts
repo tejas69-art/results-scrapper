@@ -13,6 +13,17 @@ export interface JobListing {
 
 export const JOBS_DATA: JobListing[] = [
     {
+        "id": "onlinestudy4u-bpsc-tre-recruitment",
+        "title": "BPSC TRE 4.0 Recruitment 2026: Apply Online for 32,388 School Teacher Posts",
+        "company": "BPSC TRE 4.0",
+        "location": "India",
+        "type": "Full-time",
+        "category": "Software Development",
+        "description": "BPSC TRE 4.0 Recruitment 2026: BPSC TRE 4.0 Recruitment 2026 has been introduced for school teacher posts under the Education ...",
+        "url": "https://bpsconline.bihar.gov.in/candidate/login",
+        "postedDate": "2026-09-25T15:10:05.000Z"
+    },
+    {
         "id": "onlinestudy4u-ibm-new-drive",
         "title": "IBM New Drive | Software Engineer Role",
         "company": "IBM",
@@ -550,16 +561,5 @@ export const JOBS_DATA: JobListing[] = [
         "description": "Infosys New Off Campus Hiring: Are you looking for the most recent Infosys BPM opportunities for new graduates? A new job opening ...",
         "url": "https://www.naukri.com/job-listings-hiring-for-freshers-be-computer-science-for-data-non-voice-bnglr-infosys-bpm-bengaluru-0-to-0-years-150626023323",
         "postedDate": "2026-07-27T13:46:37.000Z"
-    },
-    {
-        "id": "onlinestudy4u-tech-mahindra-big-hiring",
-        "title": "Tech Mahindra Big Hiring | Associate Role",
-        "company": "Tech Mahindra",
-        "location": "India",
-        "type": "Full-time",
-        "category": "Software Development",
-        "description": "Tech Mahindra Big Hiring: Tech Mahindra has launched an exciting opportunity for recruitment for those with experience who want to ...",
-        "url": "https://www.linkedin.com/jobs/view/4441895390/",
-        "postedDate": "2026-07-27T13:30:53.000Z"
     }
 ];
